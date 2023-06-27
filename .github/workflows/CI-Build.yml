@@ -119,3 +119,54 @@ jobs:
         with:
           name: Final2x-macos-${{ matrix.os-version }}-${{ matrix.package }}
           path: dist/*.zip
+
+
+  ubuntu:
+#     strategy:
+#       matrix:
+#         package: [ "unpacked", "setup" ]
+        
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Download Final2x-core and unzip
+        run: |
+          wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-06-27/Final2x-core-ubuntu-20.04.zip -O Final2x-core.zip
+          cd ./resources
+          mkdir Final2x-core
+          cd ..
+          unzip -d ./resources/Final2x-core Final2x-core.zip
+
+      - name: build
+        run: |
+          npm install
+          npm run build:linux
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: test
+        run: |
+          cd dist
+          ls
+         
+
+#       - name: upload-unpacked
+#         if: matrix.package == 'unpacked'
+#         uses: actions/upload-artifact@v3
+#         with:
+#           name: Final2x-windows-x64-${{ matrix.package }}
+#           path: dist/win-unpacked
+
+#       - name: upload-setup
+#         if: matrix.package == 'setup'
+#         uses: actions/upload-artifact@v3
+#         with:
+#           name: Final2x-windows-x64-${{ matrix.package }}
+#           path: dist/*.exe
