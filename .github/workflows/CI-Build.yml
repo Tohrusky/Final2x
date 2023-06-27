@@ -14,8 +14,11 @@ on:
   workflow_dispatch:
 
 jobs:
-
   windows:
+    strategy:
+      matrix:
+        package: [ "unpacked", "setup" ]
+        
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
@@ -39,16 +42,26 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: upload
+      - name: upload-unpacked
+        if: matrix.package == 'unpacked'
         uses: actions/upload-artifact@v3
         with:
-          name: Final2x-windows-x64
+          name: Final2x-windows-x64-${{ matrix.package }}
           path: dist/win-unpacked
+
+      - name: upload-setup
+        if: matrix.package == 'setup'
+        uses: actions/upload-artifact@v3
+        with:
+          name: Final2x-windows-x64-${{ matrix.package }}
+          path: dist/*.exe
+
 
   macos:
     strategy:
       matrix:
         os-version: [ "x64", "arm64" ]
+        package: [ "unpacked", "dmg" ]
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
@@ -93,8 +106,16 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: upload
+      - name: upload-unpacked
+        if: matrix.package == 'unpacked'
         uses: actions/upload-artifact@v3
         with:
-          name: Final2x-macos-${{ matrix.os-version }}
+          name: Final2x-macos-${{ matrix.os-version }}-${{ matrix.package }}
           path: dist/*.dmg
+
+      - name: upload-dmg
+        if: matrix.package == 'dmg'
+        uses: actions/upload-artifact@v3
+        with:
+          name: Final2x-macos-${{ matrix.os-version }}-${{ matrix.package }}
+          path: dist/*.zip
