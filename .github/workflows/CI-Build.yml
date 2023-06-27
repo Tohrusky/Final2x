@@ -29,7 +29,8 @@ jobs:
       - name: Download Final2x-core and unzip
         run: |
           Invoke-WebRequest -Uri https://github.com/Tohrusky/Final2x-core/releases/download/2023-06-27/Final2x-core-windows-latest.zip -OutFile Final2x-core.zip
-          7z x Final2x-core.zip -o.\resources\Final2x-core
+          7z x Final2x-core.zip -oFinal2x-core
+          xcopy Final2x-core resources\Final2x-core /E /I /H /Y
 
       - name: build
         run: |
