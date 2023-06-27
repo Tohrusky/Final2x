@@ -1,76 +1,99 @@
-#name: CI-Build
-#
-#on:
-#  push:
-#    branches:
-#      - main
-#    paths-ignore:
-#      - README.md
-#      - LICENSE
-#  pull_request:
-#    paths-ignore:
-#      - README.md
-#      - LICENSE
-#  workflow_dispatch:
-#
-#jobs:
-#
-#  windows:
-#    runs-on: windows-latest
-#    steps:
-#      - uses: actions/checkout@v3
-#        with:
-#          submodules: recursive
-#
-#      - uses: actions/setup-node@v3
-#        with:
-#          node-version: 20
-#
-#      - name: build
-#        run: |
-#          npm install
-#          npm run build:win
-#        env:
-#          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-#
-#      - name: upload
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: Final2x-windows-x64
-#          path: dist/win-unpacked
-#
-#  macos:
-#    strategy:
-#      matrix:
-#        os-version: [ "x64", "arm64" ]
-#    runs-on: macos-latest
-#    steps:
-#      - uses: actions/checkout@v3
-#        with:
-#          submodules: recursive
-#
-#      - uses: actions/setup-node@v3
-#        with:
-#          node-version: 20
-#
-#      - name: build-x64
-#        if: matrix.os-version == 'x64'
-#        run: |
-#          npm install
-#          npm run build:mac-x64
-#        env:
-#          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-#
-#      - name: build-arm64
-#        if: matrix.os-version == 'arm64'
-#        run: |
-#          npm install
-#          npm run build:mac-arm64
-#        env:
-#          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-#
-#      - name: upload
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: Final2x-macos-${{ matrix.os-version }}
-#          path: dist/*.dmg
+name: CI-Build
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - README.md
+      - LICENSE
+  pull_request:
+    paths-ignore:
+      - README.md
+      - LICENSE
+  workflow_dispatch:
+
+jobs:
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Download Final2x-core and unzip
+        run: |
+          Invoke-WebRequest -Uri https://github.com/Tohrusky/Final2x-core/releases/download/2023-06-27/Final2x-core-windows-latest.zip -OutFile Final2x-core.zip
+          7z x Final2x-core.zip -o.\resources\Final2x-core
+
+      - name: build
+        run: |
+          npm install
+          npm run build:win
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: Final2x-windows-x64
+          path: dist/win-unpacked
+
+  macos:
+    strategy:
+      matrix:
+        os-version: [ "x64", "arm64" ]
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Download Final2x-core x64
+        if: matrix.os-version == 'x64'
+        run: |
+          wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-06-27/Final2x-core-macos-latest.zip -O Final2x-core.zip
+
+
+      - name: Download Final2x-core arm64
+        if: matrix.os-version == 'arm64'
+        run: |
+          wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-06-27/Final2x-core-macos-arm64.zip -O Final2x-core.zip
+
+      - name: Unzip Final2x-core
+        run: |
+          cd /resources
+          mkdir Final2x-core
+          cd ..
+          unzip -d /resources/Final2x-core Final2x-core.zip
+
+      - name: build-x64
+        if: matrix.os-version == 'x64'
+        run: |
+          npm install
+          npm run build:mac-x64
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: build-arm64
+        if: matrix.os-version == 'arm64'
+        run: |
+          npm install
+          npm run build:mac-arm64
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: Final2x-macos-${{ matrix.os-version }}
+          path: dist/*.dmg
