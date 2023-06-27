@@ -106,13 +106,13 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: upload-unpacked
+      - name: upload-dmg
         uses: actions/upload-artifact@v3
         with:
           name: Final2x-macos-${{ matrix.os-version }}-dmg
           path: dist/*.dmg
 
-      - name: upload-dmg
+      - name: upload-unpacked
         uses: actions/upload-artifact@v3
         with:
           name: Final2x-macos-${{ matrix.os-version }}-unpacked
