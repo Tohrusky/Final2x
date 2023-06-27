@@ -1,0 +1,8 @@
+node_modules
+dist
+out
+*.log*
+*.DS_Store
+/resources/Final2x-core/
+/outputs/
+/.idea
