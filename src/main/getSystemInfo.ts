@@ -1,7 +1,6 @@
-import { IpcMainInvokeEvent } from 'electron'
 import si from 'systeminformation'
 
-export async function getSystemInfo(_: IpcMainInvokeEvent): Promise<Array<string>> {
+export async function getSystemInfo(): Promise<Array<string>> {
   const deviceList: Array<string> = []
   // get device list : cpu & GPU
   const cpu = await si.cpu()

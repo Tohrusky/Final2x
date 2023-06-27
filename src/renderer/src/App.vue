@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import router from './router'
-import { darkTheme, NSpace, NButton, NConfigProvider, NIcon, NNotificationProvider } from 'naive-ui'
+import { darkTheme, NButton, NConfigProvider, NIcon, NNotificationProvider, NSpace } from 'naive-ui'
 import { computed, onMounted, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
-import { HomeOutlined, TranslationOutlined, SettingOutlined } from '@vicons/antd'
+import { HomeOutlined, SettingOutlined, TranslationOutlined } from '@vicons/antd'
 import { MoonOutline, SunnyOutline } from '@vicons/ionicons5'
 import { switchCSSStyle, switchTheme } from './utils/DarkModeColor'
 
@@ -34,6 +34,8 @@ onMounted(async () => {
   const res: Array<string> = await window.electron.ipcRenderer.invoke('getSystemInfo')
   if (res.length == 1) {
     SRgpuid.value = -1 // CPU only
+  } else {
+    SRgpuid.value = 0 // GPU
   }
 
   for (const i in res) {
