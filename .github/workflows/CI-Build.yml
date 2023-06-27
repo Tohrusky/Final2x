@@ -71,10 +71,10 @@ jobs:
 
       - name: Unzip Final2x-core
         run: |
-          cd /resources
+          cd ./resources
           mkdir Final2x-core
           cd ..
-          unzip -d /resources/Final2x-core Final2x-core.zip
+          unzip -d ./resources/Final2x-core Final2x-core.zip
 
       - name: build-x64
         if: matrix.os-version == 'x64'
