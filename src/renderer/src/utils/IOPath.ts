@@ -76,9 +76,8 @@ class ioPATH {
   }
 
   static clearALL(): void {
-    const { inputpathMap, outputpath, inputFileList } = storeToRefs(useIOPathStore())
+    const { inputpathMap, inputFileList } = storeToRefs(useIOPathStore())
     inputpathMap.value.clear()
-    outputpath.value = ''
     inputFileList.value = []
   }
 }

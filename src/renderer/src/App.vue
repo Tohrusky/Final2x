@@ -35,8 +35,7 @@ onMounted(async () => {
   const res: Array<string> = await window.electron.ipcRenderer.invoke('getSystemInfo')
   if (res.length == 1) {
     SRgpuid.value = -1 // CPU only
-  } else {
-    SRgpuid.value = 0 // GPU
+    console.log('CPU only, SRgpuid = -1')
   }
 
   for (const i in res) {

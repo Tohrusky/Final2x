@@ -18,7 +18,7 @@ jobs:
     strategy:
       matrix:
         os-version: [ "x64" ]
-        
+
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
@@ -31,9 +31,10 @@ jobs:
 
       - name: Download Final2x-core and unzip
         run: |
+          cd .\resources
           Invoke-WebRequest -Uri https://github.com/Tohrusky/Final2x-core/releases/download/2023-06-27/Final2x-core-windows-latest.zip -OutFile Final2x-core.zip
           7z x Final2x-core.zip -oFinal2x-core
-          xcopy Final2x-core resources\Final2x-core /E /I /H /Y
+          del .\Final2x-core.zip
 
       - name: build
         run: |
@@ -41,6 +42,11 @@ jobs:
           npm run build:win
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: zip-unpacked
+        run: |
+          cd .\dist\win-unpacked
+          7z a -r Final2x-windows-${{ matrix.os-version }}-unpacked.zip *
 
       - name: upload-setup
         uses: actions/upload-artifact@v3
@@ -52,7 +58,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Final2x-windows-${{ matrix.os-version }}-unpacked
-          path: dist/win-unpacked
+          path: dist/win-unpacked/Final2x-windows-${{ matrix.os-version }}-unpacked.zip
 
 
 
@@ -61,7 +67,7 @@ jobs:
     strategy:
       matrix:
         os-version: [ "x64", "arm64" ]
-        
+
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
@@ -75,20 +81,21 @@ jobs:
       - name: Download Final2x-core x64
         if: matrix.os-version == 'x64'
         run: |
+          cd ./resources
           wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-06-27/Final2x-core-macos-latest.zip -O Final2x-core.zip
 
 
       - name: Download Final2x-core arm64
         if: matrix.os-version == 'arm64'
         run: |
+          cd ./resources
           wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-06-27/Final2x-core-macos-arm64.zip -O Final2x-core.zip
 
       - name: Unzip Final2x-core
         run: |
           cd ./resources
-          mkdir Final2x-core
-          cd ..
-          unzip -d ./resources/Final2x-core Final2x-core.zip
+          unzip -d ./Final2x-core Final2x-core.zip
+          rm Final2x-core.zip
 
       - name: build-x64
         if: matrix.os-version == 'x64'
@@ -123,7 +130,7 @@ jobs:
     strategy:
       matrix:
         os-version: [ "x64" ]
-        
+
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
@@ -136,11 +143,10 @@ jobs:
 
       - name: Download Final2x-core and unzip
         run: |
-          wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-06-27/Final2x-core-ubuntu-20.04.zip -O Final2x-core.zip
           cd ./resources
-          mkdir Final2x-core
-          cd ..
-          unzip -d ./resources/Final2x-core Final2x-core.zip
+          wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-06-27/Final2x-core-ubuntu-20.04.zip -O Final2x-core.zip
+          unzip -d ./Final2x-core Final2x-core.zip
+          rm Final2x-core.zip
 
       - name: build
         run: |
@@ -148,19 +154,24 @@ jobs:
           npm run build:linux
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          
+
+      - name: zip-unpacked
+        run: |
+          cd ./dist/linux-unpacked
+          zip -9 -r Final2x-ubuntu-${{ matrix.os-version }}-unpacked.zip ./*
+
       - name: upload-snap
         uses: actions/upload-artifact@v3
         with:
           name: Final2x-ubuntu-${{ matrix.os-version }}-snap
           path: dist/*.snap
-          
+
       - name: upload-AppImage
         uses: actions/upload-artifact@v3
         with:
           name: Final2x-ubuntu-${{ matrix.os-version }}-AppImage
           path: dist/*.AppImage
- 
+
       - name: upload-deb
         uses: actions/upload-artifact@v3
         with:
@@ -171,6 +182,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Final2x-ubuntu-${{ matrix.os-version }}-unpacked
-          path: dist/linux-unpacked
+          path: dist/linux-unpacked/Final2x-ubuntu-${{ matrix.os-version }}-unpacked.zip
 
 

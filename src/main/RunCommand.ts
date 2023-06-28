@@ -11,8 +11,11 @@ export async function RunCommand(event, config_json: string): Promise<void> {
   } else {
     resourceUrl = path.join(app.getAppPath(), '/resources/Final2x-core/Final2x-core')
   }
-  config_json = JSON.stringify(config_json) // 转义
-  const command = `${resourceUrl} -j ${config_json}`
+
+  config_json = JSON.stringify(config_json) // 转义转义
+
+  const command = `"${resourceUrl}" -j ${config_json}`
+
   console.log(command)
 
   child = spawn(command, { shell: true })
