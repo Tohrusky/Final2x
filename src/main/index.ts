@@ -15,6 +15,10 @@ function createWindow(): void {
   const mainWindow = new BrowserWindow({
     width: 665,
     height: 420,
+    maxWidth: 800,
+    minWidth: 665,
+    maxHeight: 600,
+    minHeight: 420,
     frame: process.platform !== 'darwin',
     titleBarStyle: 'hiddenInset',
     show: false,
