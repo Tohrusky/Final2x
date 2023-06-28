@@ -13,6 +13,7 @@ import { switchLanguage } from './utils/switchLanguage'
 import { useGlobalSettingsStore } from './store/globalSettingsStore'
 import MyProgress from './components/MyProgress.vue'
 import MyExternalLink from './components/MyExternalLink.vue'
+import MySetting from "./components/MySetting.vue";
 
 const { locale } = useI18n()
 const { langsNum, SRgpuid, deviceList, DarkTheme, globalcolor } = storeToRefs(
@@ -73,47 +74,46 @@ const themeOverrides = {
 <template>
   <n-config-provider :theme="getTheme" :theme-overrides="themeOverrides">
     <n-notification-provider placement="top">
-      <div class="drag" />
-
+<!--      <div class="drag" />-->
       <div class="background">
         <MyProgress />
         <MyExternalLink />
+<!--        <n-space class="main-buttons">-->
+<!--          <n-button text style="font-size: 36px" @click="router.push('/Final2xSettings')">-->
+<!--            <n-icon>-->
+<!--              <setting-outlined />-->
+<!--            </n-icon>-->
+<!--          </n-button>-->
 
-        <n-space class="main-buttons">
-          <n-button text style="font-size: 36px" @click="router.push('/Final2xSettings')">
-            <n-icon>
-              <setting-outlined />
-            </n-icon>
-          </n-button>
+<!--          <n-button text style="font-size: 36px" @click="router.push('/')">-->
+<!--            <n-icon>-->
+<!--              <home-outlined />-->
+<!--            </n-icon>-->
+<!--          </n-button>-->
 
-          <n-button text style="font-size: 36px" @click="router.push('/')">
-            <n-icon>
-              <home-outlined />
-            </n-icon>
-          </n-button>
+<!--          <n-button text style="font-size: 36px" @click="switchLanguage">-->
+<!--            <n-icon>-->
+<!--              <translation-outlined />-->
+<!--            </n-icon>-->
+<!--          </n-button>-->
 
-          <n-button text style="font-size: 36px" @click="switchLanguage">
-            <n-icon>
-              <translation-outlined />
-            </n-icon>
-          </n-button>
-
-          <n-button text style="font-size: 36px" @click="switchTheme"
-            ><n-icon>
-              <div v-if="getTheme === undefined">
-                <moon-outline />
-              </div>
-              <div v-else>
-                <sunny-outline />
-              </div>
-            </n-icon>
-          </n-button>
-        </n-space>
+<!--          <n-button text style="font-size: 36px" @click="switchTheme">-->
+<!--            <n-icon>-->
+<!--              <div v-if="getTheme === undefined">-->
+<!--                <moon-outline />-->
+<!--              </div>-->
+<!--              <div v-else>-->
+<!--                <sunny-outline />-->
+<!--              </div>-->
+<!--            </n-icon>-->
+<!--          </n-button>-->
+<!--        </n-space>-->
         <router-view v-slot="{ Component }">
           <transition name="fade">
             <component :is="Component" />
           </transition>
         </router-view>
+
       </div>
     </n-notification-provider>
     <n-global-style />

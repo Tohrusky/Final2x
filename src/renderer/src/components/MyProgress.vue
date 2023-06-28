@@ -149,27 +149,15 @@ watchEffect(() => {
 
 <template>
   <div>
-    <div class="progress">
+    <div class="control">
       <n-progress
         height="34px"
         type="line"
         :percentage="ProgressPercentage"
         color="green"
-        :indicator-placement="'inside'"
+        indicator-placement="inside"
         processing
       />
-    </div>
-
-    <n-drawer v-model:show="showLOG" :height="385" placement="top">
-      <n-drawer-content title="" :native-scrollbar="false">
-        <br />
-        <n-card title="Log" size="small" hoverable>
-          <n-log ref="logInstRef" :log="CommandLOG" trim />
-        </n-card>
-      </n-drawer-content>
-    </n-drawer>
-
-    <n-space justify="end" class="ButtonSpace">
       <n-button type="success" strong secondary round @click="StartSR">
         {{ t('MyProgress.text6') }}
       </n-button>
@@ -181,7 +169,16 @@ watchEffect(() => {
       <n-button type="warning" strong secondary round @click="showLOG = !showLOG">
         {{ t('MyProgress.text8') }}
       </n-button>
-    </n-space>
+    </div>
+
+    <n-drawer v-model:show="showLOG" height="385" placement="top">
+      <n-drawer-content title="" :native-scrollbar="false">
+        <br />
+        <n-card title="Log" size="small" hoverable>
+          <n-log ref="logInstRef" :log="CommandLOG" trim />
+        </n-card>
+      </n-drawer-content>
+    </n-drawer>
 
     <div class="divider">
       <n-divider />
@@ -190,6 +187,17 @@ watchEffect(() => {
 </template>
 
 <style lang="scss">
+.control {
+  margin: 30px 40px 0 40px;
+  display: flex;
+  justify-content: space-between;
+  > div {
+    margin: 0 5px;
+  }
+  > button {
+    margin: 0 5px;
+  }
+}
 .progress {
   margin-left: -30px;
   margin-top: 10px;
