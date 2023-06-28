@@ -93,6 +93,7 @@ jobs:
 
       - name: Unzip Final2x-core
         run: |
+          cd ./resources
           unzip -d ./Final2x-core Final2x-core.zip
           rm Final2x-core.zip
 
