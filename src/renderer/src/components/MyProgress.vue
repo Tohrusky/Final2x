@@ -1,15 +1,14 @@
 <script lang="ts" setup>
-import { onMounted, ref, watchEffect, nextTick } from 'vue'
+import { nextTick, onMounted, ref, watchEffect } from 'vue'
 import { storeToRefs } from 'pinia'
 import {
   NButton,
   NCard,
   NDivider,
-  NSpace,
-  NLog,
-  NProgress,
   NDrawer,
   NDrawerContent,
+  NLog,
+  NProgress,
   useNotification
 } from 'naive-ui'
 import { useI18n } from 'vue-i18n'
@@ -180,9 +179,7 @@ watchEffect(() => {
       </n-drawer-content>
     </n-drawer>
 
-    <div class="divider">
-      <n-divider />
-    </div>
+    <n-divider class="n-divider" />
   </div>
 </template>
 
@@ -193,13 +190,16 @@ watchEffect(() => {
   padding: 12px 40px 0 40px;
   display: flex;
   justify-content: space-between;
+
   > div {
     margin: 0 5px;
   }
+
   > button {
     margin: 0 5px;
   }
 }
+
 .progress {
   margin-left: -30px;
   margin-top: 10px;
@@ -210,7 +210,7 @@ watchEffect(() => {
   margin-top: 30px;
 }
 
-.divider {
-  margin-top: -15px;
+.n-divider {
+  margin: 30px 0 0 0 !important;
 }
 </style>
