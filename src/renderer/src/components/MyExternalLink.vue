@@ -2,10 +2,9 @@
 import useClipboard from 'vue-clipboard3'
 import { useI18n } from 'vue-i18n'
 import { storeToRefs } from 'pinia'
-import { useNotification, NSpace, NButton, NIcon, NImage } from 'naive-ui'
+import { NButton, NIcon, NImage, NSpace, useNotification } from 'naive-ui'
 import { QqCircleFilled } from '@vicons/antd'
 import { PaperPlaneSharp } from '@vicons/ionicons5'
-
 import final2xlogo from '../assets/final2xlogo.png'
 import final2xlogoDarkMode from '../assets/final2xlogoDarkMode.png'
 import { useGlobalSettingsStore } from '../store/globalSettingsStore'
@@ -20,6 +19,7 @@ class openWebsite {
     const githubLink = 'https://github.com/Tohrusky/Final2x'
     await window.open(githubLink, '_blank')
   }
+
   static async TelegramGroup(): Promise<void> {
     const telegramLink = 'https://t.me/+hQMtDxG9bqNiNjRh'
     await window.open(telegramLink, '_blank')
@@ -50,29 +50,15 @@ async function copyQQGroup(): Promise<void> {
 </script>
 
 <template>
-  <div>
-    <div class="final2x-logo">
-      <div v-if="!DarkTheme">
-        <n-image
-          width="36"
-          height="36"
-          :src="final2xlogo"
-          preview-disabled
-          @click="openWebsite.GitHub"
-        />
-      </div>
-      <div v-else>
-        <n-image
-          width="36"
-          height="36"
-          :src="final2xlogoDarkMode"
-          preview-disabled
-          @click="openWebsite.GitHub"
-        />
-      </div>
-    </div>
-
-    <n-space class="MyExternalLink">
+  <div class="MyExternalLink">
+    <n-space>
+      <n-image
+        width="36"
+        height="36"
+        :src="DarkTheme ? final2xlogoDarkMode : final2xlogo"
+        preview-disabled
+        @click="openWebsite.GitHub"
+      />
       <n-button text style="font-size: 36px" @click="openWebsite.TelegramGroup">
         <n-icon>
           <paper-plane-sharp />
@@ -88,21 +74,10 @@ async function copyQQGroup(): Promise<void> {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .final2x-logo {
-  position: fixed;
-  right: 17px;
-  bottom: 8px;
-  z-index: 10004;
 }
 
 .MyExternalLink {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  bottom: 8px;
-  right: 70px;
-  z-index: 10003;
 }
 </style>

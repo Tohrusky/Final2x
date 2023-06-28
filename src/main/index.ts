@@ -15,6 +15,10 @@ function createWindow(): void {
   const mainWindow = new BrowserWindow({
     width: 665,
     height: 420,
+    maxWidth: 800,
+    minWidth: 665,
+    maxHeight: 600,
+    minHeight: 420,
     frame: process.platform !== 'darwin',
     titleBarStyle: 'hiddenInset',
     show: false,
@@ -51,6 +55,7 @@ function createWindow(): void {
   // Load the remote URL for development or the local html file for production.
   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
     mainWindow.loadURL(process.env['ELECTRON_RENDERER_URL'])
+    mainWindow.webContents.openDevTools();
   } else {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }

@@ -1,18 +1,13 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import router from './router'
-import { darkTheme, NButton, NConfigProvider, NIcon, NNotificationProvider, NSpace } from 'naive-ui'
+import { darkTheme, NConfigProvider, NNotificationProvider, NSpace } from 'naive-ui'
 import { computed, onMounted, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
-import { HomeOutlined, SettingOutlined, TranslationOutlined } from '@vicons/antd'
-import { MoonOutline, SunnyOutline } from '@vicons/ionicons5'
-import { switchCSSStyle, switchTheme } from './utils/DarkModeColor'
-
-import { switchLanguage } from './utils/switchLanguage'
+import { switchCSSStyle } from './utils/DarkModeColor'
 import { useGlobalSettingsStore } from './store/globalSettingsStore'
 import MyProgress from './components/MyProgress.vue'
-import MyExternalLink from './components/MyExternalLink.vue'
+import BottomNavigation from './components/bottomNavigation.vue'
 
 const { locale } = useI18n()
 const { langsNum, SRgpuid, deviceList, DarkTheme, globalcolor } = storeToRefs(
@@ -71,55 +66,26 @@ const themeOverrides = {
 
 <template>
   <n-config-provider :theme="getTheme" :theme-overrides="themeOverrides">
-    <n-notification-provider placement="top">
-      <div class="drag" />
-
-      <div class="background">
+    <n-notification-provider placement="top" class="n-config-provider">
+      <n-space justify="space-between" vertical class="background">
         <MyProgress />
-        <MyExternalLink />
 
-        <n-space class="main-buttons">
-          <n-button text style="font-size: 36px" @click="router.push('/Final2xSettings')">
-            <n-icon>
-              <setting-outlined />
-            </n-icon>
-          </n-button>
-
-          <n-button text style="font-size: 36px" @click="router.push('/')">
-            <n-icon>
-              <home-outlined />
-            </n-icon>
-          </n-button>
-
-          <n-button text style="font-size: 36px" @click="switchLanguage">
-            <n-icon>
-              <translation-outlined />
-            </n-icon>
-          </n-button>
-
-          <n-button text style="font-size: 36px" @click="switchTheme"
-            ><n-icon>
-              <div v-if="getTheme === undefined">
-                <moon-outline />
-              </div>
-              <div v-else>
-                <sunny-outline />
-              </div>
-            </n-icon>
-          </n-button>
-        </n-space>
         <router-view v-slot="{ Component }">
-          <transition name="fade">
-            <component :is="Component" />
+          <transition name="fade" mode="out-in">
+            <keep-alive>
+              <component :is="Component" />
+            </keep-alive>
           </transition>
         </router-view>
-      </div>
+
+        <bottom-navigation />
+      </n-space>
     </n-notification-provider>
     <n-global-style />
   </n-config-provider>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $global-color: v-bind(globalcolor);
 $buttom-bottom: 8px;
 
@@ -127,12 +93,17 @@ $buttom-bottom: 8px;
   display: none;
 }
 
+.n-config-provider {
+  width: 100vw;
+  height: 100vh;
+}
+
 .background {
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
-  position: fixed;
   background-color: $global-color;
-  z-index: -1;
+  padding-top: 30px;
 }
 
 .drag {
@@ -141,15 +112,6 @@ $buttom-bottom: 8px;
   position: fixed;
   background-color: $global-color;
   -webkit-app-region: drag;
-}
-
-.main-buttons {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  bottom: $buttom-bottom;
-  left: 13px;
 }
 
 .fade-enter-active {

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
-import { NText, NIcon, NUpload, NUploadDragger, useNotification, UploadFileInfo } from 'naive-ui'
+import { NIcon, NText, NUpload, NUploadDragger, UploadFileInfo, useNotification } from 'naive-ui'
 import { useI18n } from 'vue-i18n'
 import { FileImageOutlined } from '@vicons/antd'
 
@@ -72,48 +72,38 @@ function handleRemove(options: { file: UploadFileInfo; fileList: Array<UploadFil
 </script>
 
 <template>
-  <div>
-    <div id="file_drag" class="for_file_drag" @click.prevent>
-      <n-upload
-        v-model:file-list="inputFileList"
-        multiple
-        directory-dnd
-        @remove="handleRemove"
-        @before-upload="handleBeforeUpload"
-        @change="handleUploadChange"
-      >
-        <n-upload-dragger class="file-drag-zone">
-          <div class="filr-drag-zone-logo-text">
-            <div style="margin-bottom: 12px">
-              <n-icon size="48" :depth="3">
-                <file-image-outlined />
-              </n-icon>
-            </div>
-            <n-text style="font-size: 16px"> {{ t('Final2xHome.text1') }} </n-text>
+  <div id="file_drag" class="for_file_drag" @click.prevent>
+    <n-upload
+      v-model:file-list="inputFileList"
+      multiple
+      directory-dnd
+      @remove="handleRemove"
+      @before-upload="handleBeforeUpload"
+      @change="handleUploadChange"
+      class="n-upload"
+    >
+      <n-upload-dragger class="file-drag-zone">
+        <div class="filr-drag-zone-logo-text">
+          <div style="margin-bottom: 12px">
+            <n-icon size="48" depth="3">
+              <file-image-outlined />
+            </n-icon>
           </div>
-        </n-upload-dragger>
-      </n-upload>
-    </div>
+          <n-text style="font-size: 16px"> {{ t('Final2xHome.text1') }}</n-text>
+        </div>
+      </n-upload-dragger>
+    </n-upload>
   </div>
 </template>
 
-<style lang="scss">
-.progress {
-  width: 44%;
-  position: absolute;
-  top: 20px;
-  left: 70px;
-}
-
+<style lang="scss" scoped>
 .for_file_drag {
-  position: absolute;
-  top: 90px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 65%;
-  overflow-y: auto;
-
+  width: 100%;
+  max-height: calc(100vh - 210px);
+  padding: 0 12%;
+  box-sizing: border-box;
+  overflow: scroll;
+  overflow-x: hidden;
   .filr-drag-zone-logo-text {
     display: flex;
     flex-direction: column;
@@ -121,4 +111,31 @@ function handleRemove(options: { file: UploadFileInfo; fileList: Array<UploadFil
     justify-content: center;
   }
 }
+
+.n-upload{
+
+  display: flex;
+  flex-direction: column;
+}
+
+.n-upload :deep .n-upload-file-list {
+  max-height: calc(100vh - 370px);
+  overflow: scroll;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background: rgba(0,0,0,0.06);
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.08);
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgba(0,0,0,0.12);
+    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+  }
+}
+
 </style>

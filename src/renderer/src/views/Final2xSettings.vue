@@ -229,18 +229,23 @@ class ClickButtomToConsoleLog {
   static selectedModel(): void {
     console.log(selectedModel.value)
   }
+
   static selectedScale(): void {
     console.log(selectedScale.value)
   }
+
   static selectedNoise(): void {
     console.log(selectedNoise.value)
   }
+
   static useTTA(): void {
     console.log(useTTA.value)
   }
+
   static SRgpuid(): void {
     console.log(SRgpuid.value)
   }
+
   static CustomScale(): void {
     console.log(CustomScaleValue.value)
   }
@@ -248,8 +253,8 @@ class ClickButtomToConsoleLog {
 </script>
 
 <template>
-  <div>
-    <n-card :bordered="false" class="settings-card">
+  <n-card :bordered="false" class="settings-card">
+    <n-space vertical class="vertical">
       <n-space>
         <n-popover trigger="hover">
           <template #trigger>
@@ -262,9 +267,6 @@ class ClickButtomToConsoleLog {
 
         <n-select v-model:value="SRgpuid" :options="deviceList" style="width: 465px" />
       </n-space>
-
-      <br />
-
       <n-space>
         <n-popover trigger="hover">
           <template #trigger>
@@ -274,14 +276,12 @@ class ClickButtomToConsoleLog {
           </template>
           <span> {{ MyPopoverMessages.Model() }} </span>
         </n-popover>
-
         <n-select
           v-model:value="selectedModel"
           :options="getEnabledModelOptions"
           :fallback-option="ModelOptionsFallBack"
           style="width: 250px"
         />
-
         <n-popover trigger="hover">
           <template #trigger>
             <n-button type="success" dashed @click="ClickButtomToConsoleLog.selectedScale()">
@@ -290,7 +290,6 @@ class ClickButtomToConsoleLog {
           </template>
           <span> {{ MyPopoverMessages.ModelScale() }} </span>
         </n-popover>
-
         <n-select
           v-model:value="selectedScale"
           :options="getScaleOptions"
@@ -298,9 +297,6 @@ class ClickButtomToConsoleLog {
           style="width: 88px"
         />
       </n-space>
-
-      <br />
-
       <n-space>
         <n-popover trigger="hover">
           <template #trigger>
@@ -327,7 +323,7 @@ class ClickButtomToConsoleLog {
           <span> {{ MyPopoverMessages.TTA() }} </span>
         </n-popover>
 
-        <n-switch v-model:value="useTTA" size="large" style="height: 35px"> </n-switch>
+        <n-switch v-model:value="useTTA" size="large" style="height: 35px"></n-switch>
 
         <n-popover trigger="hover">
           <template #trigger>
@@ -347,27 +343,31 @@ class ClickButtomToConsoleLog {
         />
       </n-space>
 
-      <br />
-
       <n-space>
         <n-popover trigger="hover">
           <template #trigger>
-            <n-button type="success" round @click="getPath"> Output Folder </n-button>
+            <n-button type="success" round @click="getPath"> Output Folder</n-button>
           </template>
           <span> {{ MyPopoverMessages.OutputFolder() }} </span>
         </n-popover>
 
         <n-input v-model:value="outputpath" :placeholder="outputpath" round style="width: 411px" />
       </n-space>
-    </n-card>
-  </div>
+    </n-space>
+  </n-card>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .settings-card {
-  width: 90%;
+  width: fit-content;
   margin: 0 auto;
   // transparent
   background-color: rgba(255, 255, 255, 0);
+
+  .vertical {
+    > div {
+      margin-bottom: 20px;
+    }
+  }
 }
 </style>
