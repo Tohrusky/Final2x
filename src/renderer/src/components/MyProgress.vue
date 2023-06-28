@@ -188,7 +188,9 @@ watchEffect(() => {
 
 <style lang="scss">
 .control {
-  margin: 30px 40px 0 40px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 40px 0 40px;
   display: flex;
   justify-content: space-between;
   > div {

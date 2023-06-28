@@ -1,45 +1,49 @@
 <template>
-  <n-space class="main-buttons">
-    <n-button text style="font-size: 36px" @click="router.push('/Final2xSettings')">
-      <n-icon>
-        <setting-outlined />
-      </n-icon>
-    </n-button>
+  <div>
+    <n-space class="main-buttons">
+      <n-button text style="font-size: 36px" @click="router.push('/Final2xSettings')">
+        <n-icon>
+          <setting-outlined />
+        </n-icon>
+      </n-button>
 
-    <n-button text style="font-size: 36px" @click="router.push('/')">
-      <n-icon>
-        <home-outlined />
-      </n-icon>
-    </n-button>
+      <n-button text style="font-size: 36px" @click="router.push('/')">
+        <n-icon>
+          <home-outlined />
+        </n-icon>
+      </n-button>
 
-    <n-button text style="font-size: 36px" @click="switchLanguage">
-      <n-icon>
-        <translation-outlined />
-      </n-icon>
-    </n-button>
+      <n-button text style="font-size: 36px" @click="switchLanguage">
+        <n-icon>
+          <translation-outlined />
+        </n-icon>
+      </n-button>
 
-    <n-button text style="font-size: 36px" @click="switchTheme">
-      <n-icon>
-        <div v-if="getTheme === undefined">
-          <moon-outline />
-        </div>
-        <div v-else>
-          <sunny-outline />
-        </div>
-      </n-icon>
-    </n-button>
-  </n-space>
+      <n-button text style="font-size: 36px" @click="switchTheme">
+        <n-icon>
+          <div v-if="getTheme === undefined">
+            <moon-outline />
+          </div>
+          <div v-else>
+            <sunny-outline />
+          </div>
+        </n-icon>
+      </n-button>
+    </n-space>
+  </div>
 </template>
 
 <script setup>
-
 import { computed } from 'vue'
 import { useGlobalSettingsStore } from '../store/globalSettingsStore'
-import { switchCSSStyle, switchTheme } from "../utils/DarkModeColor";
-import { darkTheme, NButton, NConfigProvider, NIcon, NNotificationProvider, NSpace } from 'naive-ui'
-import { switchLanguage } from "../utils/switchLanguage";
-import router from "../router";
+import { switchCSSStyle, switchTheme } from '../utils/DarkModeColor'
+import { darkTheme, NButton, NIcon, NSpace } from 'naive-ui'
+import { switchLanguage } from '../utils/switchLanguage'
+import router from '../router'
 import { storeToRefs } from 'pinia'
+import { HomeOutlined, SettingOutlined, TranslationOutlined } from '@vicons/antd'
+import { MoonOutline, SunnyOutline } from '@vicons/ionicons5'
+
 const { langsNum, SRgpuid, deviceList, DarkTheme, globalcolor } = storeToRefs(
   useGlobalSettingsStore()
 )
@@ -58,14 +62,9 @@ const getTheme = computed(() => {
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $buttom-bottom: 8px;
 .main-buttons {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  bottom: $buttom-bottom;
-  left: 13px;
+  width: 180px;
 }
 </style>

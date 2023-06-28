@@ -357,7 +357,7 @@ class ClickButtomToConsoleLog {
   </n-card>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .settings-card {
   width: fit-content;
   margin: 0 auto;
