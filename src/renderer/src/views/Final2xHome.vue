@@ -99,9 +99,11 @@ function handleRemove(options: { file: UploadFileInfo; fileList: Array<UploadFil
 <style lang="scss" scoped>
 .for_file_drag {
   width: 100%;
+  max-height: calc(100vh - 210px);
   padding: 0 12%;
   box-sizing: border-box;
-
+  overflow: scroll;
+  overflow-x: hidden;
   .filr-drag-zone-logo-text {
     display: flex;
     flex-direction: column;
@@ -109,4 +111,31 @@ function handleRemove(options: { file: UploadFileInfo; fileList: Array<UploadFil
     justify-content: center;
   }
 }
+
+.n-upload{
+
+  display: flex;
+  flex-direction: column;
+}
+
+.n-upload :deep .n-upload-file-list {
+  max-height: calc(100vh - 370px);
+  overflow: scroll;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background: rgba(0,0,0,0.06);
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.08);
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgba(0,0,0,0.12);
+    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+  }
+}
+
 </style>

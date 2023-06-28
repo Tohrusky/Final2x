@@ -69,11 +69,15 @@ const themeOverrides = {
     <n-notification-provider placement="top" class="n-config-provider">
       <n-space justify="space-between" vertical class="background">
         <MyProgress />
+
         <router-view v-slot="{ Component }">
           <transition name="fade" mode="out-in">
-            <component :is="Component" />
+            <keep-alive>
+              <component :is="Component" />
+            </keep-alive>
           </transition>
         </router-view>
+
         <bottom-navigation />
       </n-space>
     </n-notification-provider>
@@ -99,6 +103,7 @@ $buttom-bottom: 8px;
   width: 100%;
   height: 100%;
   background-color: $global-color;
+  padding-top: 30px;
 }
 
 .drag {
