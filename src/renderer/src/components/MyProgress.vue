@@ -150,30 +150,30 @@ watchEffect(() => {
   <div>
     <div class="control">
       <n-progress
-        height="34px"
-        type="line"
         :percentage="ProgressPercentage"
         color="green"
+        height="34px"
         indicator-placement="inside"
         processing
+        type="line"
       />
-      <n-button type="success" strong secondary round @click="StartSR">
+      <n-button round secondary strong type="success" @click="StartSR">
         {{ t('MyProgress.text6') }}
       </n-button>
 
-      <n-button type="error" strong secondary round @click="TerminateSR">
+      <n-button round secondary strong type="error" @click="TerminateSR">
         {{ t('MyProgress.text7') }}
       </n-button>
 
-      <n-button type="warning" strong secondary round @click="showLOG = !showLOG">
+      <n-button round secondary strong type="warning" @click="showLOG = !showLOG">
         {{ t('MyProgress.text8') }}
       </n-button>
     </div>
 
     <n-drawer v-model:show="showLOG" height="385" placement="top">
-      <n-drawer-content title="" :native-scrollbar="false">
+      <n-drawer-content :native-scrollbar="false" title="">
         <br />
-        <n-card title="Log" size="small" hoverable>
+        <n-card hoverable size="small" title="Log">
           <n-log ref="logInstRef" :log="CommandLOG" trim />
         </n-card>
       </n-drawer-content>

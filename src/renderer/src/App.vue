@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { RouterView } from 'vue-router'
 import { darkTheme, NConfigProvider, NNotificationProvider, NSpace } from 'naive-ui'
 import { computed, onMounted, watch } from 'vue'
@@ -66,12 +66,13 @@ const themeOverrides = {
 
 <template>
   <n-config-provider :theme="getTheme" :theme-overrides="themeOverrides">
-    <n-notification-provider placement="top" class="n-config-provider">
-      <n-space justify="space-between" vertical class="background">
+    <n-notification-provider class="n-config-provider" placement="top">
+      <div class="drag" />
+      <n-space class="background" justify="space-between" vertical>
         <MyProgress />
 
         <router-view v-slot="{ Component }">
-          <transition name="fade" mode="out-in">
+          <transition mode="out-in" name="fade">
             <keep-alive>
               <component :is="Component" />
             </keep-alive>
@@ -115,7 +116,7 @@ $buttom-bottom: 8px;
 }
 
 .fade-enter-active {
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
 }
 
 .fade-enter-from,

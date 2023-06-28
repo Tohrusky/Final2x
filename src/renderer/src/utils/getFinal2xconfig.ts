@@ -20,16 +20,16 @@ import ioPath from '../utils/IOPath'
 //   "tta": false // Test Time Augmentation, default false
 // }
 
-export interface Final2xConfigType {
-  gpuid: number
-  inputpath: string[]
-  model: string
-  modelscale: number
-  modelnoise: number
-  outputpath: string
-  targetscale: number
-  tta: boolean
-}
+// export interface Final2xConfigType {
+//   gpuid: number
+//   inputpath: string[]
+//   model: string
+//   modelscale: number
+//   modelnoise: number
+//   outputpath: string
+//   targetscale: number
+//   tta: boolean
+// }
 
 export const getFinal2xconfig = (): string => {
   const { selectedModel, selectedScale, selectedNoise, useTTA, CustomScaleValue } = storeToRefs(

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import useClipboard from 'vue-clipboard3'
 import { useI18n } from 'vue-i18n'
 import { storeToRefs } from 'pinia'
@@ -53,19 +53,19 @@ async function copyQQGroup(): Promise<void> {
   <div class="MyExternalLink">
     <n-space>
       <n-image
-        width="36"
-        height="36"
         :src="DarkTheme ? final2xlogoDarkMode : final2xlogo"
+        height="36"
         preview-disabled
+        width="36"
         @click="openWebsite.GitHub"
       />
-      <n-button text style="font-size: 36px" @click="openWebsite.TelegramGroup">
+      <n-button style="font-size: 36px" text @click="openWebsite.TelegramGroup">
         <n-icon>
           <paper-plane-sharp />
         </n-icon>
       </n-button>
 
-      <n-button text style="font-size: 36px" @click="copyQQGroup">
+      <n-button style="font-size: 36px" text @click="copyQQGroup">
         <n-icon>
           <qq-circle-filled />
         </n-icon>
