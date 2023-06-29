@@ -62,12 +62,14 @@ jobs:
           path: dist/*.exe
 
       - name: upload-unpacked-x64
+        if : matrix.os-version == 'x64'
         uses: actions/upload-artifact@v3
         with:
           name: Final2x-windows-${{ matrix.os-version }}-unpacked
           path: dist/win-unpacked/Final2x-windows-${{ matrix.os-version }}-unpacked.zip
 
       - name: upload-unpacked-arm64
+        if : matrix.os-version == 'arm64'
         uses: actions/upload-artifact@v3
         with:
           name: Final2x-windows-${{ matrix.os-version }}-unpacked
