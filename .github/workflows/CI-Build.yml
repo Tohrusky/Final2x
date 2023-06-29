@@ -17,7 +17,7 @@ jobs:
   windows:
     strategy:
       matrix:
-        os-version: [ "x64" ]
+        os-version: [ "x64", "arm64" ]
 
     runs-on: windows-latest
     steps:
@@ -39,13 +39,20 @@ jobs:
       - name: build
         run: |
           npm install
-          npm run build:win
+          npm run build:win-${{ matrix.os-version }}
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: zip-unpacked
+      - name: zip-unpacked-x64
+        if : matrix.os-version == 'x64'
         run: |
           cd .\dist\win-unpacked
+          7z a -r Final2x-windows-${{ matrix.os-version }}-unpacked.zip *
+
+      - name: zip-unpacked-arm64
+        if : matrix.os-version == 'arm64'
+        run: |
+          cd .\dist\win-arm64-unpacked
           7z a -r Final2x-windows-${{ matrix.os-version }}-unpacked.zip *
 
       - name: upload-setup
@@ -54,13 +61,19 @@ jobs:
           name: Final2x-windows-${{ matrix.os-version }}-setup
           path: dist/*.exe
 
-      - name: upload-unpacked
+      - name: upload-unpacked-x64
+        if : matrix.os-version == 'x64'
         uses: actions/upload-artifact@v3
         with:
           name: Final2x-windows-${{ matrix.os-version }}-unpacked
           path: dist/win-unpacked/Final2x-windows-${{ matrix.os-version }}-unpacked.zip
 
-
+      - name: upload-unpacked-arm64
+        if : matrix.os-version == 'arm64'
+        uses: actions/upload-artifact@v3
+        with:
+          name: Final2x-windows-${{ matrix.os-version }}-unpacked
+          path: dist/win-arm64-unpacked/Final2x-windows-${{ matrix.os-version }}-unpacked.zip
 
 
   macos:
@@ -97,19 +110,10 @@ jobs:
           unzip -d ./Final2x-core Final2x-core.zip
           rm Final2x-core.zip
 
-      - name: build-x64
-        if: matrix.os-version == 'x64'
+      - name: build
         run: |
           npm install
-          npm run build:mac-x64
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-
-      - name: build-arm64
-        if: matrix.os-version == 'arm64'
-        run: |
-          npm install
-          npm run build:mac-arm64
+          npm run build:mac-${{ matrix.os-version }}
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
@@ -151,7 +155,7 @@ jobs:
       - name: build
         run: |
           npm install
-          npm run build:linux
+          npm run build:linux-${{ matrix.os-version }}
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
