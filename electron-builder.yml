@@ -15,7 +15,7 @@ asar: false
 afterSign: build/notarize.js
 
 win:
-  executableName: electron-app
+  executableName: ${productName}
 
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
