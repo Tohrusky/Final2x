@@ -1,0 +1,44 @@
+name: CI-Build
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - README.md
+      - LICENSE
+  pull_request:
+    paths-ignore:
+      - README.md
+      - LICENSE
+  workflow_dispatch:
+
+jobs:
+  ubuntu:
+    strategy:
+      matrix:
+        os-version: [ "x64" ]
+
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Download Final2x-core and unzip
+        run: |
+          cd ./resources
+          wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-06-27/Final2x-core-ubuntu-20.04.zip -O Final2x-core.zip
+          unzip -d ./Final2x-core Final2x-core.zip
+          rm Final2x-core.zip
+
+      - name: Test
+        run: |
+          npm install
+          npm run test
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
