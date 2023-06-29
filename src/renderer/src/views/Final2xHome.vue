@@ -99,11 +99,14 @@ function handleRemove(options: { file: UploadFileInfo; fileList: Array<UploadFil
 <style lang="scss" scoped>
 .for_file_drag {
   width: 100%;
-  max-height: calc(100vh - 210px);
+  height: 100%;
   padding: 0 12%;
   box-sizing: border-box;
   overflow: scroll;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   .filr-drag-zone-logo-text {
     display: flex;
     flex-direction: column;
