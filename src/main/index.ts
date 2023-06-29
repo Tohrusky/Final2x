@@ -11,12 +11,12 @@ const trayIcon = join(__dirname, '../../resources/tray.png')
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 665,
-    height: 420,
-    maxWidth: 800,
-    minWidth: 665,
-    maxHeight: 600,
-    minHeight: 420,
+    width: 670,
+    height: 470,
+    maxWidth: 870,
+    minWidth: 670,
+    maxHeight: 670,
+    minHeight: 470,
     frame: process.platform !== 'darwin',
     titleBarStyle: 'hiddenInset',
     show: false,
