@@ -19,8 +19,9 @@
     "postinstall": "electron-builder install-app-deps",
     "build:mac-arm64": "npm run build && electron-builder --mac --arm64",
     "build:mac-x64": "npm run build && electron-builder --mac --x64",
-    "build:win": "npm run build && electron-builder --win --config",
-    "build:linux": "npm run build && electron-builder --linux --config"
+    "build:win-arm64": "npm run build && electron-builder --win --arm64",
+    "build:win-x64": "npm run build && electron-builder --win --x64",
+    "build:linux-x64": "npm run build && electron-builder --linux --x64"
   },
   "engines": {
     "node": ">=16.0.0"
