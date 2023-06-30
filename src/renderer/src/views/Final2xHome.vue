@@ -123,7 +123,7 @@ function handleRemove(options: { file: UploadFileInfo; fileList: Array<UploadFil
 
 .n-upload :deep .n-upload-file-list {
   max-height: calc(100vh - 370px);
-  overflow: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   &::-webkit-scrollbar {
     width: 6px;

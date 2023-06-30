@@ -52,13 +52,15 @@ async function copyQQGroup(): Promise<void> {
 <template>
   <div class="MyExternalLink">
     <n-space>
-      <n-image
-        :src="DarkTheme ? final2xlogoDarkMode : final2xlogo"
-        height="36"
-        preview-disabled
-        width="36"
-        @click="openWebsite.GitHub"
-      />
+      <transition mode="in-out" name="custom-fade">
+        <n-image
+          :src="DarkTheme ? final2xlogoDarkMode : final2xlogo"
+          height="36"
+          preview-disabled
+          width="36"
+          @click="openWebsite.GitHub"
+        />
+      </transition>
       <n-button style="font-size: 36px" text @click="openWebsite.TelegramGroup">
         <n-icon>
           <paper-plane-sharp />
@@ -75,6 +77,18 @@ async function copyQQGroup(): Promise<void> {
 </template>
 
 <style lang="scss" scoped>
+.custom-fade-enter-active {
+  transition: all 2s ease-out;
+}
+
+.custom-fade-leave-active {
+  transition: all 2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.custom-fade-enter-from,
+.custom-fade-leave-to {
+  opacity: 0;
+}
 .final2x-logo {
 }
 
