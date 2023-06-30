@@ -1,12 +1,6 @@
 <script lang="ts" setup>
 import { RouterView } from 'vue-router'
-import {
-  darkTheme,
-  NConfigProvider,
-  NDialogProvider,
-  NNotificationProvider,
-  NSpace
-} from 'naive-ui'
+import { darkTheme, NConfigProvider, NDialogProvider, NNotificationProvider } from 'naive-ui'
 import { computed, onMounted, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
@@ -75,19 +69,19 @@ const themeOverrides = {
     <n-notification-provider class="n-config-provider" placement="top">
       <n-dialog-provider>
         <div class="drag" />
-        <n-space class="background" justify="space-between" vertical>
+        <div class="background">
           <MyProgress />
-
-          <router-view v-slot="{ Component }">
-            <transition mode="out-in" name="fade">
-              <keep-alive>
-                <component :is="Component" />
-              </keep-alive>
-            </transition>
-          </router-view>
-
+          <div class="view">
+            <router-view v-slot="{ Component }">
+              <transition mode="out-in" name="custom-fade">
+                <keep-alive>
+                  <component :is="Component" />
+                </keep-alive>
+              </transition>
+            </router-view>
+          </div>
           <bottom-navigation />
-        </n-space>
+        </div>
       </n-dialog-provider>
     </n-notification-provider>
     <n-global-style />
@@ -95,6 +89,20 @@ const themeOverrides = {
 </template>
 
 <style lang="scss" scoped>
+.custom-fade-enter-active {
+  transition: all 0.2s ease-out;
+}
+
+.custom-fade-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.custom-fade-enter-from,
+.custom-fade-leave-to {
+  //transform: translateX(20px);
+  opacity: 0;
+}
+
 $global-color: v-bind(globalcolor);
 $buttom-bottom: 8px;
 
@@ -112,7 +120,13 @@ $buttom-bottom: 8px;
   width: 100%;
   height: 100%;
   background-color: $global-color;
-  padding-top: 30px;
+  //padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+
+  .view {
+    flex: 1;
+  }
 }
 
 .drag {
