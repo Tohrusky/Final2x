@@ -1,19 +1,20 @@
-name: CI-Build
+name: Release
 
 on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - README.md
-      - LICENSE
-  pull_request:
-    paths-ignore:
-      - README.md
-      - LICENSE
   workflow_dispatch:
 
 jobs:
+
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      DATE: ${{ steps.get_date.outputs.DATE }}
+    steps:
+      - name: Get current date
+        id: get_date
+        run: echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+
   windows:
     strategy:
       matrix:
@@ -55,24 +56,27 @@ jobs:
           cd .\dist\win-arm64-unpacked
           7z a -r Final2x-windows-${{ matrix.os-version }}-unpacked.zip *
 
+      - name: rename
+        run: |
+          cd .\dist
+          ren *.exe Final2x-windows-${{ matrix.os-version }}-setup.exe
+        shell: cmd
+
       - name: upload-setup
         uses: actions/upload-artifact@v3
         with:
-          name: Final2x-windows-${{ matrix.os-version }}-setup
           path: dist/*.exe
 
       - name: upload-unpacked-x64
         if : matrix.os-version == 'x64'
         uses: actions/upload-artifact@v3
         with:
-          name: Final2x-windows-${{ matrix.os-version }}-unpacked
           path: dist/win-unpacked/Final2x-windows-${{ matrix.os-version }}-unpacked.zip
 
       - name: upload-unpacked-arm64
         if : matrix.os-version == 'arm64'
         uses: actions/upload-artifact@v3
         with:
-          name: Final2x-windows-${{ matrix.os-version }}-unpacked
           path: dist/win-arm64-unpacked/Final2x-windows-${{ matrix.os-version }}-unpacked.zip
 
 
@@ -97,7 +101,6 @@ jobs:
           cd ./resources
           wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-06-30/Final2x-core-macos-latest.zip -O Final2x-core.zip
 
-
       - name: Download Final2x-core arm64
         if: matrix.os-version == 'arm64'
         run: |
@@ -117,16 +120,20 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
+      - name: rename
+        run: |
+          cd ./dist
+          mv *.dmg Final2x-macos-${{ matrix.os-version }}-dmg.dmg
+          mv *.zip Final2x-macos-${{ matrix.os-version }}-unpacked.zip
+
       - name: upload-dmg
         uses: actions/upload-artifact@v3
         with:
-          name: Final2x-macos-${{ matrix.os-version }}-dmg
           path: dist/*.dmg
 
       - name: upload-unpacked
         uses: actions/upload-artifact@v3
         with:
-          name: Final2x-macos-${{ matrix.os-version }}-unpacked
           path: dist/*.zip
 
 
@@ -164,28 +171,31 @@ jobs:
           cd ./dist/linux-unpacked
           zip -9 -r Final2x-ubuntu-${{ matrix.os-version }}-unpacked.zip ./*
 
+      - name: rename
+        run: |
+          cd ./dist
+          mv *.snap Final2x-ubuntu-${{ matrix.os-version }}-snap.snap
+          mv *.AppImage Final2x-ubuntu-${{ matrix.os-version }}-AppImage.AppImage
+          mv *.deb Final2x-ubuntu-${{ matrix.os-version }}-deb.deb
+
       - name: upload-snap
         uses: actions/upload-artifact@v3
         with:
-          name: Final2x-ubuntu-${{ matrix.os-version }}-snap
           path: dist/*.snap
 
       - name: upload-AppImage
         uses: actions/upload-artifact@v3
         with:
-          name: Final2x-ubuntu-${{ matrix.os-version }}-AppImage
           path: dist/*.AppImage
 
       - name: upload-deb
         uses: actions/upload-artifact@v3
         with:
-          name: Final2x-ubuntu-${{ matrix.os-version }}-deb
           path: dist/*.deb
 
       - name: upload-unpacked
         uses: actions/upload-artifact@v3
         with:
-          name: Final2x-ubuntu-${{ matrix.os-version }}-unpacked
           path: dist/linux-unpacked/Final2x-ubuntu-${{ matrix.os-version }}-unpacked.zip
 
 
@@ -216,26 +226,54 @@ jobs:
           cd ./dist/linux-unpacked
           zip -9 -r Final2x-linux-pip-${{ matrix.os-version }}-unpacked.zip ./*
 
+      - name: rename
+        run: |
+          cd ./dist
+          mv *.snap Final2x-linux-pip-${{ matrix.os-version }}-snap.snap
+          mv *.AppImage Final2x-linux-pip-${{ matrix.os-version }}-AppImage.AppImage
+          mv *.deb Final2x-linux-pip-${{ matrix.os-version }}-deb.deb
+
       - name: upload-snap
         uses: actions/upload-artifact@v3
         with:
-          name: Final2x-linux-pip-${{ matrix.os-version }}-snap
           path: dist/*.snap
 
       - name: upload-AppImage
         uses: actions/upload-artifact@v3
         with:
-          name: Final2x-linux-pip-${{ matrix.os-version }}-AppImage
           path: dist/*.AppImage
 
       - name: upload-deb
         uses: actions/upload-artifact@v3
         with:
-          name: Final2x-linux-pip-${{ matrix.os-version }}-deb
           path: dist/*.deb
 
       - name: upload-unpacked
         uses: actions/upload-artifact@v3
         with:
-          name: Final2x-linux-pip-${{ matrix.os-version }}-unpacked
           path: dist/linux-unpacked/Final2x-linux-pip-${{ matrix.os-version }}-unpacked.zip
+
+
+  Release:
+    needs: [ setup, windows, macos, ubuntu, linux-pip ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          path: asset
+
+      - name: dist
+        run: |
+          mkdir dist
+          cp asset/artifact/* dist
+          cd dist && ls
+
+      - name: Create Release and Upload Release Asset
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Release ${{ needs.setup.outputs.DATE }}
+          tag_name: ${{ needs.setup.outputs.DATE }}
+          body: Auto Release.
+          draft: false
+          prerelease: false
+          files: dist/*
