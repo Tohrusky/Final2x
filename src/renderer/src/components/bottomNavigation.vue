@@ -6,7 +6,7 @@ import MySetting from './MySetting.vue'
 
 <template>
   <div class="position">
-      <n-divider class="n-divider"/>
+    <n-divider class="n-divider" />
     <n-space class="n-space" justify="space-between">
       <MySetting />
       <MyExternalLink />
@@ -21,10 +21,12 @@ import MySetting from './MySetting.vue'
   height: 60px;
   justify-content: flex-end;
 }
+
 .n-space {
   box-sizing: border-box;
   margin: 10px 20px 0 20px;
 }
+
 .n-divider {
   margin: 0 !important;
 }

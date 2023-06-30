@@ -99,7 +99,6 @@ const themeOverrides = {
 
 .custom-fade-enter-from,
 .custom-fade-leave-to {
-  //transform: translateX(20px);
   opacity: 0;
 }
 
@@ -125,6 +124,7 @@ $buttom-bottom: 8px;
   flex-direction: column;
 
   .view {
+    overflow: scroll;
     flex: 1;
   }
 }

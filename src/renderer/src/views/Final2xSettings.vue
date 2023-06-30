@@ -256,7 +256,7 @@ class ClickButtomToConsoleLog {
 <template>
   <n-card :bordered="false" class="settings-card">
     <n-space class="vertical" vertical justify="center">
-      <n-space>
+      <n-space justify="space-between">
         <n-popover trigger="hover" width="400">
           <template #trigger>
             <n-button dashed type="success" @click="ClickButtomToConsoleLog.SRgpuid()">
@@ -268,7 +268,7 @@ class ClickButtomToConsoleLog {
 
         <n-select v-model:value="SRgpuid" :options="deviceList" style="width: 465px" />
       </n-space>
-      <n-space>
+      <n-space justify="space-between">
         <n-popover trigger="hover" width="400">
           <template #trigger>
             <n-button dashed type="success" @click="ClickButtomToConsoleLog.selectedModel()">
@@ -298,7 +298,7 @@ class ClickButtomToConsoleLog {
           style="width: 88px"
         />
       </n-space>
-      <n-space>
+      <n-space justify="space-between">
         <n-popover trigger="hover" width="400">
           <template #trigger>
             <n-button dashed type="success" @click="ClickButtomToConsoleLog.selectedNoise()">
@@ -368,6 +368,7 @@ class ClickButtomToConsoleLog {
 
   .vertical {
     height: 100%;
+
     > div {
       margin-bottom: 20px;
     }
