@@ -17,6 +17,7 @@ export const useGlobalSettingsStore = defineStore(
     const CommandLOG = ref('')
     const logInstRef = ref<LogInst | null>(null)
     const StartCommandLock = ref(false)
+    const SrSuccess = ref(false)
 
     return {
       globalcolor,
@@ -27,6 +28,7 @@ export const useGlobalSettingsStore = defineStore(
       ProgressPercentage,
       CommandLOG,
       StartCommandLock,
+      SrSuccess,
       logInstRef
     }
   },

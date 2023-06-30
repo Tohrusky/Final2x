@@ -15,7 +15,7 @@ asar: false
 afterSign: build/notarize.js
 
 win:
-  executableName: ${productName}
+  executableName: Final2x
 
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
