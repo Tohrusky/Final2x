@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { RouterView } from 'vue-router'
-import { darkTheme, NConfigProvider, NNotificationProvider } from 'naive-ui'
+import { darkTheme, NConfigProvider, NDialogProvider, NNotificationProvider } from 'naive-ui'
 import { computed, onMounted, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
@@ -67,29 +67,28 @@ const themeOverrides = {
 <template>
   <n-config-provider :theme="getTheme" :theme-overrides="themeOverrides">
     <n-notification-provider class="n-config-provider" placement="top">
-      <div class="drag" />
-      <!--      <n-space class="background" justify="space-between" vertical>-->
-      <div class="background">
-        <MyProgress />
-        <div class="view">
-          <router-view v-slot="{ Component }">
-            <transition mode="out-in" name="custom-fade">
-              <keep-alive>
-                <component :is="Component" />
-              </keep-alive>
-            </transition>
-          </router-view>
+      <n-dialog-provider>
+        <div class="drag" />
+        <div class="background">
+          <MyProgress />
+          <div class="view">
+            <router-view v-slot="{ Component }">
+              <transition mode="out-in" name="custom-fade">
+                <keep-alive>
+                  <component :is="Component" />
+                </keep-alive>
+              </transition>
+            </router-view>
+          </div>
+          <bottom-navigation />
         </div>
-        <bottom-navigation />
-      </div>
-      <!--      </n-space>-->
+      </n-dialog-provider>
     </n-notification-provider>
     <n-global-style />
   </n-config-provider>
 </template>
 
 <style lang="scss" scoped>
-
 .custom-fade-enter-active {
   transition: all 0.2s ease-out;
 }
@@ -124,7 +123,8 @@ $buttom-bottom: 8px;
   //padding-top: 30px;
   display: flex;
   flex-direction: column;
-  .view{
+
+  .view {
     flex: 1;
   }
 }
