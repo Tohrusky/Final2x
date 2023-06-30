@@ -1,6 +1,12 @@
 <script lang="ts" setup>
 import { RouterView } from 'vue-router'
-import { darkTheme, NConfigProvider, NNotificationProvider, NSpace } from 'naive-ui'
+import {
+  darkTheme,
+  NConfigProvider,
+  NDialogProvider,
+  NNotificationProvider,
+  NSpace
+} from 'naive-ui'
 import { computed, onMounted, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
@@ -67,20 +73,22 @@ const themeOverrides = {
 <template>
   <n-config-provider :theme="getTheme" :theme-overrides="themeOverrides">
     <n-notification-provider class="n-config-provider" placement="top">
-      <div class="drag" />
-      <n-space class="background" justify="space-between" vertical>
-        <MyProgress />
+      <n-dialog-provider>
+        <div class="drag" />
+        <n-space class="background" justify="space-between" vertical>
+          <MyProgress />
 
-        <router-view v-slot="{ Component }">
-          <transition mode="out-in" name="fade">
-            <keep-alive>
-              <component :is="Component" />
-            </keep-alive>
-          </transition>
-        </router-view>
+          <router-view v-slot="{ Component }">
+            <transition mode="out-in" name="fade">
+              <keep-alive>
+                <component :is="Component" />
+              </keep-alive>
+            </transition>
+          </router-view>
 
-        <bottom-navigation />
-      </n-space>
+          <bottom-navigation />
+        </n-space>
+      </n-dialog-provider>
     </n-notification-provider>
     <n-global-style />
   </n-config-provider>

@@ -9,6 +9,7 @@ import {
   NDrawerContent,
   NLog,
   NProgress,
+  useDialog,
   useNotification
 } from 'naive-ui'
 import { useI18n } from 'vue-i18n'
@@ -19,7 +20,8 @@ import ioPATH from '../utils/IOPath'
 
 const { t } = useI18n()
 const notification = useNotification()
-const { CommandLOG, logInstRef, StartCommandLock, ProgressPercentage } = storeToRefs(
+const dialog = useDialog()
+const { CommandLOG, logInstRef, StartCommandLock, SrSuccess, ProgressPercentage } = storeToRefs(
   useGlobalSettingsStore()
 )
 
@@ -40,9 +42,11 @@ function handleCommandLOG(log: string): void {
 
   const skipImageRegex = /______Skip_Image______:(.+)/
   const processingRegex = /Processing------\[ ([\d.]+)% /
+  const srSuccessRegex = /______SR_COMPLETED______/
 
   const skipImageMatch = log.match(skipImageRegex)
   const processingMatch = log.match(processingRegex)
+  const srSuccessMatch = log.match(srSuccessRegex)
 
   if (skipImageMatch) {
     const imagePath = skipImageMatch[1]
@@ -51,6 +55,10 @@ function handleCommandLOG(log: string): void {
 
   if (processingMatch) {
     ProgressPercentage.value = parseFloat(processingMatch[1])
+  }
+
+  if (srSuccessMatch) {
+    SrSuccess.value = true
   }
 }
 
@@ -96,6 +104,15 @@ class MyProgressNotifications {
   }
 }
 
+class MyProgressDialogs {
+  static SrFailed(): void {
+    dialog.error({
+      title: t('MyProgress.text9'),
+      content: t('MyProgress.text10')
+    })
+  }
+}
+
 function StartSR(): void {
   if (StartCommandLock.value) {
     MyProgressNotifications.SRprocessing()
@@ -108,6 +125,7 @@ function StartSR(): void {
   }
 
   StartCommandLock.value = true // START LOCK
+  SrSuccess.value = false // RESET SR SUCCESS
 
   MyProgressNotifications.StartSR()
 
@@ -141,7 +159,12 @@ watchEffect(() => {
   window.electron.ipcRenderer.on('command-close-code', (event, data) => {
     handleCommandLOG('CLOSE CODE:' + data)
     StartCommandLock.value = false
-    ioPATH.clearALL()
+
+    if (!SrSuccess.value) {
+      MyProgressDialogs.SrFailed()
+    } else {
+      ioPATH.clearALL()
+    }
   })
 })
 </script>
