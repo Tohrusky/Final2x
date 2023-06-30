@@ -68,7 +68,7 @@ const themeOverrides = {
   <n-config-provider :theme="getTheme" :theme-overrides="themeOverrides">
     <n-notification-provider class="n-config-provider" placement="top">
       <n-dialog-provider>
-        <div class="drag" />
+        <!--        <div class="drag" />-->
         <div class="background">
           <MyProgress />
           <div class="view">
@@ -129,13 +129,13 @@ $buttom-bottom: 8px;
   }
 }
 
-.drag {
-  width: 100%;
-  height: 30px;
-  position: fixed;
-  background-color: $global-color;
-  -webkit-app-region: drag;
-}
+//.drag {
+//  width: 100%;
+//  height: 30px;
+//  position: fixed;
+//  background-color: $global-color;
+//  -webkit-app-region: drag;
+//}
 
 .fade-enter-active {
   transition: opacity 0.6s ease-in-out;
