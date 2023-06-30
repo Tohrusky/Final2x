@@ -255,7 +255,7 @@ class ClickButtomToConsoleLog {
 
 <template>
   <n-card :bordered="false" class="settings-card">
-    <n-space class="vertical" vertical>
+    <n-space class="vertical" vertical justify="center">
       <n-space>
         <n-popover trigger="hover" width="400">
           <template #trigger>
@@ -362,10 +362,12 @@ class ClickButtomToConsoleLog {
 .settings-card {
   width: fit-content;
   margin: 0 auto;
+  height: 100%;
   // transparent
   background-color: rgba(255, 255, 255, 0);
 
   .vertical {
+    height: 100%;
     > div {
       margin-bottom: 20px;
     }
