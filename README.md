@@ -22,6 +22,12 @@ This is a powerful tool that allows for image super-resolution to arbitrary size
 <img src="https://s2.loli.net/2023/06/30/3QU5ReYra8tDfWb.png" width="350" /><img src="https://s2.loli.net/2023/06/30/8mcjXFgtlSAOP9u.png" width="350" />
 </div>
 
+<div align="center">
+<img src="https://s2.loli.net/2023/07/01/YOsgZFkXCu5bAqP.png" width="256" /><img src="https://s2.loli.net/2023/07/01/9QGbK2A4uERU31W.png" width="64" /><img src="https://s2.loli.net/2023/07/01/B8PWVl3ZMeQFkHs.png" width="256" />
+</div>
+<h3 align="center"> use Final2x to perform 4x super-resolution on a 256x256 Lenna image </h3>
+
+
 ## Installation
 #### Download the latest release from [here](https://github.com/Tohrusky/Final2x/releases)
 
