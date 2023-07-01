@@ -1,7 +1,7 @@
 {
   "name": "Final2x",
   "productName": "Final2x",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A cross-platform image super-resolution tool.",
   "main": "./out/main/index.js",
   "author": "Tohrusky",
