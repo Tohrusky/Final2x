@@ -30,7 +30,8 @@ Just Run!
 
 ### MacOS
 ```bash
-sudo spctl --master-disable # Disable Gatekeeper, then allow applications downloaded from anywhere in System Preferences > Security & Privacy > General
+sudo spctl --master-disable
+# Disable Gatekeeper, then allow applications downloaded from anywhere in System Preferences > Security & Privacy > General
 xattr -cr /Applications/Final2x.app
 ```
 In first time, you need to run the command above in terminal to allow the app to run, and first process may very slow because of Apple's Check.
@@ -44,7 +45,7 @@ Final2x-core -o # 114514
 ```
 
 #### For Deb/Ubuntu
-set 777 permission for the file and resourse folder
+set 777 permission for the file and resources folder
 
 
 ## Features
