@@ -35,3 +35,8 @@ jobs:
           npm run test-cov
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Codecov
+      - uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
