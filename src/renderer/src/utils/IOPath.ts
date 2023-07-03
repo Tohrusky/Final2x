@@ -50,15 +50,13 @@ class ioPATH {
     return inputpathListString
   }
 
-  static setoutputpathManual(path: string): boolean {
+  static setoutputpathManual(path: string): void {
     const { outputpath, outputpathLock } = storeToRefs(useIOPathStore())
     if (path != '') {
       outputpath.value = path
       outputpathLock.value = true
       console.log('outputpath SET SUCCESS!')
-      return true
     }
-    return false
   }
 
   static setoutputpath(path: string): void {

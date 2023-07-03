@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import PathFormat from '../src/renderer/src/utils/pathFormat'
+import PathFormat from '../../src/renderer/src/utils/pathFormat'
 
 describe('PathFormat', () => {
   it('test_unix', () => {
@@ -8,6 +8,7 @@ describe('PathFormat', () => {
     const check: Array<string> = [pathFormat.getRootPath(), pathFormat.getNewPath('/unix/test.txt')]
     expect(check).toStrictEqual(['/Users/test/Downloads', '/Users/test/Downloads/unix/test.txt'])
   })
+
   it('test_win', () => {
     const pathFormat = new PathFormat()
     pathFormat.setRootPath('C:\\Users\\test\\Downloads\\win')
@@ -17,6 +18,7 @@ describe('PathFormat', () => {
       'C:\\Users\\test\\Downloads\\win\\test.txt'
     ])
   })
+
   it('checkpath', () => {
     const pathFormat = new PathFormat()
     const check: Array<boolean> = [
