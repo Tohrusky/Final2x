@@ -7,24 +7,23 @@ assignees: DamnCrab, Tohrusky
 
 ---
 
-**Describe the bug**
+### Describe the bug | 描述错误 | BUGの説明
 A clear and concise description of what the bug is.
 
-**To Reproduce**
+### To reproduce | 复现步骤 | 再現方法 
 Steps to reproduce the behavior:
 1. Go to '...'
 2. Click on '....'
 3. See error
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
-
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
-
-**Desktop (please complete the following information):**
+### Context | 运行环境 | バックグラウンド
  - OS: [e.g. Ubuntu 20.04]
  - Arch: [e.g. x64]
 
-**Additional context**
-Add any other context about the problem here.
+### Error log | 报错日志 | ログ
+```shell
+your error log
+```
+
+### Additional context | 附加内容 | 追加コンテキスト
+Add any other context and screenshots to help explain your problem.
