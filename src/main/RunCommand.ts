@@ -7,7 +7,9 @@ let child
 export async function RunCommand(event, config_json: string): Promise<void> {
   let resourceUrl: string
 
+  // ---- 还是直接传base64吧
   // config_json = JSON.stringify(config_json) // 转义转义
+  // ----
   config_json = Buffer.from(config_json, 'utf8').toString('base64')
 
   if (!CheckPipPackage()) {
