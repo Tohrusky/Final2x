@@ -3,7 +3,6 @@ import useClipboard from 'vue-clipboard3'
 import { useI18n } from 'vue-i18n'
 import { storeToRefs } from 'pinia'
 import { NButton, NIcon, NImage, NSpace, useNotification } from 'naive-ui'
-import { QqCircleFilled } from '@vicons/antd'
 import { PaperPlaneSharp } from '@vicons/ionicons5'
 import final2xlogo from '../assets/final2xlogo.png'
 import final2xlogoDarkMode from '../assets/final2xlogoDarkMode.png'
@@ -25,28 +24,6 @@ class openWebsite {
     await window.open(telegramLink, '_blank')
   }
 }
-
-async function copyQQGroup(): Promise<void> {
-  const qqGroupNum = '711185279'
-
-  try {
-    await toClipboard(qqGroupNum)
-    console.log('Copied to clipboard')
-    notification.success({
-      title: t('MyExternalLink.text0') + qqGroupNum,
-      content: t('MyExternalLink.text1'),
-      duration: 1500,
-      keepAliveOnHover: true
-    })
-  } catch (e) {
-    console.error(e)
-    notification.error({
-      content: t('MyExternalLink.text2'),
-      duration: 1500,
-      keepAliveOnHover: true
-    })
-  }
-}
 </script>
 
 <template>
@@ -64,12 +41,6 @@ async function copyQQGroup(): Promise<void> {
       <n-button style="font-size: 36px" text @click="openWebsite.TelegramGroup">
         <n-icon>
           <paper-plane-sharp />
-        </n-icon>
-      </n-button>
-
-      <n-button style="font-size: 36px" text @click="copyQQGroup">
-        <n-icon>
-          <qq-circle-filled />
         </n-icon>
       </n-button>
     </n-space>
