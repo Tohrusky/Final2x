@@ -6,7 +6,11 @@ let child
 
 export async function RunCommand(event, config_json: string): Promise<void> {
   let resourceUrl: string
-  config_json = JSON.stringify(config_json) // 转义转义
+
+  // ---- 还是直接传base64吧
+  // config_json = JSON.stringify(config_json) // 转义转义
+  // ----
+  config_json = Buffer.from(config_json, 'utf8').toString('base64')
 
   if (!CheckPipPackage()) {
     if (process.env.NODE_ENV === 'development') {
@@ -18,7 +22,7 @@ export async function RunCommand(event, config_json: string): Promise<void> {
     resourceUrl = 'Final2x-core'
   }
 
-  const command = `"${resourceUrl}" -j ${config_json}`
+  const command = `"${resourceUrl}" -b ${config_json}`
 
   console.log(command)
 

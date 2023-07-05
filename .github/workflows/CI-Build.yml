@@ -32,7 +32,7 @@ jobs:
       - name: Download Final2x-core and unzip
         run: |
           cd .\resources
-          Invoke-WebRequest -Uri https://github.com/Tohrusky/Final2x-core/releases/download/2023-06-30/Final2x-core-windows-latest.zip -OutFile Final2x-core.zip
+          Invoke-WebRequest -Uri https://github.com/Tohrusky/Final2x-core/releases/download/2023-07-05/Final2x-core-windows-latest.zip -OutFile Final2x-core.zip
           7z x Final2x-core.zip -oFinal2x-core
           del .\Final2x-core.zip
 
@@ -95,14 +95,14 @@ jobs:
         if: matrix.os-version == 'x64'
         run: |
           cd ./resources
-          wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-06-30/Final2x-core-macos-latest.zip -O Final2x-core.zip
+          wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-07-05/Final2x-core-macos-latest.zip -O Final2x-core.zip
 
 
       - name: Download Final2x-core arm64
         if: matrix.os-version == 'arm64'
         run: |
           cd ./resources
-          wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-06-30/Final2x-core-macos-arm64.zip -O Final2x-core.zip
+          wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-07-05/Final2x-core-macos-arm64.zip -O Final2x-core.zip
 
       - name: Unzip Final2x-core
         run: |
@@ -148,7 +148,7 @@ jobs:
       - name: Download Final2x-core and unzip
         run: |
           cd ./resources
-          wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-06-30/Final2x-core-ubuntu-20.04.zip -O Final2x-core.zip
+          wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-07-05/Final2x-core-ubuntu-20.04.zip -O Final2x-core.zip
           unzip -d ./Final2x-core Final2x-core.zip
           rm Final2x-core.zip
 
