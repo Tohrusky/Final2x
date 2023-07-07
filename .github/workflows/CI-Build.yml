@@ -5,11 +5,11 @@ on:
     branches:
       - main
     paths-ignore:
-      - README.md
+      - '**.md'
       - LICENSE
   pull_request:
     paths-ignore:
-      - README.md
+      - '**.md'
       - LICENSE
   workflow_dispatch:
 
