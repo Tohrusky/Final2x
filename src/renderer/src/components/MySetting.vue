@@ -9,7 +9,7 @@ import { storeToRefs } from 'pinia'
 import { HomeOutlined, SettingOutlined, TranslationOutlined } from '@vicons/antd'
 import { MoonOutline, SunnyOutline } from '@vicons/ionicons5'
 
-const { DarkTheme, globalcolor } = storeToRefs(useGlobalSettingsStore())
+const { DarkTheme, globalcolor, changeRoute } = storeToRefs(useGlobalSettingsStore())
 
 const getTheme = computed(() => {
   if (DarkTheme.value) {
@@ -24,22 +24,35 @@ const getTheme = computed(() => {
     return undefined
   }
 })
+
+function handleRoute(): void {
+  if (changeRoute.value === false) {
+    changeRoute.value = true
+    router.push('/Final2xSettings')
+  } else {
+    changeRoute.value = false
+    router.push('/')
+  }
+}
 </script>
 
 <template>
   <div>
     <n-space class="main-buttons">
-      <n-button style="font-size: 36px" text @click="router.push('/Final2xSettings')">
-        <n-icon>
-          <setting-outlined />
-        </n-icon>
-      </n-button>
-
-      <n-button style="font-size: 36px" text @click="router.push('/')">
-        <n-icon>
-          <home-outlined />
-        </n-icon>
-      </n-button>
+      <div v-if="changeRoute === false">
+        <n-button style="font-size: 36px" text @click="handleRoute">
+          <n-icon>
+            <setting-outlined />
+          </n-icon>
+        </n-button>
+      </div>
+      <div v-else>
+        <n-button style="font-size: 36px" text @click="handleRoute">
+          <n-icon>
+            <home-outlined />
+          </n-icon>
+        </n-button>
+      </div>
 
       <n-button style="font-size: 36px" text @click="switchLanguage">
         <n-icon>
