@@ -3,8 +3,6 @@
 </p>
 <h1 align="center"> Final2x </h1>
 
-<p align="center">English | <a href="README_i18n/README_CN.md">中文</a></p>
-
 <h3 align="center"> Enhance Your Images with Effortless Cross-Platform Super-Resolution at Any Scale </h3>
 
 
@@ -20,9 +18,9 @@
 ![Download](https://img.shields.io/github/downloads/Tohrusky/Final2x/total)
 ![GitHub](https://img.shields.io/github/license/Tohrusky/Final2x)
 
-This is a powerful tool that allows for image super-resolution to arbitrary sizes using multiple models, designed to enhance the resolution and quality of images, making them clearer and more detailed. Presently, it supports several models, such as RealCUGAN, RealESRGAN, Waifu2x, and SRMD.
+这是一个强大的工具，可以使用多个模型将图像超分辨率到任意大小，以提高图像的分辨率和质量，使其更清晰和更详细。目前，它支持这几个模型：RealCUGAN、RealESRGAN、Waifu2x和SRMD。
 
-## Screenshots
+## 截图
 <div align="center">
 <img src="https://s2.loli.net/2023/06/30/3QU5ReYra8tDfWb.png" width="350" /><img src="https://s2.loli.net/2023/06/30/8mcjXFgtlSAOP9u.png" width="350" />
 </div>
@@ -30,14 +28,14 @@ This is a powerful tool that allows for image super-resolution to arbitrary size
 <div align="center">
 <img src="https://s2.loli.net/2023/07/01/YOsgZFkXCu5bAqP.png" width="256" /><img src="https://s2.loli.net/2023/07/01/9QGbK2A4uERU31W.png" width="64" /><img src="https://s2.loli.net/2023/07/01/B8PWVl3ZMeQFkHs.png" width="256" />
 </div>
-<h5 align="center"> use Final2x to perform 4x super-resolution on a 256x256 Lenna image </h5>
+<h5 align="center"> 使用Final2x对一张256x256的Lenna图进行4倍超分辨率处理 </h5>
 
 
-## Installation
-#### Download the latest release from [here](https://github.com/Tohrusky/Final2x/releases)
+## 安装
+#### [在这里下载最新的版本](https://github.com/Tohrusky/Final2x/releases)
 
 ### Windows
-Just Run!
+直接用就好
 
 ### MacOS
 ```bash
@@ -45,30 +43,30 @@ sudo spctl --master-disable
 # Disable Gatekeeper, then allow applications downloaded from anywhere in System Preferences > Security & Privacy > General
 xattr -cr /Applications/Final2x.app
 ```
-In first time, you need to run the command above in terminal to allow the app to run, and first process may very slow because of Apple's Check.
+首次运行时，您需要在终端中运行上述命令，以允许应用程序运行。由于苹果的安全检查，第一次使用可能会非常缓慢。
 
 ### Linux
-#### For General Linux (Suggested, download linux-pip)
-Python >= 3.6, then check install in terminal
+#### 对于大部分发行版(推荐, 下载linux-pip版本)
+需要Python >= 3.6, 然后在终端里检查是否安装成功
 ```bash
 pip install Final2x-core
 Final2x-core -o # 114514
 ```
 
-#### For Deb/Ubuntu
-set 777 permission for the file and resources folder
+#### 对于Deb/Ubuntu系
+对resources目录递归设置777权限
 
 
-## Features
-- Cross-platform: The tool is available for Windows x64/arm64, MacOS x64/arm64, and Linux x64, allowing users to enjoy the benefits of super-resolution regardless of their operating system.
-- Super-resolution: The tool employs advanced algorithms and models to upscale images, significantly increasing their resolution without sacrificing quality.
-- [Multiple models](https://github.com/Tohrusky/Final2x-core): It offers a wide range of models that can be used to achieve different levels of super-resolution, allowing users to choose the one that best suits their specific needs.
-- Customizable Scale: Users have the flexibility to specify the desired output size for their images, ranging from small enhancements to large-scale super-resolution.
-- i18n: The tool is available in English, Chinese, and Japanese, allowing users from different countries to enjoy the benefits of super-resolution.
+## 特性
+- 跨平台：适用于 Windows x64/arm64 、MacOS x64/arm64 and Linux x64。
+- 超分辨率：采用先进的算法和模型对图像进行放大处理，显著提高图像的分辨率，同时不损失质量。
+- [多模型](https://github.com/Tohrusky/Final2x-core)：提供多种模型，可实现不同级别的超分辨率效果，可以根据自己的需求选择最适合的模型。
+- 自定义 Scale：可以灵活指定图像的放大倍数，从而实现更精细的超分辨率效果。
+- 国际化：支持英文、中文和日文。
 
 
-## Reference
-The following references were referenced in the development of this project:
+## 参考
+在开发过程中，参考了以下项目：
 
 - [Final2x-core](https://github.com/Tohrusky/Final2x-core) - This project provided the core of the Final2x algorithm using the ncnn and Vulkan libraries.
 - [naive-ui](https://github.com/tusen-ai/naive-ui) - This project provided the UI framework for the Final2x.
@@ -87,6 +85,6 @@ the [LICENSE file](https://github.com/Tohrusky/Final2x/blob/main/LICENSE) for de
 
 
 ## Acknowledgements
-Feel free to reach out to the project maintainers with any questions or concerns. Happy image super-resolution!
+如果您有任何问题或疑虑，请随时联系该项目的维护人员。祝您玩得开心！
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Tohrusky/Final2x&type=Date)](https://star-history.com/#Tohrusky/Final2x&Date)
