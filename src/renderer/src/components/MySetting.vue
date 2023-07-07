@@ -39,20 +39,16 @@ function handleRoute(): void {
 <template>
   <div>
     <n-space class="main-buttons">
-      <div v-if="changeRoute === false">
-        <n-button style="font-size: 36px" text @click="handleRoute">
-          <n-icon>
+      <n-button style="font-size: 36px" text @click="handleRoute">
+        <n-icon>
+          <div v-if="changeRoute === false">
             <setting-outlined />
-          </n-icon>
-        </n-button>
-      </div>
-      <div v-else>
-        <n-button style="font-size: 36px" text @click="handleRoute">
-          <n-icon>
+          </div>
+          <div v-else>
             <home-outlined />
-          </n-icon>
-        </n-button>
-      </div>
+          </div>
+        </n-icon>
+      </n-button>
 
       <n-button style="font-size: 36px" text @click="switchLanguage">
         <n-icon>
