@@ -175,7 +175,7 @@ watchEffect(() => {
       <n-progress
         :percentage="ProgressPercentage"
         color="green"
-        height="34px"
+        :height="34"
         indicator-placement="inside"
         processing
         type="line"

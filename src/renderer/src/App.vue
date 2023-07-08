@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { RouterView } from 'vue-router'
-import { darkTheme, NConfigProvider, NDialogProvider, NNotificationProvider } from 'naive-ui'
+import { darkTheme, NConfigProvider, NDialogProvider, NNotificationProvider ,NGlobalStyle } from 'naive-ui'
 import { computed, onMounted, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
@@ -27,7 +27,7 @@ onMounted(async () => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const res: Array<string> = await window.electron.ipcRenderer.invoke('getSystemInfo')
-  if (res.length == 1) {
+  if (res.length === 1) {
     SRgpuid.value = -1 // CPU only
     console.log('CPU only, SRgpuid = -1, try push GPU 0 and CPU 1')
     deviceList.value.push({ label: 'CPU: ' + String(res[0]), value: -1 })
