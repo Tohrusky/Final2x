@@ -29,12 +29,16 @@ onMounted(async () => {
   const res: Array<string> = await window.electron.ipcRenderer.invoke('getSystemInfo')
   if (res.length == 1) {
     SRgpuid.value = -1 // CPU only
-    console.log('CPU only, SRgpuid = -1')
-  }
-
-  for (const i in res) {
-    const deviceType = i == 0 ? 'CPU: ' : 'GPU: '
-    deviceList.value.push({ label: deviceType + String(res[i]), value: Number(i - 1) })
+    console.log('CPU only, SRgpuid = -1, try push GPU 0 and CPU 1')
+    deviceList.value.push({ label: 'CPU: ' + String(res[0]), value: -1 })
+    deviceList.value.push({ label: '[Maybe Unavailable] GPU 0', value: 0 })
+    deviceList.value.push({ label: '[Maybe Unavailable] GPU 1', value: 1 })
+  } else {
+    // 正常情况
+    for (const i in res) {
+      const deviceType = i == 0 ? 'CPU: ' : 'GPU ' + String(i - 1) + ': '
+      deviceList.value.push({ label: deviceType + String(res[i]), value: Number(i - 1) })
+    }
   }
   console.log(deviceList.value)
 })
