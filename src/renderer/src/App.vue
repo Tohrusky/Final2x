@@ -39,6 +39,7 @@ onMounted(async () => {
       const deviceType = i == 0 ? 'CPU: ' : 'GPU ' + String(i - 1) + ': '
       deviceList.value.push({ label: deviceType + String(res[i]), value: Number(i - 1) })
     }
+    deviceList.value.push({ label: 'GPU: Auto', value: 114514 })
   }
   console.log(deviceList.value)
 })

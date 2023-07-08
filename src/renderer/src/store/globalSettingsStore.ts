@@ -11,7 +11,7 @@ export const useGlobalSettingsStore = defineStore(
 
     const langsNum = ref(0)
 
-    const SRgpuid = ref(0)
+    const SRgpuid = ref(114514)
     const deviceList = ref([])
 
     const ProgressPercentage = ref(0)
