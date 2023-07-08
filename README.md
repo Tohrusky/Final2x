@@ -3,7 +3,7 @@
 </p>
 <h1 align="center"> Final2x </h1>
 
-<p align="center">English | <a href="README_i18n/README_CN.md">中文</a></p>
+<p align="center">English | <a href="README_i18n/README_zh.md">中文</a></p>
 
 <h3 align="center"> Enhance Your Images with Effortless Cross-Platform Super-Resolution at Any Scale </h3>
 
