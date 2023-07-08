@@ -7,10 +7,11 @@ export const useGlobalSettingsStore = defineStore(
   () => {
     const globalcolor = ref('#fffafa')
     const DarkTheme = ref(false)
+    const changeRoute = ref(false)
 
     const langsNum = ref(0)
 
-    const SRgpuid = ref(0)
+    const SRgpuid = ref(114514)
     const deviceList = ref([])
 
     const ProgressPercentage = ref(0)
@@ -22,6 +23,7 @@ export const useGlobalSettingsStore = defineStore(
     return {
       globalcolor,
       DarkTheme,
+      changeRoute,
       langsNum,
       SRgpuid,
       deviceList,

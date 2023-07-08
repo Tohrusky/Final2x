@@ -9,7 +9,7 @@ import { storeToRefs } from 'pinia'
 import { HomeOutlined, SettingOutlined, TranslationOutlined } from '@vicons/antd'
 import { MoonOutline, SunnyOutline } from '@vicons/ionicons5'
 
-const { DarkTheme, globalcolor } = storeToRefs(useGlobalSettingsStore())
+const { DarkTheme, globalcolor, changeRoute } = storeToRefs(useGlobalSettingsStore())
 
 const getTheme = computed(() => {
   if (DarkTheme.value) {
@@ -24,20 +24,29 @@ const getTheme = computed(() => {
     return undefined
   }
 })
+
+function handleRoute(): void {
+  if (changeRoute.value === false) {
+    changeRoute.value = true
+    router.push('/Final2xSettings')
+  } else {
+    changeRoute.value = false
+    router.push('/')
+  }
+}
 </script>
 
 <template>
   <div>
     <n-space class="main-buttons">
-      <n-button style="font-size: 36px" text @click="router.push('/Final2xSettings')">
+      <n-button style="font-size: 36px" text @click="handleRoute">
         <n-icon>
-          <setting-outlined />
-        </n-icon>
-      </n-button>
-
-      <n-button style="font-size: 36px" text @click="router.push('/')">
-        <n-icon>
-          <home-outlined />
+          <div v-if="changeRoute === false">
+            <setting-outlined />
+          </div>
+          <div v-else>
+            <home-outlined />
+          </div>
         </n-icon>
       </n-button>
 

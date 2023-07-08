@@ -36,10 +36,11 @@ export const getFinal2xconfig = (): string => {
     useSRSettingsStore()
   )
   const { SRgpuid } = storeToRefs(useGlobalSettingsStore())
+  const gpuID = SRgpuid.value === 114514 ? 0 : SRgpuid.value
   const outputPATH = ioPath.getoutputpath()
   const inputPATHList = ioPath.getList()
   return JSON.stringify({
-    gpuid: SRgpuid.value,
+    gpuid: gpuID,
     inputpath: inputPATHList,
     model: selectedModel.value,
     modelscale: selectedScale.value,

@@ -35,7 +35,7 @@
 #### [在这里下载最新的版本](https://github.com/Tohrusky/Final2x/releases)
 
 ### Windows
-直接用就好
+点击即可使用。
 
 ### MacOS
 ```bash

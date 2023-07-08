@@ -157,8 +157,11 @@ function getPath(): void {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   window.electron.ipcRenderer.on('selectedItem', function (e, path) {
-    console.log(ioPath.getoutputpath())
-    ioPath.setoutputpathManual(path)
+    // console.log(path === undefined)
+    if (path != undefined) {
+      // console.log(ioPath.getoutputpath())
+      ioPath.setoutputpathManual(path)
+    }
   })
 }
 
