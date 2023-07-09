@@ -2,8 +2,8 @@
 name: "\U0001F680 Feature request | 功能请求 | フィーチャーリクエスト"
 about: Suggest an idea for this project
 title: "[FEATURE]"
-labels: ''
-assignees: DamnCrab, HychaoWang, Tohrusky
+labels: enhancement
+assignees: DamnCrab, HychaoWang, Tohrusky, Face1essboy, NangInShell
 
 ---
 
