@@ -77,10 +77,10 @@ function handleRemove(options: { file: UploadFileInfo; fileList: Array<UploadFil
       v-model:file-list="inputFileList"
       multiple
       directory-dnd
+      class="n-upload"
       @remove="handleRemove"
       @before-upload="handleBeforeUpload"
       @change="handleUploadChange"
-      class="n-upload"
     >
       <n-upload-dragger class="file-drag-zone">
         <div class="filr-drag-zone-logo-text">
@@ -115,8 +115,7 @@ function handleRemove(options: { file: UploadFileInfo; fileList: Array<UploadFil
   }
 }
 
-.n-upload{
-
+.n-upload {
   display: flex;
   flex-direction: column;
 }
@@ -131,14 +130,13 @@ function handleRemove(options: { file: UploadFileInfo; fileList: Array<UploadFil
   }
   &::-webkit-scrollbar-track {
     border-radius: 3px;
-    background: rgba(0,0,0,0.06);
-    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.08);
+    background: rgba(0, 0, 0, 0.06);
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.08);
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 3px;
-    background: rgba(0,0,0,0.12);
-    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
   }
 }
-
 </style>

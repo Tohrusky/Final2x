@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-import useClipboard from 'vue-clipboard3'
-import { useI18n } from 'vue-i18n'
+// import useClipboard from 'vue-clipboard3'
+// import { useI18n } from 'vue-i18n'
 import { storeToRefs } from 'pinia'
-import { NButton, NIcon, NImage, NSpace, useNotification } from 'naive-ui'
+import { NButton, NIcon, NImage, NSpace } from 'naive-ui'
 import { PaperPlaneSharp } from '@vicons/ionicons5'
 import final2xlogo from '../assets/final2xlogo.png'
 import final2xlogoDarkMode from '../assets/final2xlogoDarkMode.png'
 import { useGlobalSettingsStore } from '../store/globalSettingsStore'
 
-const { t } = useI18n()
-const { toClipboard } = useClipboard()
-const notification = useNotification()
+// const { t } = useI18n()
+// const { toClipboard } = useClipboard()
+// const notification = useNotification()
 const { DarkTheme } = storeToRefs(useGlobalSettingsStore())
 
 class openWebsite {
@@ -29,6 +29,12 @@ class openWebsite {
 <template>
   <div class="MyExternalLink">
     <n-space>
+      <n-button style="font-size: 36px" text @click="openWebsite.TelegramGroup">
+        <n-icon>
+          <paper-plane-sharp />
+        </n-icon>
+      </n-button>
+
       <transition mode="in-out" name="custom-fade">
         <n-image
           :src="DarkTheme ? final2xlogoDarkMode : final2xlogo"
@@ -38,11 +44,6 @@ class openWebsite {
           @click="openWebsite.GitHub"
         />
       </transition>
-      <n-button style="font-size: 36px" text @click="openWebsite.TelegramGroup">
-        <n-icon>
-          <paper-plane-sharp />
-        </n-icon>
-      </n-button>
     </n-space>
   </div>
 </template>

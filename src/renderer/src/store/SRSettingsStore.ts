@@ -4,7 +4,7 @@ import { defineStore } from 'pinia'
 export const useSRSettingsStore = defineStore(
   'SRSettings',
   () => {
-    const selectedModel = ref('RealCUGAN-pro')
+    const selectedModel = ref('RealESRGAN')
     const selectedScale = ref(2)
     const selectedNoise = ref(-1)
     const useTTA = ref(false)

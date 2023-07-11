@@ -1,6 +1,12 @@
 <script lang="ts" setup>
 import { RouterView } from 'vue-router'
-import { darkTheme, NConfigProvider, NDialogProvider, NNotificationProvider ,NGlobalStyle } from 'naive-ui'
+import {
+  darkTheme,
+  NConfigProvider,
+  NDialogProvider,
+  NNotificationProvider,
+  NGlobalStyle
+} from 'naive-ui'
 import { computed, onMounted, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
