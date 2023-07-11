@@ -53,6 +53,7 @@ Python >= 3.6, then check install in terminal
 ```bash
 pip install Final2x-core
 Final2x-core -o # 114514
+apt install -y libomp5 xdg-utils
 ```
 
 #### For Deb/Ubuntu
