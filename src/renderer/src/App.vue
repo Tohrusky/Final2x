@@ -49,7 +49,11 @@ onMounted(async () => {
     getdevicelist.push({ label: 'GPU: Auto', value: 114514 })
   }
 
-  deviceList.value = getdevicelist
+  if (JSON.stringify(deviceList.value) !== JSON.stringify(getdevicelist)) {
+    deviceList.value = getdevicelist
+  } else {
+    console.log('deviceList not change')
+  }
   console.log(getdevicelist)
 })
 
