@@ -86,6 +86,8 @@ libraries.
 This project is licensed under the BSD 3-Clause - see
 the [LICENSE file](https://github.com/Tohrusky/Final2x/blob/main/LICENSE) for details.
 
+## Donate
+[Buy me a coffee...But I don't drink coffee, so I will probably use this money to top up in Genshin Impact.](https://afdian.net/a/tohrusky)
 
 ## Acknowledgements
 Feel free to reach out to the project maintainers with any questions or concerns. Happy image super-resolution!
