@@ -26,8 +26,8 @@ class openWebsite {
   }
 
   static async Afdian(): Promise<void> {
-    const telegramLink = 'https://afdian.net/a/tohrusky'
-    await window.open(telegramLink, '_blank')
+    const afdianLink = 'https://afdian.net/a/tohrusky'
+    await window.open(afdianLink, '_blank')
   }
 }
 </script>
