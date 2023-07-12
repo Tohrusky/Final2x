@@ -37,7 +37,7 @@ export const useGlobalSettingsStore = defineStore(
   {
     persist: {
       storage: localStorage,
-      paths: ['langsNum', 'SRgpuid', 'DarkTheme', 'globalcolor']
+      paths: ['langsNum', 'SRgpuid', 'DarkTheme', 'globalcolor', 'deviceList']
     }
   }
 )
