@@ -79,10 +79,12 @@ libraries.
 - [nihui/srmd-ncnn-vulkan](https://github.com/nihui/srmd-ncnn-vulkan) - This project provided the core implementation of the SRMD algorithm using the ncnn and Vulkan libraries.
 
 
-## License
+## 许可证
 This project is licensed under the BSD 3-Clause - see
 the [LICENSE file](https://github.com/Tohrusky/Final2x/blob/main/LICENSE) for details.
 
+## 捐赠
+[我要玩原神，火速给我转账，转648！](https://afdian.net/a/tohrusky)
 
 ## Acknowledgements
 如果您有任何问题或疑虑，请随时联系该项目的维护人员。祝您玩得开心！
