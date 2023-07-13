@@ -63,7 +63,7 @@
     "electron-builder": "^24.4.0",
     "electron-vite": "^1.0.23",
     "eslint": "^8.44.0",
-    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^5.0.0-alpha.2",
     "eslint-plugin-vue": "^9.15.0",
     "prettier": "^3.0.0"
   }
