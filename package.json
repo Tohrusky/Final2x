@@ -64,6 +64,6 @@
     "electron-vite": "^1.0.23",
     "eslint": "^8.44.0",
     "eslint-plugin-vue": "^9.15.0",
-    "prettier": "^2.8.8"
+    "prettier": "^3.0.0"
   }
 }
