@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  ubuntu:
+  CI-Test:
     strategy:
       matrix:
         os-version: [ "macos-latest", "windows-latest", "ubuntu-20.04" ]
