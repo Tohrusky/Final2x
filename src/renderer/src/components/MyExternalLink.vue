@@ -2,7 +2,6 @@
 // import useClipboard from 'vue-clipboard3'
 // import { useI18n } from 'vue-i18n'
 import { storeToRefs } from 'pinia'
-import { NButton, NIcon, NImage, NSpace } from 'naive-ui'
 import { PaperPlaneSharp, BookOutline } from '@vicons/ionicons5'
 import { MoneyCollectOutlined } from '@vicons/antd'
 import { useGlobalSettingsStore } from '../store/globalSettingsStore'

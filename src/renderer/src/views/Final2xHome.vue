@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
-import { NIcon, NText, NUpload, NUploadDragger, UploadFileInfo, useNotification } from 'naive-ui'
+import { UploadFileInfo, useNotification } from 'naive-ui'
 import { useI18n } from 'vue-i18n'
 import { FileImageOutlined } from '@vicons/antd'
 
@@ -85,7 +85,7 @@ function handleRemove(options: { file: UploadFileInfo; fileList: Array<UploadFil
       <n-upload-dragger class="file-drag-zone">
         <div class="file-drag-zone-logo-text">
           <div style="margin-bottom: 12px">
-            <n-icon size="48" depth="3">
+            <n-icon size="48" depth="3.0">
               <file-image-outlined />
             </n-icon>
           </div>

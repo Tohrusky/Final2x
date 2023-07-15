@@ -73,17 +73,7 @@
 
 import { computed } from 'vue'
 import { storeToRefs } from 'pinia'
-import {
-  NButton,
-  NCard,
-  NInput,
-  NInputNumber,
-  NPopover,
-  NSelect,
-  NSpace,
-  NSwitch,
-  SelectOption
-} from 'naive-ui'
+import { SelectOption } from 'naive-ui'
 import { useI18n } from 'vue-i18n'
 
 import ioPath from '../utils/IOPath'

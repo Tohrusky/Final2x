@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { NDivider, NSpace } from 'naive-ui'
 import MyExternalLink from './MyExternalLink.vue'
 import MySetting from './MySetting.vue'
 </script>
