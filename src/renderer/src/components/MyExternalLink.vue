@@ -3,21 +3,27 @@
 // import { useI18n } from 'vue-i18n'
 import { storeToRefs } from 'pinia'
 import { NButton, NIcon, NImage, NSpace } from 'naive-ui'
-import { PaperPlaneSharp } from '@vicons/ionicons5'
+import { PaperPlaneSharp, BookOutline } from '@vicons/ionicons5'
 import { MoneyCollectOutlined } from '@vicons/antd'
-import final2xlogo from '../assets/final2xlogo.png'
-import final2xlogoDarkMode from '../assets/final2xlogoDarkMode.png'
 import { useGlobalSettingsStore } from '../store/globalSettingsStore'
+// import final2xlogo from '../assets/final2xlogo.png'
+// import final2xlogoDarkMode from '../assets/final2xlogoDarkMode.png'
 
 // const { t } = useI18n()
 // const { toClipboard } = useClipboard()
 // const notification = useNotification()
-const { DarkTheme } = storeToRefs(useGlobalSettingsStore())
+const { langsNum } = storeToRefs(useGlobalSettingsStore())
 
 class openWebsite {
-  static async GitHub(): Promise<void> {
-    const githubLink = 'https://github.com/Tohrusky/Final2x'
-    await window.open(githubLink, '_blank')
+  static async Docs(): Promise<void> {
+    const docsLink = 'https://final2x.tohru.top'
+    const docsLinkCN = 'https://final2x.tohru.top/zh'
+
+    if (langsNum.value === 1) {
+      await window.open(docsLinkCN, '_blank')
+    } else {
+      await window.open(docsLink, '_blank')
+    }
   }
 
   static async TelegramGroup(): Promise<void> {
@@ -47,15 +53,11 @@ class openWebsite {
         </n-icon>
       </n-button>
 
-      <transition mode="in-out" name="custom-fade">
-        <n-image
-          :src="DarkTheme ? final2xlogoDarkMode : final2xlogo"
-          height="36"
-          preview-disabled
-          width="36"
-          @click="openWebsite.GitHub"
-        />
-      </transition>
+      <n-button style="font-size: 36px" text @click="openWebsite.Docs">
+        <n-icon>
+          <book-outline />
+        </n-icon>
+      </n-button>
     </n-space>
   </div>
 </template>
