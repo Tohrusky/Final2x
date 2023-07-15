@@ -22,6 +22,8 @@
 
 This is a powerful tool that allows for image super-resolution to arbitrary sizes using multiple models, designed to enhance the resolution and quality of images, making them clearer and more detailed. Presently, it supports several models, such as RealCUGAN, RealESRGAN, Waifu2x, and SRMD.
 
+## [Documentation](https://final2x.tohru.top)
+
 ## Screenshots
 <div align="center">
 <img src="https://s2.loli.net/2023/06/30/3QU5ReYra8tDfWb.png" width="350" /><img src="https://s2.loli.net/2023/06/30/8mcjXFgtlSAOP9u.png" width="350" />

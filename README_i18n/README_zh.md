@@ -20,6 +20,8 @@
 
 这是一个强大的工具，可以使用多个模型将图像超分辨率到任意大小，以提高图像的分辨率和质量，使其更清晰和更详细。目前，它支持这几个模型：RealCUGAN、RealESRGAN、Waifu2x和SRMD。
 
+## [文档](https://final2x.tohru.top/zh)
+
 ## 截图
 <div align="center">
 <img src="https://s2.loli.net/2023/06/30/3QU5ReYra8tDfWb.png" width="350" /><img src="https://s2.loli.net/2023/06/30/8mcjXFgtlSAOP9u.png" width="350" />
