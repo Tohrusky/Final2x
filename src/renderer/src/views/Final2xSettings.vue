@@ -127,6 +127,7 @@ class MyPopoverMessages {
     } else if (selectedModel.value == 'SRMD') {
       return t('Final2xSettings.text4')
     }
+    return ''
   }
 
   static ModelScale(): string {
@@ -175,8 +176,7 @@ const getEnabledModelOptions = computed(() => {
   return SRgpuid.value === -1 ? CPUmodelOptions : modelOptions
 })
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function ModelOptionsFallBack(value: string): SelectOption {
+function ModelOptionsFallBack(): SelectOption {
   selectedModel.value = 'RealCUGAN-pro'
   console.log('modelOptionsFallBack' + selectedModel.value)
   return {
@@ -190,8 +190,7 @@ const getScaleOptions = computed(() => {
   return modelScaleOptions[selectedModel.value]
 })
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function ScaleOptionsFallBack(value: number): SelectOption {
+function ScaleOptionsFallBack(): SelectOption {
   const defaultScales: { [key: string]: number } = {
     'RealCUGAN-se': 2,
     'RealCUGAN-pro': 2,
@@ -219,8 +218,7 @@ const getNoiseOptions = computed(() => {
   return GetModelNoiseOptionsByNameAndScale(selectedModel.value, selectedScale.value)
 })
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function NoiseOptionsFallBack(value: number): SelectOption {
+function NoiseOptionsFallBack(): SelectOption {
   console.log('NoiseOptionsFallBack')
   selectedNoise.value = 0
   return {
@@ -260,7 +258,7 @@ class ClickButtomToConsoleLog {
   <n-card :bordered="false" class="settings-card">
     <n-space class="vertical" vertical justify="center">
       <n-space justify="space-between">
-        <n-popover trigger="hover" width="400">
+        <n-popover trigger="hover" :width="400">
           <template #trigger>
             <n-button dashed type="success" @click="ClickButtomToConsoleLog.SRgpuid()">
               Device
@@ -272,7 +270,7 @@ class ClickButtomToConsoleLog {
         <n-select v-model:value="SRgpuid" :options="deviceList" style="width: 465px" />
       </n-space>
       <n-space justify="space-between">
-        <n-popover trigger="hover" width="400">
+        <n-popover trigger="hover" :width="400">
           <template #trigger>
             <n-button dashed type="success" @click="ClickButtomToConsoleLog.selectedModel()">
               Model
@@ -302,7 +300,7 @@ class ClickButtomToConsoleLog {
         />
       </n-space>
       <n-space justify="space-between">
-        <n-popover trigger="hover" width="400">
+        <n-popover trigger="hover" :width="400">
           <template #trigger>
             <n-button dashed type="success" @click="ClickButtomToConsoleLog.selectedNoise()">
               Denoise
@@ -318,7 +316,7 @@ class ClickButtomToConsoleLog {
           style="width: 80px"
         />
 
-        <n-popover trigger="hover" width="400">
+        <n-popover trigger="hover" :width="400">
           <template #trigger>
             <n-button dashed type="success" @click="ClickButtomToConsoleLog.useTTA()">
               TTA
@@ -329,7 +327,7 @@ class ClickButtomToConsoleLog {
 
         <n-switch v-model:value="useTTA" size="large" style="height: 35px"></n-switch>
 
-        <n-popover trigger="hover" width="400">
+        <n-popover trigger="hover" :width="400">
           <template #trigger>
             <n-button dashed type="success" @click="ClickButtomToConsoleLog.CustomScale()">
               Custom Scale

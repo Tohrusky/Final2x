@@ -28,11 +28,11 @@ class Final2xHomeNotifications {
 
 onMounted(() => {
   const dragWrapper = document.getElementById('file_drag')
-  dragWrapper.addEventListener('drop', (e) => {
+  dragWrapper?.addEventListener('drop', (e) => {
     //阻止默认行为
     e.preventDefault()
     //获取文件列表
-    const files = e.dataTransfer.files
+    const files = e.dataTransfer?.files
 
     if (files && files.length > 0) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -45,7 +45,7 @@ onMounted(() => {
     }
   })
   //阻止拖拽结束事件默认行为
-  dragWrapper.addEventListener('dragover', (e) => {
+  dragWrapper?.addEventListener('dragover', (e) => {
     e.preventDefault()
   })
 })
@@ -58,7 +58,7 @@ function handleUploadChange(data: { fileList: UploadFileInfo[] }): void {
 
 function handleBeforeUpload(options: { file: UploadFileInfo }): UploadFileInfo {
   // console.log(pathFormat.getNewPath(options.file.fullPath))
-  ioPATH.add(options.file.id, pathFormat.getNewPath(options.file.fullPath))
+  ioPATH.add(options.file.id, pathFormat.getNewPath(String(options.file.fullPath)))
   return options.file
 }
 
@@ -83,7 +83,7 @@ function handleRemove(options: { file: UploadFileInfo; fileList: Array<UploadFil
       @change="handleUploadChange"
     >
       <n-upload-dragger class="file-drag-zone">
-        <div class="filr-drag-zone-logo-text">
+        <div class="file-drag-zone-logo-text">
           <div style="margin-bottom: 12px">
             <n-icon size="48" depth="3">
               <file-image-outlined />
@@ -107,7 +107,7 @@ function handleRemove(options: { file: UploadFileInfo; fileList: Array<UploadFil
   display: flex;
   flex-direction: column;
   justify-content: center;
-  .filr-drag-zone-logo-text {
+  .file-drag-zone-logo-text {
     display: flex;
     flex-direction: column;
     align-items: center;

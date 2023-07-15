@@ -33,7 +33,7 @@ onMounted(async () => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const res: Array<string> = await window.electron.ipcRenderer.invoke('getSystemInfo')
-  const getdevicelist = []
+  const getdevicelist: any[] = []
   if (res.length === 1) {
     SRgpuid.value = -1 // CPU only
     console.log('CPU only, SRgpuid = -1, try push GPU 0 and CPU 1')
@@ -43,8 +43,8 @@ onMounted(async () => {
   } else {
     // 正常情况
     for (const i in res) {
-      const deviceType = i == 0 ? 'CPU: ' : 'GPU ' + String(i - 1) + ': '
-      getdevicelist.push({ label: deviceType + String(res[i]), value: Number(i - 1) })
+      const deviceType = Number(i) === 0 ? 'CPU: ' : 'GPU ' + String(Number(i) - 1) + ': '
+      getdevicelist.push({ label: deviceType + String(res[i]), value: Number(i) - 1 })
     }
     getdevicelist.push({ label: 'GPU: Auto', value: 114514 })
   }
