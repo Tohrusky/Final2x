@@ -1,4 +1,4 @@
-![Final2x](https://socialify.git.ci/Tohrusky/Final2x/image?font=Inter&logo=https%3A%2F%2Fcamo.githubusercontent.com%2F5553120be072883a3a1d1243cc0616e2d4c33f6ffdd51cd0e2719451272c0a7f%2F68747470733a2f2f73322e6c6f6c692e6e65742f323032332f30362f31392f3534377152656348646e4a49624b752e706e67&name=1&pattern=Circuit%20Board&theme=Auto)
+![Final2x](https://socialify.git.ci/Tohrusky/Final2x/image?description=1&font=Inter&forks=1&issues=1&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FTohrusky%2FTohrusky%2Fdf9be18ff0707a362e216572b0cdb001f97c476b%2Ficon%2Ffinal2x-1280.svg&name=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
 
 <h3 align="center"> Enhance Your Images with Effortless Cross-Platform Super-Resolution at Any Scale </h3>
 
