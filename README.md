@@ -1,7 +1,4 @@
-<p align="center">
-<img src="https://s2.loli.net/2023/06/19/547qRecHdnJIbKu.png" height="128">
-</p>
-<h1 align="center"> Final2x </h1>
+![Final2x](https://socialify.git.ci/Tohrusky/Final2x/image?description=1&font=Inter&forks=1&issues=1&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FTohrusky%2FTohrusky%2Fdf9be18ff0707a362e216572b0cdb001f97c476b%2Ficon%2Ffinal2x-1280.svg&name=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
 
 <p align="center">English | <a href="README_i18n/README_zh.md">中文</a></p>
 
@@ -24,11 +21,7 @@ This is a powerful tool that allows for image super-resolution to arbitrary size
 
 ## [Documentation](https://final2x.tohru.top)
 
-## Screenshots
-<div align="center">
-<img src="https://s2.loli.net/2023/06/30/3QU5ReYra8tDfWb.png" width="350" /><img src="https://s2.loli.net/2023/06/30/8mcjXFgtlSAOP9u.png" width="350" />
-</div>
-
+## Comparison
 <div align="center">
 <img src="https://s2.loli.net/2023/07/01/YOsgZFkXCu5bAqP.png" width="256" /><img src="https://s2.loli.net/2023/07/01/9QGbK2A4uERU31W.png" width="64" /><img src="https://s2.loli.net/2023/07/01/B8PWVl3ZMeQFkHs.png" width="256" />
 </div>
@@ -36,7 +29,7 @@ This is a powerful tool that allows for image super-resolution to arbitrary size
 
 
 ## Installation
-#### Download the latest release from [here](https://github.com/Tohrusky/Final2x/releases)
+#### [Download the latest release from here.](https://github.com/Tohrusky/Final2x/releases)
 
 ### Windows
 Just Run!
@@ -51,7 +44,7 @@ In first time, you need to run the command above in terminal to allow the app to
 
 ### Linux
 #### For General Linux (Suggested, download linux-pip)
-Python >= 3.6, then check install in terminal
+Python >= 3.6, then check install in terminal.
 ```bash
 pip install Final2x-core
 Final2x-core -o # 114514
@@ -59,7 +52,7 @@ apt install -y libomp5 xdg-utils
 ```
 
 #### For Deb/Ubuntu
-set 777 permission for the file and resources folder
+Set 777 permission for the file and resources folder.
 
 
 ## Features
@@ -78,7 +71,7 @@ The following references were referenced in the development of this project:
 - [electron-vite](https://github.com/alex8088/electron-vite) - This project provided the build framework for the Final2x.
 - [ncnn](https://github.com/Tencent/ncnn) - ncnn is a high-performance neural network inference framework developed by Tencent AI Lab.
 - [nihui/realcugan-ncnn-vulkan](https://github.com/nihui/realcugan-ncnn-vulkan) - This project provided the core implementation of the Real-CUGAN algorithm using the ncnn and Vulkan libraries.
-- [xinntao/Real-ESRGAN-ncnn-vulkan](https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan) - This project provided the core implementation of the Real-ESRGAN algorithm using the ncnn and Vulkan
+- [xinntao/Real-ESRGAN-ncnn-vulkan](https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan) - This project provided the core implementation of the Real-ESRGAN algorithm using the ncnn and Vulkan.
 libraries.
 - [nihui/waifu2x-ncnn-vulkan](https://github.com/nihui/waifu2x-ncnn-vulkan) - This project provided the core implementation of the Waifu2x algorithm using the ncnn and Vulkan libraries.
 - [nihui/srmd-ncnn-vulkan](https://github.com/nihui/srmd-ncnn-vulkan) - This project provided the core implementation of the SRMD algorithm using the ncnn and Vulkan libraries.
