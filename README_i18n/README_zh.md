@@ -1,7 +1,4 @@
-<p align="center">
-<img src="https://s2.loli.net/2023/06/19/547qRecHdnJIbKu.png" height="128">
-</p>
-<h1 align="center"> Final2x </h1>
+![Final2x](https://socialify.git.ci/Tohrusky/Final2x/image?description=1&font=Inter&forks=1&issues=1&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FTohrusky%2FTohrusky%2Fdf9be18ff0707a362e216572b0cdb001f97c476b%2Ficon%2Ffinal2x-1280.svg&name=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
 
 <h3 align="center"> Enhance Your Images with Effortless Cross-Platform Super-Resolution at Any Scale </h3>
 
@@ -18,23 +15,19 @@
 ![Download](https://img.shields.io/github/downloads/Tohrusky/Final2x/total)
 ![GitHub](https://img.shields.io/github/license/Tohrusky/Final2x)
 
-这是一个强大的工具，可以使用多个模型将图像超分辨率到任意大小，以提高图像的分辨率和质量，使其更清晰和更详细。目前，它支持这几个模型：RealCUGAN、RealESRGAN、Waifu2x和SRMD。
+Final2x 可以使用多个模型，将图像超分辨率到任意大小，以提高图像的分辨率和质量，使其更清晰和更详细。目前，它支持这几个模型：RealCUGAN、RealESRGAN、Waifu2x和SRMD。
 
 ## [文档](https://final2x.tohru.top/zh)
 
-## 截图
-<div align="center">
-<img src="https://s2.loli.net/2023/06/30/3QU5ReYra8tDfWb.png" width="350" /><img src="https://s2.loli.net/2023/06/30/8mcjXFgtlSAOP9u.png" width="350" />
-</div>
-
+## 对比图
 <div align="center">
 <img src="https://s2.loli.net/2023/07/01/YOsgZFkXCu5bAqP.png" width="256" /><img src="https://s2.loli.net/2023/07/01/9QGbK2A4uERU31W.png" width="64" /><img src="https://s2.loli.net/2023/07/01/B8PWVl3ZMeQFkHs.png" width="256" />
 </div>
-<h5 align="center"> 使用Final2x对一张256x256的Lenna图进行4倍超分辨率处理 </h5>
+<h5 align="center"> 使用 Final2x 对一张 256x256 的 Lenna 图进行 4 倍超分辨率处理 </h5>
 
 
 ## 安装
-#### [在这里下载最新的版本](https://github.com/Tohrusky/Final2x/releases)
+#### [在这里下载最新的版本。](https://github.com/Tohrusky/Final2x/releases)
 
 ### Windows
 点击即可使用。
@@ -49,7 +42,7 @@ xattr -cr /Applications/Final2x.app
 
 ### Linux
 #### 对于大部分发行版(推荐, 下载linux-pip版本)
-需要Python >= 3.6, 然后在终端里检查是否安装成功
+需要Python >= 3.6, 然后在终端里检查是否安装成功。
 ```bash
 pip install Final2x-core
 Final2x-core -o # 114514
@@ -57,7 +50,7 @@ apt install -y libomp5 xdg-utils
 ```
 
 #### 对于Deb/Ubuntu系
-对resources目录递归设置777权限
+对 resources 目录递归设置 777 权限。
 
 
 ## 特性
@@ -76,7 +69,7 @@ apt install -y libomp5 xdg-utils
 - [electron-vite](https://github.com/alex8088/electron-vite) - This project provided the build framework for the Final2x.
 - [ncnn](https://github.com/Tencent/ncnn) - ncnn is a high-performance neural network inference framework developed by Tencent AI Lab.
 - [nihui/realcugan-ncnn-vulkan](https://github.com/nihui/realcugan-ncnn-vulkan) - This project provided the core implementation of the Real-CUGAN algorithm using the ncnn and Vulkan libraries.
-- [xinntao/Real-ESRGAN-ncnn-vulkan](https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan) - This project provided the core implementation of the Real-ESRGAN algorithm using the ncnn and Vulkan
+- [xinntao/Real-ESRGAN-ncnn-vulkan](https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan) - This project provided the core implementation of the Real-ESRGAN algorithm using the ncnn and Vulkan.
 libraries.
 - [nihui/waifu2x-ncnn-vulkan](https://github.com/nihui/waifu2x-ncnn-vulkan) - This project provided the core implementation of the Waifu2x algorithm using the ncnn and Vulkan libraries.
 - [nihui/srmd-ncnn-vulkan](https://github.com/nihui/srmd-ncnn-vulkan) - This project provided the core implementation of the SRMD algorithm using the ncnn and Vulkan libraries.
@@ -87,7 +80,7 @@ This project is licensed under the BSD 3-Clause - see
 the [LICENSE file](https://github.com/Tohrusky/Final2x/blob/main/LICENSE) for details.
 
 ## 捐赠
-[我要玩原神，火速给我转账，转648！](https://afdian.net/a/tohrusky)
+[我要玩原神，我要玩原神！](https://afdian.net/a/tohrusky)
 
 ## Acknowledgements
 如果您有任何问题或疑虑，请随时联系该项目的维护人员。祝您玩得开心！
