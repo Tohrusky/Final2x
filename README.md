@@ -87,4 +87,10 @@ the [LICENSE file](https://github.com/Tohrusky/Final2x/blob/main/LICENSE) for de
 ## Acknowledgements
 Feel free to reach out to the project maintainers with any questions or concerns. Happy image super-resolution!
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Tohrusky/Final2x&type=Date)](https://star-history.com/#Tohrusky/Final2x&Date)
+<a href="https://star-history.com/#Tohrusky/Final2x&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Tohrusky/Final2x&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Tohrusky/Final2x&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Tohrusky/Final2x&type=Date" />
+  </picture>
+</a>
