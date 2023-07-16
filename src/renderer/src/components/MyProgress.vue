@@ -1,17 +1,7 @@
 <script lang="ts" setup>
 import { nextTick, onMounted, ref, watchEffect } from 'vue'
 import { storeToRefs } from 'pinia'
-import {
-  NButton,
-  NCard,
-  NDivider,
-  NDrawer,
-  NDrawerContent,
-  NLog,
-  NProgress,
-  useDialog,
-  useNotification
-} from 'naive-ui'
+import { useDialog, useNotification } from 'naive-ui'
 import { useI18n } from 'vue-i18n'
 
 import { getFinal2xconfig } from '../utils/getFinal2xconfig'

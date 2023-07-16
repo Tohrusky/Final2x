@@ -1,29 +1,13 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
 import { useGlobalSettingsStore } from '../store/globalSettingsStore'
-import { switchCSSStyle, switchTheme } from '../utils/DarkModeColor'
-import { darkTheme, NButton, NIcon, NSpace } from 'naive-ui'
+import { switchTheme } from '../utils/DarkModeColor'
 import { switchLanguage } from '../utils/switchLanguage'
 import router from '../router'
 import { storeToRefs } from 'pinia'
 import { HomeOutlined, SettingOutlined, TranslationOutlined } from '@vicons/antd'
 import { MoonOutline, SunnyOutline } from '@vicons/ionicons5'
 
-const { DarkTheme, globalcolor, changeRoute } = storeToRefs(useGlobalSettingsStore())
-
-const getTheme = computed(() => {
-  if (DarkTheme.value) {
-    if (globalcolor.value === '#fffafa') {
-      switchCSSStyle('dark-theme')
-    }
-    return darkTheme
-  } else {
-    if (globalcolor.value === '#000000') {
-      switchCSSStyle('light-theme')
-    }
-    return undefined
-  }
-})
+const { DarkTheme, changeRoute } = storeToRefs(useGlobalSettingsStore())
 
 function handleRoute(): void {
   if (changeRoute.value === false) {
@@ -58,7 +42,7 @@ function handleRoute(): void {
 
       <n-button style="font-size: 36px" text @click="switchTheme">
         <n-icon>
-          <div v-if="getTheme === undefined">
+          <div v-if="!DarkTheme">
             <moon-outline />
           </div>
           <div v-else>
