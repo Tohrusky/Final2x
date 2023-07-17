@@ -27,9 +27,9 @@ Final2x 可以使用多个模型，将图像超分辨率到任意大小，以提
 
 ## 对比图
 <div align="center">
-<img src="https://s2.loli.net/2023/07/01/YOsgZFkXCu5bAqP.png" width="256" /><img src="https://s2.loli.net/2023/07/01/9QGbK2A4uERU31W.png" width="64" /><img src="https://s2.loli.net/2023/07/01/B8PWVl3ZMeQFkHs.png" width="256" />
+<img src="https://s2.loli.net/2023/07/17/PiLvYzkAqewEya4.png" /><img src="https://s2.loli.net/2023/07/01/9QGbK2A4uERU31W.png" width="64" /><img src="https://s2.loli.net/2023/07/17/wzx6SHXMArWuhe5.png" />
 </div>
-<h5 align="center"> 使用 Final2x 对一张 256x256 的 Lenna 图进行 4 倍超分辨率处理 </h5>
+<h5 align="center"> 使用 Final2x 对一张 256x256 的 胡桃 图进行 4 倍超分辨率处理 </h5>
 
 
 ## 安装
