@@ -29,9 +29,9 @@ This is a powerful tool that allows for image super-resolution to arbitrary size
 
 ## Comparison
 <div align="center">
-<img src="https://s2.loli.net/2023/07/01/YOsgZFkXCu5bAqP.png" width="256" /><img src="https://s2.loli.net/2023/07/01/9QGbK2A4uERU31W.png" width="64" /><img src="https://s2.loli.net/2023/07/01/B8PWVl3ZMeQFkHs.png" width="256" />
+<img src="https://s2.loli.net/2023/07/17/PiLvYzkAqewEya4.png" /><img src="https://s2.loli.net/2023/07/01/9QGbK2A4uERU31W.png" width="64" /><img src="https://s2.loli.net/2023/07/17/wzx6SHXMArWuhe5.png" />
 </div>
-<h5 align="center"> use Final2x to perform 4x super-resolution on a 256x256 Lenna image </h5>
+<h5 align="center"> use Final2x to perform 4x super-resolution on a 256x256 Hutao image </h5>
 
 
 ## Installation
