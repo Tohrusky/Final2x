@@ -328,7 +328,12 @@ class ClickButtomToConsoleLog {
 
         <n-popover trigger="hover">
           <template #trigger>
-            <n-button dashed type="success" @click="ClickButtomToConsoleLog.useTTA()">
+            <n-button
+              dashed
+              type="success"
+              style="width: 54px"
+              @click="ClickButtomToConsoleLog.useTTA()"
+            >
               TTA
             </n-button>
           </template>
