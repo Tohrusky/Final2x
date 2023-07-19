@@ -14,12 +14,13 @@ describe('getFinal2xconfig', () => {
   })
 
   it('test_getFinal2xconfig', () => {
+    ioPath.add('114514', '/Users/Downloads/114514')
     expect(getFinal2xconfig()).toEqual(
-      '{"gpuid":0,"inputpath":[],"model":"RealESRGAN","modelscale":2,"modelnoise":-1,"outputpath":"","targetscale":0,"tta":false}'
+      '{"gpuid":0,"inputpath":["/Users/Downloads/114514"],"model":"RealESRGAN","modelscale":2,"modelnoise":-1,"outputpath":"/Users/Downloads","targetscale":0,"tta":false}'
     )
     ioPath.setoutputpath('/test')
     expect(getFinal2xconfig()).toEqual(
-      '{"gpuid":0,"inputpath":[],"model":"RealESRGAN","modelscale":2,"modelnoise":-1,"outputpath":"/test","targetscale":0,"tta":false}'
+      '{"gpuid":0,"inputpath":["/Users/Downloads/114514"],"model":"RealESRGAN","modelscale":2,"modelnoise":-1,"outputpath":"/test","targetscale":0,"tta":false}'
     )
     ioPath.add('114514', '/test1')
     expect(getFinal2xconfig()).toEqual(
