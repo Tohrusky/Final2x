@@ -37,8 +37,9 @@ export const getFinal2xconfig = (): string => {
   )
   const { SRgpuid } = storeToRefs(useGlobalSettingsStore())
   const gpuID = SRgpuid.value === 114514 ? 0 : SRgpuid.value
-  const outputPATH = ioPath.getoutputpath()
   const inputPATHList = ioPath.getList()
+  const outputPATH = ioPath.getoutputpath()
+  const targetScale = CustomScaleValue.value === null ? 0 : CustomScaleValue.value
   return JSON.stringify({
     gpuid: gpuID,
     inputpath: inputPATHList,
@@ -46,7 +47,7 @@ export const getFinal2xconfig = (): string => {
     modelscale: selectedScale.value,
     modelnoise: selectedNoise.value,
     outputpath: outputPATH,
-    targetscale: CustomScaleValue.value,
+    targetscale: targetScale,
     tta: useTTA.value
   })
 }
