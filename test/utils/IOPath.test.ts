@@ -4,7 +4,8 @@
 
 import ioPath from '../../src/renderer/src/utils/IOPath'
 import { beforeEach, describe, expect, it } from 'vitest'
-import { createPinia, setActivePinia } from 'pinia'
+import { createPinia, setActivePinia, storeToRefs } from 'pinia'
+import { useIOPathStore } from '../../src/renderer/src/store/ioPathStore'
 
 describe('IOPath', () => {
   beforeEach(() => {
@@ -12,6 +13,8 @@ describe('IOPath', () => {
   })
 
   it('test_ioPath', () => {
+    const { outputpath } = storeToRefs(useIOPathStore())
+
     // test inputpath
     ioPath.add('114514', 'test')
     expect(ioPath.getByID('114514')).toBe('test')
@@ -35,6 +38,10 @@ describe('IOPath', () => {
     expect(ioPath.getoutputpath()).toBe('/test2')
     ioPath.setoutputpath('')
     expect(ioPath.getoutputpath()).toBe('/test2')
+    outputpath.value = '' // 模拟用户手动清除outputpath
+    ioPath.setoutputpath('/testWhenEmpty')
+    expect(ioPath.getoutputpath()).toBe('/testWhenEmpty')
+    ioPath.setoutputpathManual('/test2')
 
     // clear ALL
     ioPath.add('114514', 'test')

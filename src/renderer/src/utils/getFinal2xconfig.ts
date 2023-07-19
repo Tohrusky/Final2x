@@ -2,6 +2,7 @@ import { storeToRefs } from 'pinia'
 import { useSRSettingsStore } from '../store/SRSettingsStore'
 import { useGlobalSettingsStore } from '../store/globalSettingsStore'
 import ioPath from '../utils/IOPath'
+import PathFormat from '../utils/pathFormat'
 
 // {
 //   "gpuid": 0, // GPU id, >= -1 (-1 for CPU, may not work for some models.)
@@ -31,14 +32,25 @@ import ioPath from '../utils/IOPath'
 //   tta: boolean
 // }
 
+function getOutPutPATH(): string {
+  if (ioPath.getoutputpath() === '') {
+    const inputPATHList = ioPath.getList()
+    const pathFormat = new PathFormat()
+    pathFormat.setRootPath(inputPATHList[0])
+    ioPath.setoutputpath(pathFormat.getRootPath())
+  }
+  return ioPath.getoutputpath()
+}
+
 export const getFinal2xconfig = (): string => {
   const { selectedModel, selectedScale, selectedNoise, useTTA, CustomScaleValue } = storeToRefs(
     useSRSettingsStore()
   )
   const { SRgpuid } = storeToRefs(useGlobalSettingsStore())
+
   const gpuID = SRgpuid.value === 114514 ? 0 : SRgpuid.value
   const inputPATHList = ioPath.getList()
-  const outputPATH = ioPath.getoutputpath()
+  const outputPATH = getOutPutPATH()
   const targetScale = CustomScaleValue.value === null ? 0 : CustomScaleValue.value
   return JSON.stringify({
     gpuid: gpuID,

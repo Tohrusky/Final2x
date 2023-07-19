@@ -61,7 +61,8 @@ class ioPATH {
 
   static setoutputpath(path: string): void {
     const { outputpath, outputpathLock } = storeToRefs(useIOPathStore())
-    if (path != '' && outputpathLock.value == false) {
+    // if outputpathLock is false or outputpath is empty, set outputpath
+    if (path != '' && (outputpathLock.value == false || outputpath.value == '')) {
       outputpath.value = path
     } else {
       console.log('outputpath Lock!')
