@@ -1,5 +1,6 @@
 import { storeToRefs } from 'pinia'
 import { useIOPathStore } from '../store/ioPathStore'
+import PathFormat from '../utils/pathFormat'
 
 class ioPATH {
   static add(id: string, path: string): void {
@@ -62,7 +63,7 @@ class ioPATH {
   static setoutputpath(path: string): void {
     const { outputpath, outputpathLock } = storeToRefs(useIOPathStore())
     // if outputpathLock is false or outputpath is empty, set outputpath
-    if (path != '' && (outputpathLock.value == false || outputpath.value == '')) {
+    if (path != '' && (outputpathLock.value == false || !PathFormat.checkPath(outputpath.value))) {
       outputpath.value = path
     } else {
       console.log('outputpath Lock!')

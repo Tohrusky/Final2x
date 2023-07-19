@@ -33,7 +33,7 @@ import PathFormat from '../utils/pathFormat'
 // }
 
 function getOutPutPATH(): string {
-  if (ioPath.getoutputpath() === '') {
+  if (!PathFormat.checkPath(ioPath.getoutputpath())) {
     const inputPATHList = ioPath.getList()
     const pathFormat = new PathFormat()
     pathFormat.setRootPath(inputPATHList[0])

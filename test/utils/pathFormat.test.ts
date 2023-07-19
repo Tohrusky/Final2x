@@ -20,12 +20,11 @@ describe('PathFormat', () => {
   })
 
   it('checkpath', () => {
-    const pathFormat = new PathFormat()
     const check: Array<boolean> = [
-      pathFormat.checkPath('/Users/test/Downloads/unix'),
-      pathFormat.checkPath('C:\\Users\\test\\Downloads\\win'),
-      pathFormat.checkPath('C:Users/test/Downloads/unix/test.txt'),
-      pathFormat.checkPath('Users/test/Downloads/unix/test.txt')
+      PathFormat.checkPath('/Users/test/Downloads/unix'),
+      PathFormat.checkPath('C:\\Users\\test\\Downloads\\win'),
+      PathFormat.checkPath('C:Users/test/Downloads/unix/test.txt'),
+      PathFormat.checkPath('Users/test/Downloads/unix/test.txt')
     ]
     expect(check).toStrictEqual([true, true, false, false])
   })
