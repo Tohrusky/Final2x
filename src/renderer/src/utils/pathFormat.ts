@@ -22,7 +22,7 @@ class PathFormat {
     return this.rootpath + segments.join(this.rootpath.startsWith('/') ? '/' : '\\')
   }
 
-  checkPath(path: string): boolean {
+  static checkPath(path: string): boolean {
     return path.startsWith('/') || path.includes('\\')
   }
 }
