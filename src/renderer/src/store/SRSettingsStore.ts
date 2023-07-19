@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, Ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useSRSettingsStore = defineStore(
@@ -8,7 +8,7 @@ export const useSRSettingsStore = defineStore(
     const selectedScale = ref(2)
     const selectedNoise = ref(-1)
     const useTTA = ref(false)
-    const CustomScaleValue = ref(0)
+    const CustomScaleValue: Ref<number | null> = ref(null)
 
     return {
       selectedModel,

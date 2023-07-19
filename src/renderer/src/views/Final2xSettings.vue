@@ -331,6 +331,7 @@ class ClickButtomToConsoleLog {
           :max="99999999"
           :min="0"
           :step="0.2"
+          placeholder="Default"
           style="width: 110px"
         />
       </n-space>

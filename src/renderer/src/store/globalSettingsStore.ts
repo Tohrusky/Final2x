@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, Ref } from 'vue'
 import { defineStore } from 'pinia'
 import { LogInst } from 'naive-ui'
 
@@ -12,7 +12,7 @@ export const useGlobalSettingsStore = defineStore(
     const langsNum = ref(0)
 
     const SRgpuid = ref(114514)
-    const deviceList = ref([])
+    const deviceList: Ref<any[]> = ref([])
 
     const ProgressPercentage = ref(0)
     const CommandLOG = ref('')
