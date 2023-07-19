@@ -247,10 +247,15 @@ class ClickButtomToConsoleLog {
 <template>
   <n-card :bordered="false" class="settings-card">
     <n-space class="vertical" vertical justify="center">
-      <n-space justify="space-between">
+      <n-space>
         <n-popover trigger="hover" :width="400">
           <template #trigger>
-            <n-button dashed type="success" @click="ClickButtomToConsoleLog.SRgpuid()">
+            <n-button
+              dashed
+              type="success"
+              style="width: 80px"
+              @click="ClickButtomToConsoleLog.SRgpuid()"
+            >
               Device
             </n-button>
           </template>
@@ -259,10 +264,15 @@ class ClickButtomToConsoleLog {
 
         <n-select v-model:value="SRgpuid" :options="deviceList" style="width: 465px" />
       </n-space>
-      <n-space justify="space-between">
+      <n-space>
         <n-popover trigger="hover" :width="400">
           <template #trigger>
-            <n-button dashed type="success" @click="ClickButtomToConsoleLog.selectedModel()">
+            <n-button
+              dashed
+              type="success"
+              style="width: 80px"
+              @click="ClickButtomToConsoleLog.selectedModel()"
+            >
               Model
             </n-button>
           </template>
@@ -272,11 +282,16 @@ class ClickButtomToConsoleLog {
           v-model:value="selectedModel"
           :fallback-option="ModelOptionsFallBack"
           :options="getEnabledModelOptions"
-          style="width: 250px"
+          style="width: 206px"
         />
         <n-popover trigger="hover">
           <template #trigger>
-            <n-button dashed type="success" @click="ClickButtomToConsoleLog.selectedScale()">
+            <n-button
+              dashed
+              type="success"
+              style="width: 120px"
+              @click="ClickButtomToConsoleLog.selectedScale()"
+            >
               Model Scale
             </n-button>
           </template>
@@ -286,13 +301,18 @@ class ClickButtomToConsoleLog {
           v-model:value="selectedScale"
           :fallback-option="ScaleOptionsFallBack"
           :options="getScaleOptions"
-          style="width: 88px"
+          style="width: 115px"
         />
       </n-space>
-      <n-space justify="space-between">
-        <n-popover trigger="hover" :width="400">
+      <n-space>
+        <n-popover trigger="hover">
           <template #trigger>
-            <n-button dashed type="success" @click="ClickButtomToConsoleLog.selectedNoise()">
+            <n-button
+              dashed
+              type="success"
+              style="width: 80px"
+              @click="ClickButtomToConsoleLog.selectedNoise()"
+            >
               Denoise
             </n-button>
           </template>
@@ -306,7 +326,7 @@ class ClickButtomToConsoleLog {
           style="width: 80px"
         />
 
-        <n-popover trigger="hover" :width="400">
+        <n-popover trigger="hover">
           <template #trigger>
             <n-button dashed type="success" @click="ClickButtomToConsoleLog.useTTA()">
               TTA
@@ -317,9 +337,14 @@ class ClickButtomToConsoleLog {
 
         <n-switch v-model:value="useTTA" size="large" style="height: 35px"></n-switch>
 
-        <n-popover trigger="hover" :width="400">
+        <n-popover trigger="hover" :width="200">
           <template #trigger>
-            <n-button dashed type="success" @click="ClickButtomToConsoleLog.CustomScale()">
+            <n-button
+              dashed
+              type="success"
+              style="width: 120px"
+              @click="ClickButtomToConsoleLog.CustomScale()"
+            >
               Custom Scale
             </n-button>
           </template>
@@ -332,19 +357,21 @@ class ClickButtomToConsoleLog {
           :min="0"
           :step="0.2"
           placeholder="Default"
-          style="width: 110px"
+          style="width: 115px"
         />
       </n-space>
 
       <n-space>
         <n-popover trigger="hover">
           <template #trigger>
-            <n-button round type="success" @click="getPath"> Output Folder</n-button>
+            <n-button round type="success" style="width: 171px" @click="getPath">
+              Output Folder
+            </n-button>
           </template>
           <span> {{ MyPopoverMessages.OutputFolder() }} </span>
         </n-popover>
 
-        <n-input v-model:value="outputpath" :placeholder="outputpath" round style="width: 411px" />
+        <n-input v-model:value="outputpath" :placeholder="outputpath" round style="width: 374px" />
       </n-space>
     </n-space>
   </n-card>
