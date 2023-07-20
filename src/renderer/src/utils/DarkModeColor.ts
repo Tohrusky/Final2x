@@ -2,7 +2,9 @@ import { storeToRefs } from 'pinia'
 import { useGlobalSettingsStore } from '../store/globalSettingsStore'
 import { nextTick } from 'vue'
 
-// Interpolate two colors by a given factor
+/**
+ * @description Interpolate two colors by a given factor
+ */
 function interpolateColor(color1: string, color2: string, factor: number): string {
   if (factor === 0) return color1
   if (factor === 1) return color2
@@ -28,7 +30,9 @@ function hexToRgb(hex: string): { r: number; g: number; b: number } {
   return { r, g, b }
 }
 
-// Smooth transition to dark mode
+/**
+ * @description Smooth transition to dark mode
+ */
 function switchCSSStyle(theme: string): void {
   const { globalcolor } = storeToRefs(useGlobalSettingsStore())
 
@@ -45,6 +49,9 @@ function switchCSSStyle(theme: string): void {
   }
 }
 
+/**
+ * @description Switch the theme between light and dark
+ */
 function switchTheme(): void {
   const { DarkTheme } = storeToRefs(useGlobalSettingsStore())
   DarkTheme.value = !DarkTheme.value

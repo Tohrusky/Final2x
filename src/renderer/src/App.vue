@@ -10,6 +10,7 @@ import {
 import { computed, onMounted, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
+import { getLanguage } from './utils'
 import { switchCSSStyle } from './utils/DarkModeColor'
 import { useGlobalSettingsStore } from './store/globalSettingsStore'
 import MyProgress from './components/MyProgress.vue'
@@ -20,16 +21,17 @@ const { langsNum, SRgpuid, deviceList, DarkTheme, globalcolor } = storeToRefs(
   useGlobalSettingsStore()
 )
 
-const langs = ['en', 'zh', 'ja']
-
 watch(langsNum, () => {
-  locale.value = langs[langsNum.value]
-  console.log('locale', locale.value)
+  // 切换语言
+  locale.value = getLanguage(langsNum.value).lang
+  console.log('locale: ', locale.value)
 })
 
 onMounted(async () => {
-  const langs = ['en', 'zh', 'ja']
-  locale.value = langs[langsNum.value]
+  if (langsNum.value !== 114514) {
+    // 当语言不是跟随环境时，设置语言
+    locale.value = getLanguage(langsNum.value).lang
+  }
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const res: Array<string> = await window.electron.ipcRenderer.invoke('getSystemInfo')

@@ -1,16 +1,8 @@
 <script lang="ts" setup>
-// import useClipboard from 'vue-clipboard3'
-// import { useI18n } from 'vue-i18n'
 import { storeToRefs } from 'pinia'
 import { PaperPlaneSharp, BookOutline } from '@vicons/ionicons5'
 import { MoneyCollectOutlined } from '@vicons/antd'
 import { useGlobalSettingsStore } from '../store/globalSettingsStore'
-// import final2xlogo from '../assets/final2xlogo.png'
-// import final2xlogoDarkMode from '../assets/final2xlogoDarkMode.png'
-
-// const { t } = useI18n()
-// const { toClipboard } = useClipboard()
-// const notification = useNotification()
 const { langsNum } = storeToRefs(useGlobalSettingsStore())
 
 class openWebsite {
