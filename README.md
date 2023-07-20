@@ -29,7 +29,7 @@ This is a powerful tool that allows for image super-resolution to arbitrary size
 
 ## Comparison
 <div align="center">
-<img src="https://s2.loli.net/2023/07/17/PiLvYzkAqewEya4.png" width="512" /><img src="https://s2.loli.net/2023/07/17/wzx6SHXMArWuhe5.png" width="512" />
+<img src="https://s2.loli.net/2023/07/20/hWi4U6BNeqau3MF.png" />
 </div>
 <h5 align="center"> use Final2x to perform 4x super-resolution on a 256x256 Hutao RGBA image </h5>
 
