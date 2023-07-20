@@ -30,6 +30,8 @@ watch(langsNum, () => {
 })
 
 onMounted(async () => {
+  DarkTheme.value = osThemeRef.value === 'dark'
+
   if (langsNum.value !== 114514) {
     // 当语言不是跟随环境时，设置语言
     locale.value = getLanguage(langsNum.value).lang
