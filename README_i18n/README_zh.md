@@ -27,7 +27,7 @@ Final2x 可以使用多个模型，将图像超分辨率到任意大小，以提
 
 ## 对比图
 <div align="center">
-<img src="https://s2.loli.net/2023/07/17/PiLvYzkAqewEya4.png" width="512" /><img src="https://s2.loli.net/2023/07/17/wzx6SHXMArWuhe5.png" width="512" />
+<img src="https://s2.loli.net/2023/07/20/hWi4U6BNeqau3MF.png" />
 </div>
 <h5 align="center"> 使用 Final2x 对一张 256x256 带透明通道的 胡桃 图进行 4 倍超分辨率处理 </h5>
 
