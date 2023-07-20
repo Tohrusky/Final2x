@@ -5,7 +5,8 @@ import {
   NConfigProvider,
   NDialogProvider,
   NNotificationProvider,
-  NGlobalStyle
+  NGlobalStyle,
+  useOsTheme
 } from 'naive-ui'
 import { computed, onMounted, watch } from 'vue'
 import { storeToRefs } from 'pinia'
@@ -20,6 +21,7 @@ const { locale } = useI18n()
 const { langsNum, SRgpuid, deviceList, DarkTheme, globalcolor } = storeToRefs(
   useGlobalSettingsStore()
 )
+const osThemeRef = useOsTheme()
 
 watch(langsNum, () => {
   // 切换语言
@@ -59,6 +61,12 @@ onMounted(async () => {
   console.log(getdevicelist)
 })
 
+// 检测系统主题，修改 DarkTheme.value
+watch(osThemeRef, (value) => {
+  DarkTheme.value = value === 'dark'
+})
+
+// 根据 DarkTheme.value 切换主题黑暗模式
 const getTheme = computed(() => {
   if (DarkTheme.value) {
     if (globalcolor.value === '#fffafa') {
