@@ -4,34 +4,9 @@ import { useGlobalSettingsStore } from '../store/globalSettingsStore'
 import ioPath from '../utils/IOPath'
 import PathFormat from '../utils/pathFormat'
 
-// {
-//   "gpuid": 0, // GPU id, >= -1 (-1 for CPU, may not work for some models.)
-//   "inputpath": [
-//     // Input image paths, should be a list.
-//     "path/to/img1.jpg",
-//     "path/to/img2.png"
-//   ],
-//   "model": "RealCUGAN-pro", // model name
-//   "modelscale": 2, // model upscale factor
-//   "modelnoise": -1, // DENOISE level
-//   "outputpath": "path/to/output", // output path
-//   "targetscale": 2.0,
-//   // Target upscale factor, upscale multiple times to achieve the target upscale factor.
-//   // If not invalid, use modelscale.
-//   "tta": false // Test Time Augmentation, default false
-// }
-
-// export interface Final2xConfigType {
-//   gpuid: number
-//   inputpath: string[]
-//   model: string
-//   modelscale: number
-//   modelnoise: number
-//   outputpath: string
-//   targetscale: number
-//   tta: boolean
-// }
-
+/**
+ * @description: 返回输出路径，如果输出路径不合法，则从第一个输入路径构造一个合法输出路径
+ */
 function getOutPutPATH(): string {
   if (!PathFormat.checkPath(ioPath.getoutputpath())) {
     const inputPATHList = ioPath.getList()
@@ -42,6 +17,9 @@ function getOutPutPATH(): string {
   return ioPath.getoutputpath()
 }
 
+/**
+ * @description: 返回最终的json字符串配置文件
+ */
 export const getFinal2xconfig = (): string => {
   const { selectedModel, selectedScale, selectedNoise, useTTA, CustomScaleValue } = storeToRefs(
     useSRSettingsStore()

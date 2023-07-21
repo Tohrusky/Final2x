@@ -256,7 +256,7 @@ class ClickButtomToConsoleLog {
               style="width: 80px"
               @click="ClickButtomToConsoleLog.SRgpuid()"
             >
-              Device
+              {{ t('Final2xSettings.text10') }}
             </n-button>
           </template>
           <span> {{ MyPopoverMessages.Device() }} </span>
@@ -273,7 +273,7 @@ class ClickButtomToConsoleLog {
               style="width: 80px"
               @click="ClickButtomToConsoleLog.selectedModel()"
             >
-              Model
+              {{ t('Final2xSettings.text11') }}
             </n-button>
           </template>
           <span> {{ MyPopoverMessages.Model() }} </span>
@@ -292,7 +292,7 @@ class ClickButtomToConsoleLog {
               style="width: 120px"
               @click="ClickButtomToConsoleLog.selectedScale()"
             >
-              Model Scale
+              {{ t('Final2xSettings.text12') }}
             </n-button>
           </template>
           <span> {{ MyPopoverMessages.ModelScale() }} </span>
@@ -313,7 +313,7 @@ class ClickButtomToConsoleLog {
               style="width: 80px"
               @click="ClickButtomToConsoleLog.selectedNoise()"
             >
-              Denoise
+              {{ t('Final2xSettings.text13') }}
             </n-button>
           </template>
           <span> {{ MyPopoverMessages.ModelDenoise() }} </span>
@@ -334,7 +334,7 @@ class ClickButtomToConsoleLog {
               style="width: 54px"
               @click="ClickButtomToConsoleLog.useTTA()"
             >
-              TTA
+              {{ t('Final2xSettings.text14') }}
             </n-button>
           </template>
           <span> {{ MyPopoverMessages.TTA() }} </span>
@@ -350,7 +350,7 @@ class ClickButtomToConsoleLog {
               style="width: 120px"
               @click="ClickButtomToConsoleLog.CustomScale()"
             >
-              Custom Scale
+              {{ t('Final2xSettings.text15') }}
             </n-button>
           </template>
           <span> {{ MyPopoverMessages.CustomScale() }} </span>
@@ -361,7 +361,7 @@ class ClickButtomToConsoleLog {
           :max="99999999"
           :min="0"
           :step="0.2"
-          placeholder="Default"
+          :placeholder="t('Final2xSettings.text16')"
           style="width: 115px"
         />
       </n-space>
@@ -370,7 +370,7 @@ class ClickButtomToConsoleLog {
         <n-popover trigger="hover">
           <template #trigger>
             <n-button round type="success" style="width: 171px" @click="getPath">
-              Output Folder
+              {{ t('Final2xSettings.text17') }}
             </n-button>
           </template>
           <span> {{ MyPopoverMessages.OutputFolder() }} </span>

@@ -3,6 +3,11 @@ import { useIOPathStore } from '../store/ioPathStore'
 import PathFormat from '../utils/pathFormat'
 
 class ioPATH {
+  /**
+   * @description Add a new inputpath to inputpathMap
+   * @param id inputpath id
+   * @param path inputpath
+   */
   static add(id: string, path: string): void {
     const { inputpathMap } = storeToRefs(useIOPathStore())
     if (path != '') {
@@ -10,16 +15,28 @@ class ioPATH {
     }
   }
 
+  /**
+   * @description Delete an inputpath from inputpathMap by id
+   * @param id inputpath id
+   */
   static delete(id: string): void {
     const { inputpathMap } = storeToRefs(useIOPathStore())
     inputpathMap.value.delete(id)
   }
 
+  /**
+   * @description Get an inputpath from inputpathMap by id
+   * @param id inputpath id
+   */
   static getByID(id: string): string {
     const { inputpathMap } = storeToRefs(useIOPathStore())
     return inputpathMap.value.get(id) || ''
   }
 
+  /**
+   * @description Get all inputpath from inputpathMap
+   * @returns inputpathMap with string
+   */
   static getAllPath(): string {
     const { inputpathMap } = storeToRefs(useIOPathStore())
     // return inputpath key and value with string
@@ -30,17 +47,28 @@ class ioPATH {
     return inputpath
   }
 
+  /**
+   * @description Get all inputpath from inputpathMap
+   * @returns inputpathMap string list
+   */
   static getList(): string[] {
     const { inputpathMap } = storeToRefs(useIOPathStore())
     // return inputpath value with String List
     return Array.from(inputpathMap.value.values())
   }
 
+  /**
+   * @description check inputpathMap is empty
+   */
   static isEmpty(): boolean {
     const { inputpathMap } = storeToRefs(useIOPathStore())
     return inputpathMap.value.size == 0
   }
 
+  /**
+   * @description Get all inputpath from inputpathMap
+   * @returns inputpathMap with string
+   */
   static show(): string {
     const inputpathList = ioPATH.getList()
     console.log('inputpathList: ', inputpathList)
@@ -51,6 +79,9 @@ class ioPATH {
     return inputpathListString
   }
 
+  /**
+   * @description Set outputpath by manual, and lock outputpath
+   */
   static setoutputpathManual(path: string): void {
     const { outputpath, outputpathLock } = storeToRefs(useIOPathStore())
     if (path != '') {
@@ -60,6 +91,9 @@ class ioPATH {
     }
   }
 
+  /**
+   * @description Set outputpath if outputpathLock is false or outputpath is invalid
+   */
   static setoutputpath(path: string): void {
     const { outputpath, outputpathLock } = storeToRefs(useIOPathStore())
     // if outputpathLock is false or outputpath is empty, set outputpath
@@ -70,11 +104,17 @@ class ioPATH {
     }
   }
 
+  /**
+   * @description get outputpath
+   */
   static getoutputpath(): string {
     const { outputpath } = storeToRefs(useIOPathStore())
     return outputpath.value
   }
 
+  /**
+   * @description clear all inputpath
+   */
   static clearALL(): void {
     const { inputpathMap, inputFileList } = storeToRefs(useIOPathStore())
     inputpathMap.value.clear()

@@ -15,6 +15,9 @@ describe('switchLanguage', () => {
 
   it('test_switchLanguage', () => {
     const { langsNum } = storeToRefs(useGlobalSettingsStore())
+    switchLanguage()
+    expect(langsNum.value).toBe(1) // 第一次后应该是 'zh'
+    langsNum.value = 0 // 手动设置为 'en'
     // 断言语言切换是否正确
     expect(langsNum.value).toBe(0) // 初始语言是 'en', 所以切换一次后应该是 'zh', 切换两次后应该是 'ja', 切换三次后应该是 'en'
     for (let i = 0; i < 30; i++) {

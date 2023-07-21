@@ -5,6 +5,9 @@ class PathFormat {
     this.rootpath = ''
   }
 
+  /**
+   * @description 设置本次上传的根目录
+   */
   setRootPath(path: string): void {
     const segments = path.split(/[/\\]/)
     if (segments.length > 1) {
@@ -13,15 +16,24 @@ class PathFormat {
     }
   }
 
+  /**
+   * @description 返回本次上传的根目录
+   */
   getRootPath(): string {
     return this.rootpath
   }
 
+  /**
+   * @description 相对于本次上传的根目录，返回拼接后的真实路径
+   */
   getNewPath(path: string): string {
     const segments = path.split(/[/\\]/)
     return this.rootpath + segments.join(this.rootpath.startsWith('/') ? '/' : '\\')
   }
 
+  /**
+   * @description 检查路径格式是否正确
+   */
   static checkPath(path: string): boolean {
     return path.startsWith('/') || path.includes('\\')
   }

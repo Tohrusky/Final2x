@@ -1,5 +1,8 @@
 import { SelectOption } from 'naive-ui'
 
+/**
+ * @description: 模型选项-GPU
+ */
 export const modelOptions: SelectOption[] = [
   { label: 'RealCUGAN-se', value: 'RealCUGAN-se' },
   { label: 'RealCUGAN-pro', value: 'RealCUGAN-pro' },
@@ -12,6 +15,9 @@ export const modelOptions: SelectOption[] = [
   { label: 'SRMD', value: 'SRMD' }
 ]
 
+/**
+ * @description: 模型选项-CPU
+ */
 export const CPUmodelOptions: SelectOption[] = [
   { label: 'RealCUGAN-se', value: 'RealCUGAN-se' },
   { label: 'RealCUGAN-pro', value: 'RealCUGAN-pro' },
@@ -20,10 +26,16 @@ export const CPUmodelOptions: SelectOption[] = [
   { label: 'Waifu2x-upconv_7_photo', value: 'Waifu2x-upconv_7_photo' }
 ]
 
+/**
+ * @description: 模型 -> 模型Scale
+ */
 export interface ModelScaleOptionsType {
   [key: string]: SelectOption[]
 }
 
+/**
+ * @description: 模型Scale选项
+ */
 export const modelScaleOptions: ModelScaleOptionsType = {
   'RealCUGAN-se': [
     { label: '2', value: 2 },
@@ -54,7 +66,11 @@ export const modelScaleOptions: ModelScaleOptionsType = {
   ]
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+/**
+ * @description: 由模型和Scale获取Noise选项
+ * @param Model 模型
+ * @param Scale 模型Scale
+ */
 export function GetModelNoiseOptionsByNameAndScale(Model: string, Scale: number): SelectOption[] {
   if (Model === 'RealCUGAN-se') {
     if (Scale === 2) {

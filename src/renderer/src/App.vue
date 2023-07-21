@@ -5,11 +5,13 @@ import {
   NConfigProvider,
   NDialogProvider,
   NNotificationProvider,
-  NGlobalStyle
+  NGlobalStyle,
+  useOsTheme
 } from 'naive-ui'
 import { computed, onMounted, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
+import { getLanguage } from './utils'
 import { switchCSSStyle } from './utils/DarkModeColor'
 import { useGlobalSettingsStore } from './store/globalSettingsStore'
 import MyProgress from './components/MyProgress.vue'
@@ -19,17 +21,21 @@ const { locale } = useI18n()
 const { langsNum, SRgpuid, deviceList, DarkTheme, globalcolor } = storeToRefs(
   useGlobalSettingsStore()
 )
-
-const langs = ['en', 'zh', 'ja']
+const osThemeRef = useOsTheme()
 
 watch(langsNum, () => {
-  locale.value = langs[langsNum.value]
-  console.log('locale', locale.value)
+  // 切换语言
+  locale.value = getLanguage(langsNum.value).lang
+  console.log('locale: ', locale.value)
 })
 
 onMounted(async () => {
-  const langs = ['en', 'zh', 'ja']
-  locale.value = langs[langsNum.value]
+  DarkTheme.value = osThemeRef.value === 'dark'
+
+  if (langsNum.value !== 114514) {
+    // 当语言不是跟随环境时，设置语言
+    locale.value = getLanguage(langsNum.value).lang
+  }
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const res: Array<string> = await window.electron.ipcRenderer.invoke('getSystemInfo')
@@ -57,6 +63,12 @@ onMounted(async () => {
   console.log(getdevicelist)
 })
 
+// 检测系统主题，修改 DarkTheme.value
+watch(osThemeRef, (value) => {
+  DarkTheme.value = value === 'dark'
+})
+
+// 根据 DarkTheme.value 切换主题黑暗模式
 const getTheme = computed(() => {
   if (DarkTheme.value) {
     if (globalcolor.value === '#fffafa') {

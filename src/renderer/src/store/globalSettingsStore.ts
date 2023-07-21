@@ -9,7 +9,7 @@ export const useGlobalSettingsStore = defineStore(
     const DarkTheme = ref(false)
     const changeRoute = ref(false)
 
-    const langsNum = ref(0)
+    const langsNum = ref(114514)
 
     const SRgpuid = ref(114514)
     const deviceList: Ref<any[]> = ref([])
