@@ -48,7 +48,7 @@ xattr -cr /Applications/Final2x.app
 
 ### Linux
 #### 对于大部分发行版(推荐, 下载linux-pip版本)
-需要Python >= 3.6, 然后在终端里检查是否安装成功。
+需要Python >= 3.8, 然后在终端里检查是否安装成功。
 ```bash
 pip install Final2x-core
 Final2x-core -o # 114514
