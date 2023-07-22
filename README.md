@@ -50,7 +50,7 @@ In first time, you need to run the command above in terminal to allow the app to
 
 ### Linux
 #### For General Linux (Suggested, download linux-pip)
-Python >= 3.6, then check install in terminal.
+Python >= 3.8, then check install in terminal.
 ```bash
 pip install Final2x-core
 Final2x-core -o # 114514
