@@ -36,7 +36,11 @@ Final2x 可以使用多个模型，将图像超分辨率到任意大小，以提
 #### [在这里下载最新的版本。](https://github.com/Tohrusky/Final2x/releases)
 
 ### Windows
-点击即可使用。
+点击即可使用，此外你也可以通过包管理器来安装、更新。
+#### winget
+```bash
+winget install Final2x
+```
 
 ### MacOS
 ```bash

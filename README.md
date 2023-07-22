@@ -38,7 +38,11 @@ This is a powerful tool that allows for image super-resolution to arbitrary size
 #### [Download the latest release from here.](https://github.com/Tohrusky/Final2x/releases)
 
 ### Windows
-Just Run!
+Just Run! Furthermore, you can use package mananger to install and upgrade.
+#### winget
+```bash
+winget install Final2x
+```
 
 ### MacOS
 ```bash
