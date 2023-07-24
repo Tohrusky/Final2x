@@ -36,7 +36,7 @@
     "naive-ui": "^2.34.3",
     "pinia": "^2.1.4",
     "pinia-plugin-persistedstate": "^3.1.0",
-    "sass": "^1.63.6",
+    "sass": "^1.64.1",
     "systeminformation": "^5.18.7",
     "typescript": "^5.1.6",
     "vite": "^4.4.4",
