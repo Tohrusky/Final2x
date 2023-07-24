@@ -45,7 +45,7 @@
     "vue-clipboard3": "^2.0.0",
     "vue-i18n": "^9.2.2",
     "vue-router": "^4.2.4",
-    "vue-tsc": "^1.8.5"
+    "vue-tsc": "^1.8.6"
   },
   "devDependencies": {
     "@electron-toolkit/preload": "^2.0.0",
