@@ -58,7 +58,7 @@
     "@vitest/coverage-v8": "^0.33.0",
     "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/eslint-config-typescript": "^11.0.3",
-    "@vue/test-utils": "^2.4.0",
+    "@vue/test-utils": "^2.4.1",
     "electron": "^25.3.0",
     "electron-builder": "^24.4.0",
     "electron-vite": "^1.0.25",
