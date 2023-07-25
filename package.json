@@ -39,7 +39,7 @@
     "sass": "^1.64.1",
     "systeminformation": "^5.18.7",
     "typescript": "^5.1.6",
-    "vite": "^4.4.4",
+    "vite": "^4.4.7",
     "vitest": "^0.33.0",
     "vue": "^3.2.47",
     "vue-clipboard3": "^2.0.0",
