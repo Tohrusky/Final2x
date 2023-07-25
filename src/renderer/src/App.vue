@@ -18,9 +18,7 @@ import MyProgress from './components/MyProgress.vue'
 import BottomNavigation from './components/bottomNavigation.vue'
 
 const { locale } = useI18n()
-const { langsNum, SRgpuid, deviceList, DarkTheme, globalcolor } = storeToRefs(
-  useGlobalSettingsStore()
-)
+const { langsNum, deviceList, DarkTheme, globalcolor } = storeToRefs(useGlobalSettingsStore())
 const osThemeRef = useOsTheme()
 
 watch(langsNum, () => {
@@ -41,7 +39,7 @@ onMounted(async () => {
   const res: Array<string> = await window.electron.ipcRenderer.invoke('getSystemInfo')
   const getdevicelist: any[] = []
   if (res.length === 1) {
-    SRgpuid.value = -1 // CPU only
+    // CPU only
     console.log('CPU only, SRgpuid = -1, try push GPU 0 and CPU 1')
     getdevicelist.push({ label: 'CPU: ' + String(res[0]), value: -1 })
     getdevicelist.push({ label: '[Maybe Unavailable] GPU 0', value: 0 })
@@ -52,8 +50,9 @@ onMounted(async () => {
       const deviceType = Number(i) === 0 ? 'CPU: ' : 'GPU ' + String(Number(i) - 1) + ': '
       getdevicelist.push({ label: deviceType + String(res[i]), value: Number(i) - 1 })
     }
-    getdevicelist.push({ label: 'GPU: Auto', value: 114514 })
   }
+  // 自动选择，gpuid = 0
+  getdevicelist.push({ label: 'GPU: Auto', value: 114514 })
 
   if (JSON.stringify(deviceList.value) !== JSON.stringify(getdevicelist)) {
     deviceList.value = getdevicelist
