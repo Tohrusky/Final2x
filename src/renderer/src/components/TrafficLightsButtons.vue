@@ -1,36 +1,93 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 const isFocus = ref(true)
+
+const handleFocus = (): void => {
+  isFocus.value = true
+}
+
+const handleBlur = (): void => {
+  isFocus.value = false
+}
+
+onMounted(() => {
+  window.addEventListener('focus', handleFocus)
+  window.addEventListener('blur', handleBlur)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('focus', handleFocus)
+  window.removeEventListener('blur', handleBlur)
+})
+
+function handleClose(): void {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  window.electron.ipcRenderer.send('close')
+}
+
+function handleMinimize(): void {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  window.electron.ipcRenderer.send('minimize')
+}
+
+function handleMaximize(): void {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  window.electron.ipcRenderer.send('maximize')
+}
 </script>
 
 <template>
   <div class="container">
-    <!--    <br />-->
-    <!--    <br />-->
-    <!--    <br />-->
     <div class="drag-area" />
     <div v-if="!isFocus">
       <div class="example">
         <div class="traffic-lights">
-          <button id="close" class="traffic-light traffic-light-close"></button>
-          <button id="minimize" class="traffic-light traffic-light-minimize"></button>
-          <button id="maximize" class="traffic-light traffic-light-maximize"></button>
+          <button
+            id="close"
+            class="traffic-light traffic-light-close"
+            @click="handleClose"
+          ></button>
+          <button
+            id="minimize"
+            class="traffic-light traffic-light-minimize"
+            @click="handleMinimize"
+          ></button>
+          <button
+            id="maximize"
+            class="traffic-light traffic-light-maximize"
+            @click="handleMaximize"
+          ></button>
         </div>
       </div>
     </div>
     <div v-else>
       <div class="example focus">
         <div class="traffic-lights">
-          <button id="close" class="traffic-light traffic-light-close"></button>
-          <button id="minimize" class="traffic-light traffic-light-minimize"></button>
-          <button id="maximize" class="traffic-light traffic-light-maximize"></button>
+          <button
+            id="close"
+            class="traffic-light traffic-light-close"
+            @click="handleClose"
+          ></button>
+          <button
+            id="minimize"
+            class="traffic-light traffic-light-minimize"
+            @click="handleMinimize"
+          ></button>
+          <button
+            id="maximize"
+            class="traffic-light traffic-light-maximize"
+            @click="handleMaximize"
+          ></button>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $close-red: #ff6159;
 $close-red-active: #bf4942;
 $close-red-icon: #4d0000;

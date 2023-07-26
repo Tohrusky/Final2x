@@ -43,6 +43,26 @@ function createWindow(): void {
 
   ipcMain.on('open-directory-dialog', openDirectory)
 
+  ipcMain.on('minimize', () => {
+    mainWindow.minimize()
+  })
+
+  ipcMain.on('maximize', () => {
+    if (mainWindow.isMaximized()) {
+      mainWindow.restore()
+    } else {
+      mainWindow.maximize()
+    }
+  })
+
+  ipcMain.on('close', () => {
+    if (process.platform !== 'darwin') {
+      app.quit()
+    } else {
+      app.hide()
+    }
+  })
+
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
   })
@@ -74,7 +94,9 @@ function setTray(): void {
       click: (): void => {
         // On macOS it's common to re-create a window in the app when the
         // dock icon is clicked and there are no other windows open.
-        if (BrowserWindow.getAllWindows().length === 0) createWindow()
+        if (BrowserWindow.getAllWindows().length === 0) {
+          createWindow()
+        }
       }
     },
     {
