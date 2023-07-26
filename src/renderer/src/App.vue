@@ -14,6 +14,7 @@ import { useI18n } from 'vue-i18n'
 import { getLanguage } from './utils'
 import { switchCSSStyle } from './utils/DarkModeColor'
 import { useGlobalSettingsStore } from './store/globalSettingsStore'
+import TrafficLightsButtons from './components/TrafficLightsButtons.vue'
 import MyProgress from './components/MyProgress.vue'
 import BottomNavigation from './components/bottomNavigation.vue'
 
@@ -95,10 +96,11 @@ const themeOverrides = {
 
 <template>
   <n-config-provider :theme="getTheme" :theme-overrides="themeOverrides">
+    <n-global-style />
     <n-notification-provider class="n-config-provider" placement="top">
       <n-dialog-provider>
-        <!--        <div class="drag" />-->
         <div class="background">
+          <traffic-lights-buttons />
           <MyProgress />
           <div class="view">
             <router-view v-slot="{ Component }">
@@ -113,7 +115,6 @@ const themeOverrides = {
         </div>
       </n-dialog-provider>
     </n-notification-provider>
-    <n-global-style />
   </n-config-provider>
 </template>
 
@@ -157,14 +158,6 @@ $buttom-bottom: 8px;
     flex: 1;
   }
 }
-
-//.drag {
-//  width: 100%;
-//  height: 30px;
-//  position: fixed;
-//  background-color: $global-color;
-//  -webkit-app-region: drag;
-//}
 
 .fade-enter-active {
   transition: opacity 0.6s ease-in-out;
