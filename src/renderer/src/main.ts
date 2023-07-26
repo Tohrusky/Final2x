@@ -4,6 +4,8 @@ import router from './router'
 import i18n from './plugins/i18n'
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+// 通用字体
+import 'vfonts/OpenSans.css'
 import {
   // create naive ui
   create,
