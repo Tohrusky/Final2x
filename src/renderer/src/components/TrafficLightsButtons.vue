@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-const isFocus = ref(false)
+const isFocus = ref(true)
 </script>
 
 <template>
@@ -8,7 +8,8 @@ const isFocus = ref(false)
     <!--    <br />-->
     <!--    <br />-->
     <!--    <br />-->
-    <div v-if="isFocus">
+    <div class="drag-area" />
+    <div v-if="!isFocus">
       <div class="example">
         <div class="traffic-lights">
           <button id="close" class="traffic-light traffic-light-close"></button>
@@ -193,10 +194,16 @@ h2 {
 
 .container {
   position: fixed;
-  width: 100%;
   height: 30px;
+  width: 50px;
   left: 10px;
+}
+
+.drag-area {
   -webkit-app-region: drag;
-  pointer-events: none;
+  position: fixed;
+  height: 30px;
+  width: 100%;
+  left: 60px;
 }
 </style>

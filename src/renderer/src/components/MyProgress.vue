@@ -201,7 +201,7 @@ watchEffect(() => {
 .control {
   box-sizing: border-box;
   width: 100%;
-  padding: 25px 40px 0 40px;
+  padding: 30px 40px 0 40px;
   display: flex;
   justify-content: space-between;
 
@@ -225,6 +225,6 @@ watchEffect(() => {
 }
 
 .n-divider {
-  margin: 15px 0 0 0 !important;
+  margin: 10px 0 0 0 !important;
 }
 </style>
