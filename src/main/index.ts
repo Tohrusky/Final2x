@@ -96,6 +96,8 @@ function setTray(): void {
         // dock icon is clicked and there are no other windows open.
         if (BrowserWindow.getAllWindows().length === 0) {
           createWindow()
+        } else {
+          BrowserWindow.getAllWindows()[0].show()
         }
       }
     },
