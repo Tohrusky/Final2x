@@ -28,8 +28,11 @@ function createWindow(): void {
       sandbox: false
     }
   })
-  // 隐藏红绿灯，使用自定义的
-  mainWindow.setWindowButtonVisibility(false)
+
+  if (process.platform === 'darwin') {
+    // 隐藏红绿灯，使用自定义的
+    mainWindow.setWindowButtonVisibility(false)
+  }
 
   if (process.platform === 'darwin') {
     app.dock.setIcon(nativeImage.createFromPath(icon))
