@@ -17,8 +17,6 @@ function createWindow(): void {
     minWidth: 670,
     maxHeight: 670,
     minHeight: 470,
-    titleBarStyle: 'hiddenInset',
-    // frame: true,
     frame: false,
     show: false,
     autoHideMenuBar: true,
@@ -28,11 +26,6 @@ function createWindow(): void {
       sandbox: false
     }
   })
-
-  if (process.platform === 'darwin') {
-    // 隐藏红绿灯，使用自定义的
-    mainWindow.setWindowButtonVisibility(false)
-  }
 
   if (process.platform === 'darwin') {
     app.dock.setIcon(nativeImage.createFromPath(icon))
