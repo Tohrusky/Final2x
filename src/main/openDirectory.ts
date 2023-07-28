@@ -1,9 +1,9 @@
 import { dialog } from 'electron'
 
 /**
- * Open a directory or file/multiple files
- * @param event
- * @param p
+ * @description Open a directory or file/multiple files
+ * @param event The event that triggered the function
+ * @param p The properties of the dialog
  */
 export function openDirectory(event, p: Array<any>): void {
   dialog
