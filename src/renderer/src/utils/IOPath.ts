@@ -25,9 +25,8 @@ class ioPATH {
   }
 
   /**
-   * @description 检查id是否存在，因为 naive-ui 生成的 id 长度较短，所以这里只检查 inputpathMap 即可
+   * @description 检查 id 是否存在，因为 naive-ui 生成的 id 长度较短，所以这里只检查 inputpathMap 即可
    * @param id inputpath id
-   * @returns true if id is not exist
    */
   static checkID(id: string): boolean {
     const { inputpathMap } = storeToRefs(useIOPathStore())
