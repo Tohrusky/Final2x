@@ -36,6 +36,13 @@ class Utils {
       /* empty */
     }
   }
+
+  /**
+   * @description 生成超长随机字符串
+   */
+  static getRandString(): string {
+    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+  }
 }
 
-export const { getCurrentLocale, getLanguage, sleep, DeepDeepSleep } = Utils
+export const { getCurrentLocale, getLanguage, sleep, DeepDeepSleep, getRandString } = Utils

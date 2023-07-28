@@ -14,9 +14,12 @@ describe('IOPath', () => {
 
   it('test_ioPath', () => {
     const { outputpath } = storeToRefs(useIOPathStore())
-
+    // checkID
+    expect(ioPath.checkID('114514')).toBe(false)
     // test inputpath
     ioPath.add('114514', 'test')
+    // checkID
+    expect(ioPath.checkID('114514')).toBe(true)
     expect(ioPath.getByID('114514')).toBe('test')
     ioPath.add('114514', 'test2')
     expect(ioPath.getByID('114514')).toBe('test2')

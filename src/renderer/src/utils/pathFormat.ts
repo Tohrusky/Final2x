@@ -37,6 +37,14 @@ class PathFormat {
   static checkPath(path: string): boolean {
     return path.startsWith('/') || path.includes('\\')
   }
+
+  /**
+   * @description 返回文件名
+   */
+  static getFileName(path: string): string {
+    const segments = path.split(/[/\\]/)
+    return segments[segments.length - 1]
+  }
 }
 
 export default PathFormat

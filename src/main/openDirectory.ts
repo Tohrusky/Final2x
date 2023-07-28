@@ -1,12 +1,20 @@
 import { dialog } from 'electron'
 
-export function openDirectory(event, p): void {
+/**
+ * Open a directory or file/multiple files
+ * @param event
+ * @param p
+ */
+export function openDirectory(event, p: Array<any>): void {
   dialog
     .showOpenDialog({
-      properties: [p]
+      properties: p
     })
     .then((result) => {
       console.log(result)
-      event.sender.send('selectedItem', result.filePaths[0])
+      event.sender.send('selectedItem', result.filePaths)
+    })
+    .catch((err) => {
+      console.log(err)
     })
 }
