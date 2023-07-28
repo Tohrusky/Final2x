@@ -19,7 +19,7 @@ export const en = {
   },
   Final2xHome: {
     text0: 'Removal successful',
-    text1: 'Drag and drop images or folders here to upload'
+    text1: 'Click or drag and drop images or folders here to upload'
   },
   Final2xSettings: {
     text0: 'When the GPU display order is incorrect for the loaded device, choose another one',
