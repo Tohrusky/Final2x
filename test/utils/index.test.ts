@@ -2,7 +2,7 @@
  * @vitest-environment jsdom
  */
 
-import { sleep, DeepDeepSleep, getCurrentLocale } from '../../src/renderer/src/utils'
+import { sleep, DeepDeepSleep, getCurrentLocale, getRandString } from '../../src/renderer/src/utils'
 import { describe, expect, it } from 'vitest'
 
 describe('Utils', () => {
@@ -22,5 +22,9 @@ describe('Utils', () => {
     DeepDeepSleep(1000)
     const end = new Date().getTime()
     expect(end - start).toBeGreaterThanOrEqual(1000)
+  })
+
+  it('getRandString', () => {
+    expect(getRandString())
   })
 })

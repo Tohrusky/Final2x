@@ -144,16 +144,21 @@ class MyPopoverMessages {
 function getPath(): void {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  window.electron.ipcRenderer.send('open-directory-dialog', 'openDirectory')
+  const handleSelected = (e, path): void => {
+    if (path[0] != undefined) {
+      // console.log(ioPath.getoutputpath())
+      ioPath.setoutputpathManual(path[0])
+    }
+  }
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  window.electron.ipcRenderer.on('selectedItem', function (e, path) {
-    // console.log(path === undefined)
-    if (path != undefined) {
-      // console.log(ioPath.getoutputpath())
-      ioPath.setoutputpathManual(path)
-    }
-  })
+  window.electron.ipcRenderer.removeAllListeners('selectedItem') // 取消监听，防止多次触发
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  window.electron.ipcRenderer.send('open-directory-dialog', ['openDirectory'])
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  window.electron.ipcRenderer.on('selectedItem', handleSelected)
 }
 
 // -----------------------------------------------------------------------------------------

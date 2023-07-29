@@ -7,6 +7,7 @@ import { FileImageOutlined } from '@vicons/antd'
 
 import PathFormat from '../utils/pathFormat'
 import ioPATH from '../utils/IOPath'
+import { getRandString } from '../utils'
 import { useIOPathStore } from '../store/ioPathStore'
 
 const { t } = useI18n()
@@ -24,6 +25,45 @@ class Final2xHomeNotifications {
       duration: 1000
     })
   }
+}
+
+function handleClickUpload(): void {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  const handleSelected = (e, path): void => {
+    if (path != undefined) {
+      path.forEach((p: string) => {
+        // 生成随机id
+        let pathid = getRandString()
+        while (ioPATH.checkID(pathid)) {
+          pathid = getRandString()
+        }
+        // console.log(pathid)
+        // 插入 inputpathMap
+        ioPATH.add(pathid, p)
+        // 插入 inputFileList
+        inputFileList.value.push({
+          fullPath: p,
+          id: pathid,
+          name: PathFormat.getFileName(p),
+          percentage: 0,
+          status: 'pending',
+          thumbnailUrl: null,
+          type: 'image/png',
+          url: null
+        })
+      })
+    }
+  }
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  window.electron.ipcRenderer.removeAllListeners('selectedItem') // 取消监听，防止多次触发
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  window.electron.ipcRenderer.send('open-directory-dialog', ['openFile', 'multiSelections'])
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  window.electron.ipcRenderer.on('selectedItem', handleSelected)
 }
 
 onMounted(() => {
@@ -82,7 +122,7 @@ function handleRemove(options: { file: UploadFileInfo; fileList: Array<UploadFil
       @before-upload="handleBeforeUpload"
       @change="handleUploadChange"
     >
-      <n-upload-dragger class="file-drag-zone">
+      <n-upload-dragger class="file-drag-zone" @click="handleClickUpload">
         <div class="file-drag-zone-logo-text">
           <div style="margin-bottom: 12px">
             <n-icon size="48" depth="3.0">

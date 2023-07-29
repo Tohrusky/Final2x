@@ -19,7 +19,7 @@ export const zh = {
   },
   Final2xHome: {
     text0: '移除成功',
-    text1: '将图片或文件夹拖拽到此处上传'
+    text1: '点击或拖拽图片或文件夹到此处上传'
   },
   Final2xSettings: {
     text0: '负载的设备，GPU显示顺序错误时，选择另一个即可',
