@@ -37,7 +37,7 @@
     "pinia": "^2.1.6",
     "pinia-plugin-persistedstate": "^3.2.0",
     "sass": "^1.64.1",
-    "systeminformation": "^5.18.10",
+    "systeminformation": "^5.18.12",
     "typescript": "^5.1.6",
     "vfonts": "^0.0.3",
     "vite": "^4.4.7",
