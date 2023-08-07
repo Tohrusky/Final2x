@@ -41,7 +41,7 @@
     "typescript": "^5.1.6",
     "vfonts": "^0.0.3",
     "vite": "^4.4.7",
-    "vitest": "^0.33.0",
+    "vitest": "^0.34.1",
     "vue": "^3.2.47",
     "vue-clipboard3": "^2.0.0",
     "vue-i18n": "^9.2.2",
