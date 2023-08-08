@@ -29,11 +29,15 @@ jobs:
         with:
           node-version: 20
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Test
         run: |
-          npm install
-          npm run lint
-          npm run test-cov
+          pnpm install
+          pnpm run lint
+          pnpm run test-cov
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 

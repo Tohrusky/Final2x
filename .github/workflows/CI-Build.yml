@@ -29,6 +29,10 @@ jobs:
         with:
           node-version: 20
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Download Final2x-core and unzip
         run: |
           cd .\resources
@@ -38,8 +42,8 @@ jobs:
 
       - name: build
         run: |
-          npm install
-          npm run build:win-${{ matrix.os-version }}
+          pnpm install
+          pnpm run build:win-${{ matrix.os-version }}
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
@@ -91,12 +95,15 @@ jobs:
         with:
           node-version: 20
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Download Final2x-core x64
         if: matrix.os-version == 'x64'
         run: |
           cd ./resources
           wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-07-12/Final2x-core-macos-latest.zip -O Final2x-core.zip
-
 
       - name: Download Final2x-core arm64
         if: matrix.os-version == 'arm64'
@@ -112,8 +119,8 @@ jobs:
 
       - name: build
         run: |
-          npm install
-          npm run build:mac-${{ matrix.os-version }}
+          pnpm install
+          pnpm run build:mac-${{ matrix.os-version }}
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
@@ -145,6 +152,10 @@ jobs:
         with:
           node-version: 20
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Download Final2x-core and unzip
         run: |
           cd ./resources
@@ -154,8 +165,8 @@ jobs:
 
       - name: build
         run: |
-          npm install
-          npm run build:linux-${{ matrix.os-version }}
+          pnpm install
+          pnpm run build:linux-${{ matrix.os-version }}
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
@@ -204,10 +215,14 @@ jobs:
         with:
           node-version: 20
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: build
         run: |
-          npm install
-          npm run build:linux-${{ matrix.os-version }}
+          pnpm install
+          pnpm run build:linux-${{ matrix.os-version }}
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
