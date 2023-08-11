@@ -1,0 +1,81 @@
+name: 🐛 Bug report | 错误报告 | BUG報告
+description: Create a bug report to help us improve | 创建bug报告以帮助我们改进 | 改善を支援するためのレポートを作成する
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Please carefully review each item in the checklist below | 请认真检查以下清单中的每一项 | 以下のチェックリストの各項目を注意深く確認してください
+      options:
+        - label: Searched and didn't find a similar issue | 已经搜索过，没有发现类似issue | 類似の問題が見つかりませんでした
+        - label: Searched documentation and didn't find relevant content | 已经搜索过文档，没有发现相关内容 | ドキュメントを検索して関連する内容が見つかりませんでした
+        - label: Tried with the latest version and the issue still exists | 已经尝试使用过最新版，问题依旧存在 | 最新バージョンを試しましたが問題は解消されませんでした
+  - type: input
+    id: app-version
+    attributes:
+      label: Software Version | 软件版本 | ソフトウェアバージョン
+      placeholder: "1.1.4"
+    validations:
+      required: true
+  - type: dropdown
+    id: system-type
+    attributes:
+      label: Operating System | 操作系统 | オペレーティングシステム
+      options:
+        - Windows x64
+        - Windows arm64
+        - macOS x64 (Intel)
+        - macOS arm64 (M1,M2...)
+        - Ubuntu x64
+        - Debian x64
+        - Arch Linux x64
+        - Other Linux x64
+    validations:
+      required: true
+  - type: input
+    id: system-version
+    attributes:
+      label: System Version | 系统版本 | システムバージョン
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug | 描述错误 | BUGの説明
+      description: |
+        A clear and concise description of what the bug is
+        描述错误的详细信息
+        バグの内容を明確かつ簡潔に説明してください
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce-steps
+    attributes:
+      label: To reproduce | 复现步骤 | 再現方法
+      description: Steps to reproduce the behavior | 复现行为的步骤 | 不具合の再現手順
+      value: |
+        1. Go to '...'
+        2. Click on '....'
+        3. See error
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Error log | 报错日志 | ログ
+      description: your error log | 您的错误日志 | エラーログ
+      value: |
+        ```
+        your error log
+        ```
+    validations:
+      required: true
+  - type: textarea
+    id: other
+    attributes:
+      label: Additional context | 附加内容 | 追加コンテキスト
+      description: |
+        Add any other context and screenshots to help explain your problem
+        添加任何其他上下文和截图，以帮助解释您的问题
+        問題を説明するために他の文脈やスクリーンショットを追加してください

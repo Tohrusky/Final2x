@@ -23,7 +23,7 @@ jobs:
       
   check-title:
     runs-on: ubuntu-latest
-    if: github.event.issue.title == '[BUG]' || github.event.issue.title == '[FEATURE]' || (contains(github.event.issue.title, '[BUG]') == false && contains(github.event.issue.title, '[FEATURE]') == false)
+    if: github.event.issue.title == '[BUG] ' || github.event.issue.title == '[FEATURE] ' || (contains(github.event.issue.title, '[BUG]') == false && contains(github.event.issue.title, '[FEATURE]') == false)
     steps:
       - name: close issue
         uses: actions-cool/issues-helper@v3
@@ -39,20 +39,3 @@ jobs:
 
             こんにちは、@${{ github.event.issue.user.login }}さん、タイトルが仕様に準拠していないため、ご提案いただいた問題はクローズされました。
   
-  check-body:
-    runs-on: ubuntu-latest
-    if: contains(github.event.issue.body, 'Describe the bug') == false && contains(github.event.issue.body, 'Is your feature request related to a problem') == false
-    steps:
-      - name: close issue
-        uses: actions-cool/issues-helper@v3
-        with:
-          actions: 'create-comment, add-labels, close-issue'
-          token: ${{ secrets.GH_TOKEN }}
-          issue-number: ${{ github.event.issue.number }}
-          labels: 'Invalid'
-          body: |
-            Hello @${{ github.event.issue.user.login }}, your issue has been closed because it does not conform to our issue template. 
-
-            你好 @${{ github.event.issue.user.login }}，为了能够进行高效沟通，我们对 issue 有一定的格式要求，你的 issue 因为不符合模版格式而被自动关闭。
-
-            こんにちは、@${{ github.event.issue.user.login }}さん、あなたの問題は、弊社の問題テンプレートに準拠していないため、クローズされました。
