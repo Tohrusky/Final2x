@@ -1,0 +1,39 @@
+name: 🚀 Feature request | 功能请求 | フィーチャーリクエスト
+description: Suggest an idea for this project ｜ 为项目提供一个创意建议 ｜ このプロジェクトにアイデアを提案する
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Please carefully review each item in the checklist below | 请认真检查以下清单中的每一项 | 以下のチェックリストの各項目を注意深く確認してください
+      options:
+        - label: Searched and didn't find a similar issue | 已经搜索过，没有发现类似issue | 類似の問題が見つかりませんでした
+  - type: textarea
+    id: is-related
+    attributes:
+      label: Is your feature request related to a problem? | 你的feature请求是否与一个问题有关？ | あなたのfeatureリクエストは質問に関連していますか？
+      description: | 
+        A clear and concise description of what the problem is
+        请清楚而简明地描述问题是什么
+        問題が何であるかを明確かつ簡潔に説明してください
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: Detail | 详细描述 | 詳細な説明
+      description: |
+        A clear and concise description of what you want to happen
+        请清楚而简明地描述您想要实现的内容
+        実現したい内容を明確かつ簡潔に説明してください
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Additional context | 附加内容 | 追加コンテキスト
+      description: |
+        Add any other context or screenshots about the feature request here
+        在这里添加任何其他上下文或截图，以帮助解释您的功能请求
+        その他の文脈やスクリーンショットを追加して、機能リクエストについて説明してください
