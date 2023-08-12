@@ -6,7 +6,6 @@ import { useGlobalSettingsStore } from '../store/globalSettingsStore'
  * @param devices 设备列表，从 node 侧获取
  */
 export function updateDeviceList(devices: Array<string>): void {
-  console.log(devices)
   const { deviceList } = storeToRefs(useGlobalSettingsStore())
   const getdevicelist: any[] = []
   if (devices.length === 0) {
@@ -36,5 +35,4 @@ export function updateDeviceList(devices: Array<string>): void {
   } else {
     console.log('deviceList not change')
   }
-  console.log(getdevicelist)
 }

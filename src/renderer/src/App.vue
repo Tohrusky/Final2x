@@ -1,27 +1,19 @@
 <script lang="ts" setup>
 import { RouterView } from 'vue-router'
-import {
-  darkTheme,
-  NConfigProvider,
-  NDialogProvider,
-  NNotificationProvider,
-  NGlobalStyle,
-  useOsTheme
-} from 'naive-ui'
-import { computed, onMounted, watch } from 'vue'
+import { NConfigProvider, NDialogProvider, NNotificationProvider, NGlobalStyle } from 'naive-ui'
+import { onMounted, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
 import { getLanguage } from './utils'
-import { switchCSSStyle } from './utils/DarkModeColor'
 import { updateDeviceList } from './utils/updateDeviceList'
 import { useGlobalSettingsStore } from './store/globalSettingsStore'
 import TrafficLightsButtons from './components/TrafficLightsButtons.vue'
 import MyProgress from './components/MyProgress.vue'
 import BottomNavigation from './components/bottomNavigation.vue'
+import MyDarkMode from './components/MyDarkMode.vue'
 
 const { locale } = useI18n()
-const { langsNum, DarkTheme, globalcolor } = storeToRefs(useGlobalSettingsStore())
-const osThemeRef = useOsTheme()
+const { langsNum, naiveTheme, globalcolor } = storeToRefs(useGlobalSettingsStore())
 
 watch(langsNum, () => {
   // 切换语言
@@ -30,8 +22,6 @@ watch(langsNum, () => {
 })
 
 onMounted(async () => {
-  DarkTheme.value = osThemeRef.value === 'dark'
-
   if (langsNum.value !== 114514) {
     // 当语言不是跟随环境时，设置语言
     locale.value = getLanguage(langsNum.value).lang
@@ -40,26 +30,6 @@ onMounted(async () => {
   // @ts-ignore
   const res: Array<string> = await window.electron.ipcRenderer.invoke('getSystemInfo')
   updateDeviceList(res)
-})
-
-// 检测系统主题，修改 DarkTheme.value
-watch(osThemeRef, (value) => {
-  DarkTheme.value = value === 'dark'
-})
-
-// 根据 DarkTheme.value 切换主题黑暗模式
-const getTheme = computed(() => {
-  if (DarkTheme.value) {
-    if (globalcolor.value === '#fffafa') {
-      switchCSSStyle('dark-theme')
-    }
-    return darkTheme
-  } else {
-    if (globalcolor.value === '#000000') {
-      switchCSSStyle('light-theme')
-    }
-    return undefined
-  }
 })
 
 const themeOverrides = {
@@ -74,11 +44,12 @@ const themeOverrides = {
 </script>
 
 <template>
-  <n-config-provider :theme="getTheme" :theme-overrides="themeOverrides">
+  <n-config-provider :theme="naiveTheme" :theme-overrides="themeOverrides">
     <n-global-style />
     <n-notification-provider class="n-config-provider" placement="top">
       <n-dialog-provider>
         <div class="background">
+          <my-dark-mode />
           <traffic-lights-buttons />
           <MyProgress />
           <div class="view">

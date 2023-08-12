@@ -44,5 +44,7 @@ describe('updateDeviceList', () => {
     expect(JSON.stringify(deviceList.value)).toEqual(JSON.stringify(expectList_cpu))
     updateDeviceList(devices_none)
     expect(JSON.stringify(deviceList.value)).toEqual(JSON.stringify(expectList_none))
+    updateDeviceList(devices_none)
+    expect(JSON.stringify(deviceList.value)).toEqual(JSON.stringify(expectList_none))
   })
 })

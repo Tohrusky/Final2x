@@ -1,13 +1,12 @@
 <script lang="ts" setup>
 import { useGlobalSettingsStore } from '../store/globalSettingsStore'
-import { switchTheme } from '../utils/DarkModeColor'
 import { switchLanguage } from '../utils/switchLanguage'
 import router from '../router'
 import { storeToRefs } from 'pinia'
 import { HomeOutlined, SettingOutlined, TranslationOutlined } from '@vicons/antd'
-import { MoonOutline, SunnyOutline } from '@vicons/ionicons5'
+import { MoonOutline, SunnyOutline, ContrastSharp } from '@vicons/ionicons5'
 
-const { DarkTheme, changeRoute } = storeToRefs(useGlobalSettingsStore())
+const { darkMode, changeRoute } = storeToRefs(useGlobalSettingsStore())
 
 function handleRoute(): void {
   if (changeRoute.value === false) {
@@ -16,6 +15,17 @@ function handleRoute(): void {
   } else {
     changeRoute.value = false
     router.push('/')
+  }
+}
+
+function handleDarkMode(): void {
+  // const darkmodeList : Array<NaiveDarkModeType> = ['system', 'light', 'dark']
+  if (darkMode.value === 'system') {
+    darkMode.value = 'light'
+  } else if (darkMode.value === 'light') {
+    darkMode.value = 'dark'
+  } else {
+    darkMode.value = 'system'
   }
 }
 </script>
@@ -40,13 +50,16 @@ function handleRoute(): void {
         </n-icon>
       </n-button>
 
-      <n-button style="font-size: 36px" text @click="switchTheme">
+      <n-button style="font-size: 36px" text @click="handleDarkMode">
         <n-icon>
-          <div v-if="!DarkTheme">
+          <div v-if="darkMode === 'light'">
+            <sunny-outline />
+          </div>
+          <div v-else-if="darkMode === 'dark'">
             <moon-outline />
           </div>
           <div v-else>
-            <sunny-outline />
+            <contrast-sharp />
           </div>
         </n-icon>
       </n-button>
