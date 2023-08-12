@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { clickDebounce } from '../utils'
 import { useGlobalSettingsStore } from '../store/globalSettingsStore'
 import { switchLanguage } from '../utils/switchLanguage'
 import router from '../router'
@@ -18,7 +19,7 @@ function handleRoute(): void {
   }
 }
 
-function handleDarkMode(): void {
+const handleDarkMode = clickDebounce(function changeDarkMode(): void {
   // const darkmodeList : Array<NaiveDarkModeType> = ['system', 'light', 'dark']
   if (darkMode.value === 'system') {
     darkMode.value = 'light'
@@ -27,7 +28,7 @@ function handleDarkMode(): void {
   } else {
     darkMode.value = 'system'
   }
-}
+})
 </script>
 
 <template>

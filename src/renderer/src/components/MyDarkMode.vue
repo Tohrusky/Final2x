@@ -12,9 +12,9 @@ const { darkMode, globalcolor, naiveTheme } = storeToRefs(useGlobalSettingsStore
       v-model:color="globalcolor"
       v-model:naivetheme="naiveTheme"
       :dark-mode="darkMode"
-      :design-dark="'#1a1919'"
+      :design-dark="'#101015'"
       :design-light="'#fffafa'"
-      :fade-layer="25"
+      :fade-layer="19"
       class="naive-dark-mode"
     />
   </div>
