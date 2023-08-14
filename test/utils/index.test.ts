@@ -2,8 +2,14 @@
  * @vitest-environment jsdom
  */
 
-import { sleep, DeepDeepSleep, getCurrentLocale, getRandString } from '../../src/renderer/src/utils'
-import { describe, expect, it } from 'vitest'
+import {
+  sleep,
+  DeepDeepSleep,
+  getCurrentLocale,
+  getRandString,
+  clickDebounce
+} from '../../src/renderer/src/utils'
+import { describe, expect, it, vi } from 'vitest'
 
 describe('Utils', () => {
   it('getCurrentLocale', () => {
@@ -26,5 +32,22 @@ describe('Utils', () => {
 
   it('getRandString', () => {
     expect(getRandString())
+  })
+
+  it('clickDebounce', async () => {
+    const fn = (): void => console.log('click')
+    // spy on fn to check if it's called
+    const spy = vi.spyOn(console, 'log')
+    // call fn 3 times
+    const debouncedFn = clickDebounce(fn, 1000)
+    debouncedFn()
+    debouncedFn()
+    debouncedFn()
+    // check if fn is called only once
+    expect(spy).toHaveBeenCalledTimes(1)
+    // await new Promise((resolve) => setTimeout(resolve, 1000));
+    await sleep(1000)
+    debouncedFn()
+    expect(spy).toHaveBeenCalledTimes(2)
   })
 })

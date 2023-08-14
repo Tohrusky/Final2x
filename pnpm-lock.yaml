@@ -17,6 +17,9 @@ dependencies:
   core-js:
     specifier: ^3.32.0
     version: 3.32.0
+  naive-dark-mode:
+    specifier: ^0.1.3
+    version: 0.1.3
   naive-ui:
     specifier: ^2.34.4
     version: 2.34.4(vue@3.3.4)
@@ -3526,6 +3529,15 @@ packages:
   /muggle-string@0.3.1:
     resolution: {integrity: sha512-ckmWDJjphvd/FvZawgygcUeQCxzvohjFO5RxTjj4eq8kw359gFF3E1brjfI+viLMxss5JrHTDRHZvu2/tuy0Qg==}
     dev: true
+
+  /naive-dark-mode@0.1.3:
+    resolution: {integrity: sha512-Yk/+WcVn72iDFs5bynB8Gn/UWIFv2eaCI6HQs3aEKNw2qWU+jW6FUYn3QxkogLeAUc6encbA8PXoImmqY8oH2g==}
+    engines: {node: '>=18.0.0'}
+    dependencies:
+      naive-ui: 2.34.4(vue@3.3.4)
+      sass: 1.64.2
+      vue: 3.3.4
+    dev: false
 
   /naive-ui@2.34.4(vue@3.3.4):
     resolution: {integrity: sha512-aPG8PDfhSzIzn/jSC9y3Jb3Pe2wHJ7F0cFV1EWlbImSrZECeUmoc+fIcOSWbizoztkKfaUAeKwYdMl09MKkj1g==}
