@@ -36,7 +36,7 @@
     "naive-ui": "^2.34.4",
     "pinia": "^2.1.6",
     "pinia-plugin-persistedstate": "^3.2.0",
-    "sass": "^1.65.1",
+    "sass": "^1.66.1",
     "systeminformation": "^5.18.15",
     "vfonts": "^0.0.3",
     "vue": "^3.3.4",
