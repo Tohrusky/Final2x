@@ -58,7 +58,7 @@
     "electron": "^25.6.0",
     "electron-builder": "^24.6.3",
     "electron-vite": "^1.0.27",
-    "eslint": "^8.47.0",
+    "eslint": "^8.48.0",
     "eslint-plugin-vue": "^9.17.0",
     "jsdom": "^22.1.0",
     "prettier": "^3.0.2",
