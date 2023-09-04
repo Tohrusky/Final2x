@@ -56,7 +56,7 @@
     "@vue/eslint-config-typescript": "^11.0.3",
     "@vue/test-utils": "^2.4.1",
     "electron": "^25.6.0",
-    "electron-builder": "^24.6.3",
+    "electron-builder": "^24.6.4",
     "electron-vite": "^1.0.27",
     "eslint": "^8.47.0",
     "eslint-plugin-vue": "^9.17.0",
