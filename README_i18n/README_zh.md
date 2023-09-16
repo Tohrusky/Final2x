@@ -89,8 +89,6 @@ libraries.
 This project is licensed under the BSD 3-Clause - see
 the [LICENSE file](https://github.com/Tohrusky/Final2x/blob/main/LICENSE) for details.
 
-## 捐赠
-[我要玩原神，我要玩原神！](https://afdian.net/a/tohrusky)
 
 ## Acknowledgements
 如果您有任何问题或疑虑，请随时联系该项目的维护人员。祝您玩得开心！
