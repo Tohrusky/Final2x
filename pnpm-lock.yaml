@@ -89,8 +89,8 @@ devDependencies:
     specifier: ^24.6.4
     version: 24.6.4
   electron-vite:
-    specifier: ^1.0.27
-    version: 1.0.27(vite@4.4.9)
+    specifier: ^1.0.28
+    version: 1.0.28(vite@4.4.9)
   eslint:
     specifier: ^8.49.0
     version: 8.49.0
@@ -2238,8 +2238,8 @@ packages:
     resolution: {integrity: sha512-9AreocSUWnzNtvLcbpng6N+GkXnCcBR80IQkxRC9Dfdyg4gaWNUPBujAHUpKkiUkoSoR9UlhA4zD/IgBklmhzg==}
     dev: true
 
-  /electron-vite@1.0.27(vite@4.4.9):
-    resolution: {integrity: sha512-T8UVt9HtMFMMqU78dhv8TsRHYxMkuMTIZBIFYHzfeEoJ1Go3tVemgY/kO6sTTv94jIhkhcZIkvwmq4liABFjmA==}
+  /electron-vite@1.0.28(vite@4.4.9):
+    resolution: {integrity: sha512-cp7nBi6do/jn5SHdL2V71WjxqZ+NXitVqn5bW+TsTEYgAfSUuYYp6INJN854kcgoOj4UrjMqA9cGRTSl79xx0Q==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
