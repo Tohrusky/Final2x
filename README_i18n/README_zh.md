@@ -25,12 +25,17 @@ Final2x 可以使用多个模型，将图像超分辨率到任意大小，以提
 
 ## [文档](https://final2x.tohru.top/zh)
 
-## 对比图
+## 图片对比
 <div align="center">
 <img src="https://s2.loli.net/2023/07/20/hWi4U6BNeqau3MF.png" />
 </div>
 <h5 align="center"> 使用 Final2x 对一张 256x256 带透明通道的 胡桃 图进行 4 倍超分辨率处理 </h5>
 
+## 应用截图
+<div align=center>
+<a href="https://sm.ms/image/2QdtWyTe9DbOxJS" target="_blank"><img src="https://s2.loli.net/2023/09/19/2QdtWyTe9DbOxJS.png" width="40%"></a>
+<a href="https://sm.ms/image/BhQKM2751vAGNDP" target="_blank"><img src="https://s2.loli.net/2023/09/19/BhQKM2751vAGNDP.png" width="40%"></a>
+</div>
 
 ## 安装
 #### [在这里下载最新的版本。](https://github.com/Tohrusky/Final2x/releases)
