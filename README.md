@@ -33,6 +33,11 @@ This is a powerful tool that allows for image super-resolution to arbitrary size
 </div>
 <h5 align="center"> use Final2x to perform 4x super-resolution on a 256x256 Hutao RGBA image </h5>
 
+## Screenshots
+<div align=center>
+<a href="https://sm.ms/image/2QdtWyTe9DbOxJS" target="_blank"><img src="https://s2.loli.net/2023/09/19/2QdtWyTe9DbOxJS.png" width="40%"></a>
+<a href="https://sm.ms/image/BhQKM2751vAGNDP" target="_blank"><img src="https://s2.loli.net/2023/09/19/BhQKM2751vAGNDP.png" width="40%"></a>
+</div>
 
 ## Installation
 #### [Download the latest release from here.](https://github.com/Tohrusky/Final2x/releases)
