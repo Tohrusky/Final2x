@@ -51,7 +51,7 @@
     "@rushstack/eslint-patch": "^1.4.0",
     "@types/node": "20.6.0",
     "@vitejs/plugin-vue": "^4.3.4",
-    "@vitest/coverage-v8": "^0.34.4",
+    "@vitest/coverage-v8": "^0.34.5",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/eslint-config-typescript": "^11.0.3",
     "@vue/test-utils": "^2.4.1",
