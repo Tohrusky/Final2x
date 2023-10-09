@@ -20,7 +20,7 @@ onMounted(() => {
   watchEffect(() => {
     if (CommandLOG.value) {
       nextTick(() => {
-        logInstRef.value?.scrollTo({ position: 'bottom', slient: true })
+        logInstRef.value?.scrollTo({ position: 'bottom', silent: true })
       })
     }
   })
