@@ -13,7 +13,7 @@ jobs:
         with:
           actions: 'close-issues'
           token: ${{ secrets.GH_TOKEN }}
-          inactive-day: 30  
+          inactive-day: 100  
           body: |
             Hello! your issue has been closed because it has been inactive for a long time.
 
