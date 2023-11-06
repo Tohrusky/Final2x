@@ -39,7 +39,7 @@
     "sass": "^1.69.5",
     "systeminformation": "^5.21.15",
     "vfonts": "^0.0.3",
-    "vue": "^3.3.7",
+    "vue": "^3.3.8",
     "vue-i18n": "^9.6.2",
     "vue-router": "^4.2.5"
   },
