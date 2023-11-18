@@ -36,13 +36,13 @@ export const fr = {
     text8:
       "Facteur d'échelle personnalisé, agrandissez plusieurs fois en utilisant le modèle sélectionné",
     text9: 'Définir le chemin de sortie',
-    text10: 'Périphérique',
+    text10: 'Périph.',
     text11: 'Modèle',
-    text12: 'Échelle du modèle',
-    text13: 'Débruitage',
+    text12: 'Échelle',
+    text13: 'Débruit.',
     text14: 'TTA',
-    text15: 'Échelle personnalisée',
-    text16: 'Par défaut',
+    text15: 'Échelle (num)',
+    text16: 'Par déf.',
     text17: 'Dossier de sortie'
   }
 }
