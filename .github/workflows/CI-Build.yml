@@ -17,7 +17,7 @@ jobs:
   windows:
     strategy:
       matrix:
-        os-version: [ "x64", "arm64" ]
+        os-version: ['x64', 'arm64']
 
     runs-on: windows-latest
     steps:
@@ -48,13 +48,13 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: zip-unpacked-x64
-        if : matrix.os-version == 'x64'
+        if: matrix.os-version == 'x64'
         run: |
           cd .\dist\win-unpacked
           7z a -r Final2x-windows-${{ matrix.os-version }}-unpacked.zip *
 
       - name: zip-unpacked-arm64
-        if : matrix.os-version == 'arm64'
+        if: matrix.os-version == 'arm64'
         run: |
           cd .\dist\win-arm64-unpacked
           7z a -r Final2x-windows-${{ matrix.os-version }}-unpacked.zip *
@@ -66,24 +66,23 @@ jobs:
           path: dist/*.exe
 
       - name: upload-unpacked-x64
-        if : matrix.os-version == 'x64'
+        if: matrix.os-version == 'x64'
         uses: actions/upload-artifact@v3
         with:
           name: Final2x-windows-${{ matrix.os-version }}-unpacked
           path: dist/win-unpacked/Final2x-windows-${{ matrix.os-version }}-unpacked.zip
 
       - name: upload-unpacked-arm64
-        if : matrix.os-version == 'arm64'
+        if: matrix.os-version == 'arm64'
         uses: actions/upload-artifact@v3
         with:
           name: Final2x-windows-${{ matrix.os-version }}-unpacked
           path: dist/win-arm64-unpacked/Final2x-windows-${{ matrix.os-version }}-unpacked.zip
 
-
   macos:
     strategy:
       matrix:
-        os-version: [ "x64", "arm64" ]
+        os-version: ['x64', 'arm64']
 
     runs-on: macos-latest
     steps:
@@ -136,11 +135,10 @@ jobs:
           name: Final2x-macos-${{ matrix.os-version }}-unpacked
           path: dist/*.zip
 
-
   ubuntu:
     strategy:
       matrix:
-        os-version: [ "x64" ]
+        os-version: ['x64']
 
     runs-on: ubuntu-20.04
     steps:
@@ -199,11 +197,10 @@ jobs:
           name: Final2x-ubuntu-${{ matrix.os-version }}-unpacked
           path: dist/linux-unpacked/Final2x-ubuntu-${{ matrix.os-version }}-unpacked.zip
 
-
   linux-pip:
     strategy:
       matrix:
-        os-version: [ "x64" ]
+        os-version: ['x64']
 
     runs-on: ubuntu-20.04
     steps:

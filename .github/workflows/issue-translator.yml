@@ -1,8 +1,8 @@
 name: 'issue-translator'
-on: 
-  issue_comment: 
+on:
+  issue_comment:
     types: [created]
-  issues: 
+  issues:
     types: [opened]
 
 jobs:
@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: usthe/issues-translate-action@v2.7
         with:
-          CUSTOM_BOT_NOTE: Bot detected the issue body's language is not English, translate it automatically. 
+          CUSTOM_BOT_NOTE: Bot detected the issue body's language is not English, translate it automatically.

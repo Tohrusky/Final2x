@@ -1,7 +1,7 @@
 name: 🐛 Bug report | 错误报告 | BUG報告
 description: Create a bug report to help us improve | 创建bug报告以帮助我们改进 | 改善を支援するためのレポートを作成する
-title: "[Bug] "
-labels: ["bug"]
+title: '[Bug] '
+labels: ['bug']
 body:
   - type: checkboxes
     id: checks
@@ -15,7 +15,7 @@ body:
     id: app-version
     attributes:
       label: Software Version | 软件版本 | ソフトウェアバージョン
-      placeholder: "1.1.4"
+      placeholder: '1.1.4'
     validations:
       required: true
   - type: dropdown
