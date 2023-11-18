@@ -41,7 +41,7 @@ export const fr = {
     text12: 'Échelle',
     text13: 'Débruit.',
     text14: 'TTA',
-    text15: 'Échelle (num)',
+    text15: 'Échelle (num.)',
     text16: 'Par déf.',
     text17: 'Dossier de sortie'
   }
