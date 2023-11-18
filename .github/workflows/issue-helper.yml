@@ -4,7 +4,7 @@ on:
   issues:
     types: [opened, reopened, edited]
 
-jobs:  
+jobs:
   check-inactive:
     runs-on: ubuntu-latest
     steps:
@@ -13,14 +13,14 @@ jobs:
         with:
           actions: 'close-issues'
           token: ${{ secrets.GH_TOKEN }}
-          inactive-day: 100  
+          inactive-day: 100
           body: |
             Hello! your issue has been closed because it has been inactive for a long time.
 
             你好，你的 issue 因为长时间不活跃而被自动关闭。
 
             こんにちは、お問い合わせは長期間活動がないため、閉じられました。
-      
+
   check-title:
     runs-on: ubuntu-latest
     if: github.event.issue.title == '[BUG] ' || github.event.issue.title == '[FEATURE] ' || (contains(github.event.issue.title, '[BUG]') == false && contains(github.event.issue.title, '[FEATURE]') == false)
@@ -38,4 +38,3 @@ jobs:
             你好 @${{ github.event.issue.user.login }}，为了能够进行高效沟通，我们对 issue 有一定的格式要求，你的 issue 因为标题不符合规范而被自动关闭。
 
             こんにちは、@${{ github.event.issue.user.login }}さん、タイトルが仕様に準拠していないため、ご提案いただいた問題はクローズされました。
-  
