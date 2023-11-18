@@ -2,6 +2,7 @@ import { createI18n } from 'vue-i18n'
 import { en } from '../locales/en'
 import { zh } from '../locales/zh'
 import { ja } from '../locales/ja'
+import { fr } from '../locales/fr'
 
 import { getCurrentLocale } from '../utils'
 
@@ -13,7 +14,8 @@ const i18n = createI18n({
   messages: {
     en,
     zh,
-    ja
+    ja,
+    fr
   }
 })
 

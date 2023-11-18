@@ -11,7 +11,7 @@ class Utils {
    * @param id 语言id 0-> en, 1-> zh, 2-> ja
    */
   static getLanguage(id: number): { lang: string; numLang: number } {
-    const langs = ['en', 'zh', 'ja']
+    const langs = ['en', 'zh', 'ja', 'fr']
     return {
       lang: langs[id],
       numLang: langs.length
