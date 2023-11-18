@@ -1,17 +1,12 @@
+import { LANG_LIST } from '../plugins/i18n'
+
 class Utils {
   /**
-   * @description 返回当前环境语言
-   */
-  static getCurrentLocale(): string {
-    return navigator?.language?.split('-')[0] || 'en'
-  }
-
-  /**
    * @description 返回语言，和语言数量
-   * @param id 语言id 0-> en, 1-> zh, 2-> ja
+   * @param id 语言id 0-> en, 1-> zh, 2-> ja, 3-> fr
    */
   static getLanguage(id: number): { lang: string; numLang: number } {
-    const langs = ['en', 'zh', 'ja', 'fr']
+    const langs = LANG_LIST
     return {
       lang: langs[id],
       numLang: langs.length
@@ -73,5 +68,4 @@ class Utils {
   }
 }
 
-export const { getCurrentLocale, getLanguage, sleep, DeepDeepSleep, getRandString, clickDebounce } =
-  Utils
+export const { getLanguage, sleep, DeepDeepSleep, getRandString, clickDebounce } = Utils

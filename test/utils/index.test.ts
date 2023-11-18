@@ -2,20 +2,10 @@
  * @vitest-environment jsdom
  */
 
-import {
-  sleep,
-  DeepDeepSleep,
-  getCurrentLocale,
-  getRandString,
-  clickDebounce
-} from '../../src/renderer/src/utils'
+import { sleep, DeepDeepSleep, getRandString, clickDebounce } from '../../src/renderer/src/utils'
 import { describe, expect, it, vi } from 'vitest'
 
 describe('Utils', () => {
-  it('getCurrentLocale', () => {
-    expect(getCurrentLocale())
-  })
-
   it('sleep', async () => {
     const start = new Date().getTime()
     await sleep(1000)
