@@ -88,9 +88,8 @@ import { useGlobalSettingsStore } from '../store/globalSettingsStore'
 import { useSRSettingsStore } from '../store/SRSettingsStore'
 
 const { SRgpuid, deviceList } = storeToRefs(useGlobalSettingsStore())
-const { selectedModel, selectedScale, selectedNoise, useTTA, CustomScaleValue } = storeToRefs(
-  useSRSettingsStore()
-)
+const { selectedModel, selectedScale, selectedNoise, useTTA, CustomScaleValue } =
+  storeToRefs(useSRSettingsStore())
 const { outputpath } = storeToRefs(useIOPathStore())
 const { t } = useI18n()
 
