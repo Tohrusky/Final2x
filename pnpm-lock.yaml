@@ -78,7 +78,7 @@ devDependencies:
     version: 8.0.0(eslint@8.54.0)(prettier@3.1.0)
   '@vue/eslint-config-typescript':
     specifier: ^12.0.0
-    version: 12.0.0(eslint-plugin-vue@9.18.1)(eslint@8.54.0)(typescript@5.2.2)
+    version: 12.0.0(eslint-plugin-vue@9.19.2)(eslint@8.54.0)(typescript@5.2.2)
   '@vue/test-utils':
     specifier: ^2.4.2
     version: 2.4.2(vue@3.3.8)
@@ -95,8 +95,8 @@ devDependencies:
     specifier: ^8.54.0
     version: 8.54.0
   eslint-plugin-vue:
-    specifier: ^9.18.1
-    version: 9.18.1(eslint@8.54.0)
+    specifier: ^9.19.2
+    version: 9.19.2(eslint@8.54.0)
   jsdom:
     specifier: ^22.1.0
     version: 22.1.0
@@ -1369,7 +1369,7 @@ packages:
       - '@types/eslint'
     dev: true
 
-  /@vue/eslint-config-typescript@12.0.0(eslint-plugin-vue@9.18.1)(eslint@8.54.0)(typescript@5.2.2):
+  /@vue/eslint-config-typescript@12.0.0(eslint-plugin-vue@9.19.2)(eslint@8.54.0)(typescript@5.2.2):
     resolution: {integrity: sha512-StxLFet2Qe97T8+7L8pGlhYBBr8Eg05LPuTDVopQV6il+SK6qqom59BA/rcFipUef2jD8P2X44Vd8tMFytfvlg==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -1383,7 +1383,7 @@ packages:
       '@typescript-eslint/eslint-plugin': 6.11.0(@typescript-eslint/parser@6.11.0)(eslint@8.54.0)(typescript@5.2.2)
       '@typescript-eslint/parser': 6.11.0(eslint@8.54.0)(typescript@5.2.2)
       eslint: 8.54.0
-      eslint-plugin-vue: 9.18.1(eslint@8.54.0)
+      eslint-plugin-vue: 9.19.2(eslint@8.54.0)
       typescript: 5.2.2
       vue-eslint-parser: 9.3.2(eslint@8.54.0)
     transitivePeerDependencies:
@@ -2445,8 +2445,8 @@ packages:
       synckit: 0.8.5
     dev: true
 
-  /eslint-plugin-vue@9.18.1(eslint@8.54.0):
-    resolution: {integrity: sha512-7hZFlrEgg9NIzuVik2I9xSnJA5RsmOfueYgsUGUokEDLJ1LHtxO0Pl4duje1BriZ/jDWb+44tcIlC3yi0tdlZg==}
+  /eslint-plugin-vue@9.19.2(eslint@8.54.0):
+    resolution: {integrity: sha512-CPDqTOG2K4Ni2o4J5wixkLVNwgctKXFu6oBpVJlpNq7f38lh9I80pRTouZSJ2MAebPJlINU/KTFSXyQfBUlymA==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
