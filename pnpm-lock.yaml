@@ -15,8 +15,8 @@ dependencies:
     specifier: ^0.12.0
     version: 0.12.0
   core-js:
-    specifier: ^3.33.2
-    version: 3.33.2
+    specifier: ^3.34.0
+    version: 3.34.0
   naive-dark-mode:
     specifier: ^0.2.1
     version: 0.2.1(typescript@5.2.2)
@@ -1976,8 +1976,8 @@ packages:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
     dev: true
 
-  /core-js@3.33.2:
-    resolution: {integrity: sha512-XeBzWI6QL3nJQiHmdzbAOiMYqjrb7hwU7A39Qhvd/POSa/t9E1AeZyEZx3fNvp/vtM8zXwhoL0FsiS0hD0pruQ==}
+  /core-js@3.34.0:
+    resolution: {integrity: sha512-aDdvlDder8QmY91H88GzNi9EtQi2TjvQhpCX6B1v/dAZHU1AuLgHvRh54RiOerpEhEW46Tkf+vgAViB/CWC0ag==}
     requiresBuild: true
     dev: false
 
