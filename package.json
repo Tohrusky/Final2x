@@ -60,7 +60,7 @@
     "eslint": "^8.54.0",
     "eslint-plugin-vue": "^9.18.1",
     "jsdom": "^22.1.0",
-    "prettier": "^3.1.0",
+    "prettier": "^3.1.1",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
     "vitest": "^0.34.6",
