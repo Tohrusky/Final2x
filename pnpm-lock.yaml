@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@intlify/unplugin-vue-i18n':
-    specifier: ^1.5.0
-    version: 1.5.0(vue-i18n@9.7.0)
+    specifier: ^1.6.0
+    version: 1.6.0(vue-i18n@9.7.0)
   '@vicons/antd':
     specifier: ^0.12.0
     version: 0.12.0
@@ -780,8 +780,8 @@ packages:
     engines: {node: '>= 16'}
     dev: false
 
-  /@intlify/unplugin-vue-i18n@1.5.0(vue-i18n@9.7.0):
-    resolution: {integrity: sha512-jW0MCCdwxybxcwjEfCunAcKjVoxyO3i+cnLL6v+MNGRLUHqrpELF6zQAJUhgAK2afhY7mCliy8RxTFWKdXm26w==}
+  /@intlify/unplugin-vue-i18n@1.6.0(vue-i18n@9.7.0):
+    resolution: {integrity: sha512-IGeFNWxdEvB12E/3Y/+nmIsGeTg5okPsK1XEtUUD/DdkHbVqUbJucMpHKeHF8Px55Qca551pQCs/g+VjNUt6KA==}
     engines: {node: '>= 14.16'}
     peerDependencies:
       petite-vue-i18n: '*'
