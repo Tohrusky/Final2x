@@ -50,8 +50,8 @@ dependencies:
 
 devDependencies:
   '@electron-toolkit/preload':
-    specifier: ^2.0.0
-    version: 2.0.0(electron@26.6.0)
+    specifier: ^3.0.0
+    version: 3.0.0(electron@26.6.0)
   '@electron-toolkit/tsconfig':
     specifier: ^1.0.1
     version: 1.0.1(@types/node@20.9.1)
@@ -372,8 +372,8 @@ packages:
       ajv-keywords: 3.5.2(ajv@6.12.6)
     dev: true
 
-  /@electron-toolkit/preload@2.0.0(electron@26.6.0):
-    resolution: {integrity: sha512-zpZDzbqJTZQC5d4LRs2EKruKWnqah+T75s+niBYFemYLtiW5TTZcWi3Q8UxHqnwTudDMuWJb233aaS2yjx3Xiw==}
+  /@electron-toolkit/preload@3.0.0(electron@26.6.0):
+    resolution: {integrity: sha512-DTyvNGits43J1RiQGFN00/OxjjcTcozLWMjgQBANt97FFptEYiLVasq7kMC24nMwwoOpdDYY9CE6C+4wQJ55/w==}
     peerDependencies:
       electron: '>=13.0.0'
     dependencies:
