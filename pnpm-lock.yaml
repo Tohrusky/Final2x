@@ -56,8 +56,8 @@ devDependencies:
     specifier: ^1.0.1
     version: 1.0.1(@types/node@20.9.1)
   '@electron-toolkit/utils':
-    specifier: ^2.0.1
-    version: 2.0.1(electron@26.6.0)
+    specifier: ^3.0.0
+    version: 3.0.0(electron@26.6.0)
   '@electron/notarize':
     specifier: ^2.2.0
     version: 2.2.0
@@ -388,8 +388,8 @@ packages:
       '@types/node': 20.9.1
     dev: true
 
-  /@electron-toolkit/utils@2.0.1(electron@26.6.0):
-    resolution: {integrity: sha512-3nnjd3D1NIjxdzNrvR5fkJ3kbJNbRkpHppv0/pSbMX6I0DaBzpPXeSfDYuJJKzZrAc3CmGcJa0MU4+AjEOlT4g==}
+  /@electron-toolkit/utils@3.0.0(electron@26.6.0):
+    resolution: {integrity: sha512-GaXHDhiT7KCvMJjXdp/QqpYinq69T/Pdl49Z1XLf8mKGf63dnsODMWyrmIjEQ0z/vG7dO8qF3fvmI6Eb2lUNZA==}
     peerDependencies:
       electron: '>=13.0.0'
     dependencies:

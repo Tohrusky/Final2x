@@ -45,7 +45,7 @@
   "devDependencies": {
     "@electron-toolkit/preload": "^2.0.0",
     "@electron-toolkit/tsconfig": "^1.0.1",
-    "@electron-toolkit/utils": "^2.0.1",
+    "@electron-toolkit/utils": "^3.0.0",
     "@electron/notarize": "^2.2.0",
     "@rushstack/eslint-patch": "^1.5.1",
     "@types/node": "20.9.1",
