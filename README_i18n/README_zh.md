@@ -20,7 +20,7 @@
 ![Download](https://img.shields.io/github/downloads/Tohrusky/Final2x/total)
 ![GitHub](https://img.shields.io/github/license/Tohrusky/Final2x)
 
-Final2x 可以使用多个模型，将图像超分辨率到任意大小，以提高图像的分辨率和质量，使其更清晰和更详细。目前，它支持这几个模型：RealCUGAN、RealESRGAN、Waifu2x 和 SRMD。
+Final2x 可以使用多个模型，将图像超分辨率到任意大小，以提高图像的分辨率和质量，使其更清晰和更详细。目前，它支持这几个模型：RealCUGAN、RealESRGAN 和 Waifu2x。
 
 ## [文档](https://final2x.tohru.top/zh)
 
@@ -98,7 +98,6 @@ apt install -y libomp5 xdg-utils
 - [xinntao/Real-ESRGAN-ncnn-vulkan](https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan) - This project provided the core implementation of the Real-ESRGAN algorithm using the ncnn and Vulkan.
   libraries.
 - [nihui/waifu2x-ncnn-vulkan](https://github.com/nihui/waifu2x-ncnn-vulkan) - This project provided the core implementation of the Waifu2x algorithm using the ncnn and Vulkan libraries.
-- [nihui/srmd-ncnn-vulkan](https://github.com/nihui/srmd-ncnn-vulkan) - This project provided the core implementation of the SRMD algorithm using the ncnn and Vulkan libraries.
 
 ## 许可证
 

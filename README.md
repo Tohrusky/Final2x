@@ -22,7 +22,7 @@
 ![Download](https://img.shields.io/github/downloads/Tohrusky/Final2x/total)
 ![GitHub](https://img.shields.io/github/license/Tohrusky/Final2x)
 
-This is a powerful tool that allows for image super-resolution to arbitrary sizes using multiple models, designed to enhance the resolution and quality of images, making them clearer and more detailed. Presently, it supports several models, such as RealCUGAN, RealESRGAN, Waifu2x, and SRMD.
+This is a powerful tool that allows for image super-resolution to arbitrary sizes using multiple models, designed to enhance the resolution and quality of images, making them clearer and more detailed. Presently, it supports several models, such as RealCUGAN, RealESRGAN, and Waifu2x.
 
 ## [Documentation](https://final2x.tohru.top)
 
@@ -100,7 +100,6 @@ The following references were referenced in the development of this project:
 - [xinntao/Real-ESRGAN-ncnn-vulkan](https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan) - This project provided the core implementation of the Real-ESRGAN algorithm using the ncnn and Vulkan.
   libraries.
 - [nihui/waifu2x-ncnn-vulkan](https://github.com/nihui/waifu2x-ncnn-vulkan) - This project provided the core implementation of the Waifu2x algorithm using the ncnn and Vulkan libraries.
-- [nihui/srmd-ncnn-vulkan](https://github.com/nihui/srmd-ncnn-vulkan) - This project provided the core implementation of the SRMD algorithm using the ncnn and Vulkan libraries.
 
 ## License
 
