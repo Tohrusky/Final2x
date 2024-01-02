@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "electron-vite dev",
     "test": "vitest",
-    "test-cov": "vitest run --coverage",
+    "test-cov": "vitest run --coverage.enabled --coverage.exclude='**/*.vue' --coverage.include='src/renderer' --coverage.exclude='src/renderer/src/*.ts' ",
     "lint": "prettier --write . && eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue --fix",
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
     "typecheck:web": "vue-tsc --noEmit -p tsconfig.web.json --composite false",
