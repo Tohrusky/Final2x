@@ -1,10 +1,10 @@
 // download Final2x-core from https://github.com/Final2x/Final2x-core/releases
 // and put it in resources folder
 
-import fetch from 'node-fetch'
-import extract from 'extract-zip'
-import fs from 'fs'
-import path from 'path'
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args))
+const extract = require('extract-zip')
+const fs = require('fs')
+const path = require('path')
 
 const coreDict = {
   'macos-arm64':
@@ -16,8 +16,6 @@ const coreDict = {
   'windows-x64':
     'https://github.com/Final2x/Final2x-core/releases/download/2024-01-01/Final2x-core-windows-latest.zip'
 }
-
-const __dirname = path.resolve()
 
 // 判断当前平台
 const PLATFORM = process.env.PLATFORM || process.platform
@@ -61,7 +59,7 @@ async function downloadAndUnzipCore(platform) {
     return
   }
 
-  const targetPath = path.join(__dirname, 'resources')
+  const targetPath = path.join(__dirname)
   console.log(`Target path: ${targetPath}`)
 
   if (fs.existsSync(path.join(targetPath, 'Final2x-core'))) {
