@@ -1,7 +1,7 @@
 import { SelectOption } from 'naive-ui'
 
 /**
- * @description: 模型选项-GPU
+ * @description: 模型选项
  */
 export const modelOptions: SelectOption[] = [
   { label: 'RealCUGAN-se', value: 'RealCUGAN-se' },

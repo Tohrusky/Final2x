@@ -1,7 +1,7 @@
 {
   "name": "Final2x",
   "productName": "Final2x",
-  "version": "1.1.5",
+  "version": "1.2.0",
   "description": "A cross-platform image super-resolution tool.",
   "main": "./out/main/index.js",
   "author": "Tohrusky",
@@ -54,7 +54,7 @@
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",
     "@vue/test-utils": "^2.4.3",
-    "electron": "^26.6.3",
+    "electron": "^27.2.0",
     "electron-builder": "^24.9.1",
     "electron-vite": "2.0.0-beta.2",
     "eslint": "^8.56.0",

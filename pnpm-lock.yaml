@@ -51,13 +51,13 @@ dependencies:
 devDependencies:
   '@electron-toolkit/preload':
     specifier: ^3.0.0
-    version: 3.0.0(electron@26.6.3)
+    version: 3.0.0(electron@27.2.0)
   '@electron-toolkit/tsconfig':
     specifier: ^1.0.1
     version: 1.0.1(@types/node@20.10.6)
   '@electron-toolkit/utils':
     specifier: ^3.0.0
-    version: 3.0.0(electron@26.6.3)
+    version: 3.0.0(electron@27.2.0)
   '@electron/notarize':
     specifier: ^2.2.0
     version: 2.2.0
@@ -83,8 +83,8 @@ devDependencies:
     specifier: ^2.4.3
     version: 2.4.3(vue@3.4.3)
   electron:
-    specifier: ^26.6.3
-    version: 26.6.3
+    specifier: ^27.2.0
+    version: 27.2.0
   electron-builder:
     specifier: ^24.9.1
     version: 24.9.1
@@ -378,12 +378,12 @@ packages:
       ajv-keywords: 3.5.2(ajv@6.12.6)
     dev: true
 
-  /@electron-toolkit/preload@3.0.0(electron@26.6.3):
+  /@electron-toolkit/preload@3.0.0(electron@27.2.0):
     resolution: {integrity: sha512-DTyvNGits43J1RiQGFN00/OxjjcTcozLWMjgQBANt97FFptEYiLVasq7kMC24nMwwoOpdDYY9CE6C+4wQJ55/w==}
     peerDependencies:
       electron: '>=13.0.0'
     dependencies:
-      electron: 26.6.3
+      electron: 27.2.0
     dev: true
 
   /@electron-toolkit/tsconfig@1.0.1(@types/node@20.10.6):
@@ -394,12 +394,12 @@ packages:
       '@types/node': 20.10.6
     dev: true
 
-  /@electron-toolkit/utils@3.0.0(electron@26.6.3):
+  /@electron-toolkit/utils@3.0.0(electron@27.2.0):
     resolution: {integrity: sha512-GaXHDhiT7KCvMJjXdp/QqpYinq69T/Pdl49Z1XLf8mKGf63dnsODMWyrmIjEQ0z/vG7dO8qF3fvmI6Eb2lUNZA==}
     peerDependencies:
       electron: '>=13.0.0'
     dependencies:
-      electron: 26.6.3
+      electron: 27.2.0
     dev: true
 
   /@electron/asar@3.2.8:
@@ -2368,8 +2368,8 @@ packages:
       - supports-color
     dev: true
 
-  /electron@26.6.3:
-    resolution: {integrity: sha512-mI6OB12OiFLEQx8oxVs9rm6C6lusx+6VVjbsiz4BLpPXrHTqrLupRsF4Uuw2zyj2bm8qe1aEGz3oFaoZD6NtHg==}
+  /electron@27.2.0:
+    resolution: {integrity: sha512-no/iMICVLI/5G0IqgKFbB89HDN88DWwKeRO+dPfJPkpJISdEX8Cx/sMEOFuuRa4VNInNe5CKCqRWExK5z3AdcQ==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
     requiresBuild: true
