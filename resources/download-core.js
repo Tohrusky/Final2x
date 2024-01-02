@@ -6,13 +6,6 @@ import extract from 'extract-zip'
 import fs from 'fs'
 import path from 'path'
 
-const __dirname = path.resolve()
-
-// 判断当前平台
-const PLATFORM = process.platform
-// 判断当前平台架构
-const ARCH = process.arch
-
 const coreDict = {
   'macos-arm64':
     'https://github.com/Final2x/Final2x-core/releases/download/2024-01-01/Final2x-core-macos-arm64.zip',
@@ -22,6 +15,18 @@ const coreDict = {
     'https://github.com/Final2x/Final2x-core/releases/download/2024-01-01/Final2x-core-ubuntu-20.04.zip',
   'windows-x64':
     'https://github.com/Final2x/Final2x-core/releases/download/2024-01-01/Final2x-core-windows-latest.zip'
+}
+
+const __dirname = path.resolve()
+
+// 判断当前平台
+const PLATFORM = process.env.PLATFORM || process.platform
+// 判断当前平台架构
+const ARCH = process.env.ARCH || process.arch
+
+if (process.env.SKIP_DOWNLOAD_CORE) {
+  console.log('Skip download Final2x-core by env SKIP_DOWNLOAD_CORE')
+  process.exit(0)
 }
 
 async function downloadAndUnzip(url, targetPath) {
