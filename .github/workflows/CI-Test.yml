@@ -39,6 +39,7 @@ jobs:
           pnpm run lint
           pnpm run test-cov
         env:
+          SKIP_DOWNLOAD_CORE: true
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Codecov

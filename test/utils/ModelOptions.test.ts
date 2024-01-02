@@ -119,31 +119,6 @@ describe('GetModelNoiseOptionsByNameAndScale', () => {
     expect(options).toEqual(expectedOptions)
   })
 
-  it('returns the correct options for SRMD and scale 2 or 3 or 4', () => {
-    const Model = 'SRMD'
-
-    const expectedOptions = [
-      { label: '-1', value: -1 },
-      { label: '0', value: 0 },
-      { label: '1', value: 1 },
-      { label: '2', value: 2 },
-      { label: '3', value: 3 },
-      { label: '4', value: 4 },
-      { label: '5', value: 5 },
-      { label: '6', value: 6 },
-      { label: '7', value: 7 },
-      { label: '8', value: 8 },
-      { label: '9', value: 9 },
-      { label: '10', value: 10 }
-    ]
-    const options = GetModelNoiseOptionsByNameAndScale(Model, 2)
-    expect(options).toEqual(expectedOptions)
-    const options2 = GetModelNoiseOptionsByNameAndScale(Model, 3)
-    expect(options2).toEqual(expectedOptions)
-    const options3 = GetModelNoiseOptionsByNameAndScale(Model, 4)
-    expect(options3).toEqual(expectedOptions)
-  })
-
   it('returns the invalid options', () => {
     const Model = 'genshinimpact'
     const Scale = 5

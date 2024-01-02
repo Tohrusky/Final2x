@@ -32,13 +32,6 @@ jobs:
         with:
           version: 8
 
-      - name: Download Final2x-core and unzip
-        run: |
-          cd .\resources
-          Invoke-WebRequest -Uri https://github.com/Tohrusky/Final2x-core/releases/download/2023-07-12/Final2x-core-windows-latest.zip -OutFile Final2x-core.zip
-          7z x Final2x-core.zip -oFinal2x-core
-          del .\Final2x-core.zip
-
       - name: build
         run: |
           pnpm install
@@ -100,29 +93,12 @@ jobs:
         with:
           version: 8
 
-      - name: Download Final2x-core x64
-        if: matrix.os-version == 'x64'
-        run: |
-          cd ./resources
-          wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-07-12/Final2x-core-macos-latest.zip -O Final2x-core.zip
-
-      - name: Download Final2x-core arm64
-        if: matrix.os-version == 'arm64'
-        run: |
-          cd ./resources
-          wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-07-12/Final2x-core-macos-arm64.zip -O Final2x-core.zip
-
-      - name: Unzip Final2x-core
-        run: |
-          cd ./resources
-          unzip -d ./Final2x-core Final2x-core.zip
-          rm Final2x-core.zip
-
       - name: build
         run: |
           pnpm install
           pnpm run build:mac-${{ matrix.os-version }}
         env:
+          ARCH: ${{ matrix.os-version }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: rename
@@ -159,13 +135,6 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 8
-
-      - name: Download Final2x-core and unzip
-        run: |
-          cd ./resources
-          wget https://github.com/Tohrusky/Final2x-core/releases/download/2023-07-12/Final2x-core-ubuntu-20.04.zip -O Final2x-core.zip
-          unzip -d ./Final2x-core Final2x-core.zip
-          rm Final2x-core.zip
 
       - name: build
         run: |
@@ -230,6 +199,7 @@ jobs:
           pnpm install
           pnpm run build:linux-${{ matrix.os-version }}
         env:
+          SKIP_DOWNLOAD_CORE: true
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: zip-unpacked
