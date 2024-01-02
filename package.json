@@ -27,7 +27,7 @@
     "node": ">=16.0.0"
   },
   "dependencies": {
-    "@intlify/unplugin-vue-i18n": "^1.6.0",
+    "@intlify/unplugin-vue-i18n": "^2.0.0",
     "@vicons/antd": "^0.12.0",
     "@vicons/ionicons5": "^0.12.0",
     "core-js": "^3.35.0",
@@ -43,8 +43,6 @@
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "extract-zip": "^2.0.1",
-    "node-fetch": "^3.3.2",
     "@electron-toolkit/preload": "^3.0.0",
     "@electron-toolkit/tsconfig": "^1.0.1",
     "@electron-toolkit/utils": "^3.0.0",
@@ -58,10 +56,12 @@
     "@vue/test-utils": "^2.4.3",
     "electron": "^26.6.3",
     "electron-builder": "^24.9.1",
-    "electron-vite": "^2.0.0-beta.2",
+    "electron-vite": "2.0.0-beta.2",
     "eslint": "^8.56.0",
     "eslint-plugin-vue": "^9.19.2",
+    "extract-zip": "^2.0.1",
     "jsdom": "^23.0.1",
+    "node-fetch": "^3.3.2",
     "prettier": "^3.1.1",
     "typescript": "^5.3.3",
     "vite": "^5.0.10",
