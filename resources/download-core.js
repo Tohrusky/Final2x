@@ -17,11 +17,13 @@ const coreDict = {
     'https://github.com/Final2x/Final2x-core/releases/download/2024-01-01/Final2x-core-windows-latest.zip'
 }
 
+console.log('-'.repeat(50))
+
 // 判断当前平台
 const PLATFORM = process.env.PLATFORM || process.platform
 // 判断当前平台架构
 const ARCH = process.env.ARCH || process.arch
-
+console.log(`Platform: ${PLATFORM}`, `| Arch: ${ARCH}`)
 if (process.env.SKIP_DOWNLOAD_CORE) {
   console.log('Skip download Final2x-core by env SKIP_DOWNLOAD_CORE')
   process.exit(0)
@@ -73,9 +75,6 @@ async function downloadAndUnzipCore(platform) {
 
   await downloadAndUnzip(url, targetPath)
 }
-
-console.log('-'.repeat(50))
-console.log(`Platform: ${PLATFORM}`, `| Arch: ${ARCH}`)
 
 // 选择要下载的平台
 let platformToDownload = ''
