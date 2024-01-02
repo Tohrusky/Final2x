@@ -78,7 +78,6 @@ import { useI18n } from 'vue-i18n'
 
 import ioPath from '../utils/IOPath'
 import {
-  CPUmodelOptions,
   GetModelNoiseOptionsByNameAndScale,
   modelOptions,
   modelScaleOptions
@@ -113,8 +112,6 @@ class MyPopoverMessages {
       selectedModel.value == 'Waifu2x-upconv_7_photo'
     ) {
       return t('Final2xSettings.text3')
-    } else if (selectedModel.value == 'SRMD') {
-      return t('Final2xSettings.text4')
     }
     return ''
   }
@@ -166,8 +163,7 @@ function getPath(): void {
 
 const getEnabledModelOptions = computed(() => {
   console.log('getEnabledModelOptions' + SRgpuid.value)
-  // RealESRGAN-animevideov3、RealESRGAN、RealESRGAN-anime and SRMD are not supported on CPU
-  return SRgpuid.value === -1 ? CPUmodelOptions : modelOptions
+  return modelOptions
 })
 
 function ModelOptionsFallBack(): SelectOption {
@@ -193,8 +189,7 @@ function ScaleOptionsFallBack(): SelectOption {
     'RealESRGAN-anime': 4,
     'Waifu2x-cunet': 2,
     'Waifu2x-upconv_7_anime_style_art_rgb': 2,
-    'Waifu2x-upconv_7_photo': 2,
-    SRMD: 2
+    'Waifu2x-upconv_7_photo': 2
   }
   selectedScale.value = defaultScales[selectedModel.value]
   console.log('ScaleOptionsFallBack' + defaultScales[selectedModel.value])
