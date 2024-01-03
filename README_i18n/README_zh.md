@@ -84,13 +84,13 @@ apt install -y libomp5 xdg-utils
 - 超分辨率：采用先进的算法和模型对图像进行放大处理，显著提高图像的分辨率，同时不损失质量。
 - [多模型](https://github.com/Tohrusky/Final2x-core)：提供多种模型，可实现不同级别的超分辨率效果，可以根据自己的需求选择最适合的模型。
 - 自定义 Scale：可以灵活指定图像的放大倍数，从而实现更精细的超分辨率效果。
-- 国际化：支持英文、中文和日文。
+- 国际化：支持英文、中文、日语、法语。
 
 ## 参考
 
 在开发过程中，参考了以下项目：
 
-- [Final2x-core](https://github.com/Tohrusky/Final2x-core) - This project provided the core of the Final2x algorithm using the ncnn and Vulkan libraries.
+- [Final2x-core](https://github.com/Final2x/Final2x-core) - This project provided the core of the Final2x algorithm using the ncnn and Vulkan libraries.
 - [naive-ui](https://github.com/tusen-ai/naive-ui) - This project provided the UI framework for the Final2x.
 - [electron-vite](https://github.com/alex8088/electron-vite) - This project provided the build framework for the Final2x.
 - [ncnn](https://github.com/Tencent/ncnn) - ncnn is a high-performance neural network inference framework developed by Tencent AI Lab.
