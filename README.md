@@ -86,13 +86,13 @@ Set 777 permission for the file and resources folder.
 - Super-resolution: The tool employs advanced algorithms and models to upscale images, significantly increasing their resolution without sacrificing quality.
 - [Multiple models](https://github.com/Tohrusky/Final2x-core): It offers a wide range of models that can be used to achieve different levels of super-resolution, allowing users to choose the one that best suits their specific needs.
 - Customizable Scale: Users have the flexibility to specify the desired output size for their images, ranging from small enhancements to large-scale super-resolution.
-- i18n: The tool is available in English, Chinese, and Japanese, allowing users from different countries to enjoy the benefits of super-resolution.
+- i18n: The tool is available in ['English', 'Chinese', 'Japanese', 'French'] allowing users from different countries to enjoy the benefits of super-resolution.
 
 ## Reference
 
 The following references were referenced in the development of this project:
 
-- [Final2x-core](https://github.com/Tohrusky/Final2x-core) - This project provided the core of the Final2x algorithm using the ncnn and Vulkan libraries.
+- [Final2x-core](https://github.com/Final2x/Final2x-core) - This project provided the core of the Final2x algorithm using the ncnn and Vulkan libraries.
 - [naive-ui](https://github.com/tusen-ai/naive-ui) - This project provided the UI framework for the Final2x.
 - [electron-vite](https://github.com/alex8088/electron-vite) - This project provided the build framework for the Final2x.
 - [ncnn](https://github.com/Tencent/ncnn) - ncnn is a high-performance neural network inference framework developed by Tencent AI Lab.
