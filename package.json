@@ -56,7 +56,7 @@
     "@vue/test-utils": "^2.4.3",
     "electron": "^27.2.0",
     "electron-builder": "^24.9.1",
-    "electron-vite": "2.0.0-beta.2",
+    "electron-vite": "2.0.0",
     "eslint": "^8.56.0",
     "eslint-plugin-vue": "^9.19.2",
     "extract-zip": "^2.0.1",
