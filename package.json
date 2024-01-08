@@ -60,7 +60,7 @@
     "eslint": "^8.56.0",
     "eslint-plugin-vue": "^9.19.2",
     "extract-zip": "^2.0.1",
-    "jsdom": "^23.0.1",
+    "jsdom": "^23.2.0",
     "node-fetch": "^3.3.2",
     "prettier": "^3.1.1",
     "typescript": "^5.3.3",
