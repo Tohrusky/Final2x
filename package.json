@@ -49,7 +49,7 @@
     "@electron/notarize": "^2.2.0",
     "@rushstack/eslint-patch": "^1.6.1",
     "@types/node": "20.10.6",
-    "@vitejs/plugin-vue": "^5.0.2",
+    "@vitejs/plugin-vue": "^5.0.3",
     "@vitest/coverage-v8": "^1.1.1",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",
