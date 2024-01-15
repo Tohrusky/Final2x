@@ -32,7 +32,7 @@
     "@vicons/ionicons5": "^0.12.0",
     "core-js": "^3.35.0",
     "naive-dark-mode": "^0.2.2",
-    "naive-ui": "^2.36.0",
+    "naive-ui": "^2.37.3",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
     "sass": "^1.69.6",
