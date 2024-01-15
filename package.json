@@ -58,7 +58,7 @@
     "electron-builder": "^24.9.1",
     "electron-vite": "2.0.0-beta.2",
     "eslint": "^8.56.0",
-    "eslint-plugin-vue": "^9.19.2",
+    "eslint-plugin-vue": "^9.20.1",
     "extract-zip": "^2.0.1",
     "jsdom": "^23.0.1",
     "node-fetch": "^3.3.2",
