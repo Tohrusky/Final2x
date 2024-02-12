@@ -68,8 +68,8 @@ devDependencies:
     specifier: 20.11.5
     version: 20.11.5
   '@vitejs/plugin-vue':
-    specifier: ^5.0.3
-    version: 5.0.3(vite@5.0.12)(vue@3.4.15)
+    specifier: ^5.0.4
+    version: 5.0.4(vite@5.0.12)(vue@3.4.15)
   '@vitest/coverage-v8':
     specifier: ^1.2.1
     version: 1.2.1(vitest@1.2.1)
@@ -1338,8 +1338,8 @@ packages:
     resolution: {integrity: sha512-Iy1EUVRpX0WWxeu1VIReR1zsZLMc4fqpt223czR+Rpnrwu7pt46nbnC2ycO7ItI/uqDLJxnbcMC7FujKs9IfFA==}
     dev: false
 
-  /@vitejs/plugin-vue@5.0.3(vite@5.0.12)(vue@3.4.15):
-    resolution: {integrity: sha512-b8S5dVS40rgHdDrw+DQi/xOM9ed+kSRZzfm1T74bMmBDCd8XO87NKlFYInzCtwvtWwXZvo1QxE2OSspTATWrbA==}
+  /@vitejs/plugin-vue@5.0.4(vite@5.0.12)(vue@3.4.15):
+    resolution: {integrity: sha512-WS3hevEszI6CEVEx28F8RjTX97k3KsrcY6kvTg7+Whm5y3oYvcqzVeGCU3hxSAn4uY2CLCkeokkGKpoctccilQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0
