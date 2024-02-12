@@ -48,7 +48,7 @@
     "@electron-toolkit/utils": "^3.0.0",
     "@electron/notarize": "^2.2.0",
     "@rushstack/eslint-patch": "^1.7.0",
-    "@types/node": "20.11.5",
+    "@types/node": "20.11.17",
     "@vitejs/plugin-vue": "^5.0.3",
     "@vitest/coverage-v8": "^1.2.1",
     "@vue/eslint-config-prettier": "^9.0.0",
