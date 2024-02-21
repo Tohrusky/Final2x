@@ -99,6 +99,7 @@ $buttom-bottom: 8px;
   width: 100%;
   height: 100%;
   background-color: $global-color;
+  transition: all 300ms ease-in-out;
   //padding-top: 30px;
   display: flex;
   flex-direction: column;
