@@ -37,6 +37,7 @@ jobs:
         run: |
           pnpm install
           pnpm run lint
+          pnpm run typecheck
           pnpm run test-cov
         env:
           SKIP_DOWNLOAD_CORE: true
