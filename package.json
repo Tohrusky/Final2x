@@ -36,7 +36,7 @@
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
     "sass": "^1.71.1",
-    "systeminformation": "^5.22.0",
+    "systeminformation": "^5.22.4",
     "vfonts": "^0.0.3",
     "vue": "^3.4.21",
     "vue-i18n": "^9.10.1",
