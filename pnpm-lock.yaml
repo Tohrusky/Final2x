@@ -18,8 +18,8 @@ dependencies:
     specifier: ^3.36.1
     version: 3.36.1
   naive-dark-mode:
-    specifier: ^0.2.5
-    version: 0.2.5(typescript@5.4.3)
+    specifier: ^0.2.6
+    version: 0.2.6(typescript@5.4.3)
   naive-ui:
     specifier: ^2.38.1
     version: 2.38.1(vue@3.4.21)
@@ -4042,8 +4042,8 @@ packages:
     resolution: {integrity: sha512-ckmWDJjphvd/FvZawgygcUeQCxzvohjFO5RxTjj4eq8kw359gFF3E1brjfI+viLMxss5JrHTDRHZvu2/tuy0Qg==}
     dev: true
 
-  /naive-dark-mode@0.2.5(typescript@5.4.3):
-    resolution: {integrity: sha512-JMJ1YxxL/GrAZfNtdXos2CSvg0Y6B5+092wo1QO1KIJ1edDBnD/I04KTeeTgHz6nFPkbhCQm1qdUIfjONraF6Q==}
+  /naive-dark-mode@0.2.6(typescript@5.4.3):
+    resolution: {integrity: sha512-TUvgaaQ4ouA10fCDGSgFo4NnLK2dCP4x9ERQ+fbmQMs182yjEK+BZ1XOMRX14ZpJNux7kU54hq3idFmxeeCiSQ==}
     engines: {node: '>=18.0.0'}
     dependencies:
       naive-ui: 2.38.1(vue@3.4.21)
