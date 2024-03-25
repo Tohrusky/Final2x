@@ -20,7 +20,7 @@
 ![Download](https://img.shields.io/github/downloads/Tohrusky/Final2x/total)
 ![GitHub](https://img.shields.io/github/license/Tohrusky/Final2x)
 
-Final2x 可以使用多个模型，将图像超分辨率到任意大小，以提高图像的分辨率和质量，使其更清晰和更详细。目前，它支持这几个模型：RealCUGAN、RealESRGAN 和 Waifu2x。
+Final2x 可以使用多个模型，将图像超分辨率到任意大小，以提高图像的分辨率和质量，如获得更清晰和丰富的纹理。目前，它支持以下几个模型：RealCUGAN、RealESRGAN 及 Waifu2x。
 
 ## [文档](https://final2x.tohru.top/zh)
 
