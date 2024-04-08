@@ -78,7 +78,7 @@ devDependencies:
     version: 9.0.0(eslint@8.57.0)(prettier@3.2.5)
   '@vue/eslint-config-typescript':
     specifier: ^12.0.0
-    version: 12.0.0(eslint-plugin-vue@9.23.0)(eslint@8.57.0)(typescript@5.4.3)
+    version: 12.0.0(eslint-plugin-vue@9.24.1)(eslint@8.57.0)(typescript@5.4.3)
   '@vue/test-utils':
     specifier: ^2.4.5
     version: 2.4.5
@@ -95,8 +95,8 @@ devDependencies:
     specifier: ^8.57.0
     version: 8.57.0
   eslint-plugin-vue:
-    specifier: ^9.23.0
-    version: 9.23.0(eslint@8.57.0)
+    specifier: ^9.24.1
+    version: 9.24.1(eslint@8.57.0)
   extract-zip:
     specifier: ^2.0.1
     version: 2.0.1
@@ -1696,7 +1696,7 @@ packages:
       - '@types/eslint'
     dev: true
 
-  /@vue/eslint-config-typescript@12.0.0(eslint-plugin-vue@9.23.0)(eslint@8.57.0)(typescript@5.4.3):
+  /@vue/eslint-config-typescript@12.0.0(eslint-plugin-vue@9.24.1)(eslint@8.57.0)(typescript@5.4.3):
     resolution: {integrity: sha512-StxLFet2Qe97T8+7L8pGlhYBBr8Eg05LPuTDVopQV6il+SK6qqom59BA/rcFipUef2jD8P2X44Vd8tMFytfvlg==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -1710,7 +1710,7 @@ packages:
       '@typescript-eslint/eslint-plugin': 6.21.0(@typescript-eslint/parser@6.21.0)(eslint@8.57.0)(typescript@5.4.3)
       '@typescript-eslint/parser': 6.21.0(eslint@8.57.0)(typescript@5.4.3)
       eslint: 8.57.0
-      eslint-plugin-vue: 9.23.0(eslint@8.57.0)
+      eslint-plugin-vue: 9.24.1(eslint@8.57.0)
       typescript: 5.4.3
       vue-eslint-parser: 9.4.2(eslint@8.57.0)
     transitivePeerDependencies:
@@ -2876,14 +2876,15 @@ packages:
       synckit: 0.8.8
     dev: true
 
-  /eslint-plugin-vue@9.23.0(eslint@8.57.0):
-    resolution: {integrity: sha512-Bqd/b7hGYGrlV+wP/g77tjyFmp81lh5TMw0be9093X02SyelxRRfCI6/IsGq/J7Um0YwB9s0Ry0wlFyjPdmtUw==}
+  /eslint-plugin-vue@9.24.1(eslint@8.57.0):
+    resolution: {integrity: sha512-wk3SuwmS1pZdcuJlokGYEi/buDOwD6KltvhIZyOnpJ/378dcQ4zchu9PAMbbLAaydCz1iYc5AozszcOOgZIIOg==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
-      eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
+      eslint: ^6.2.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.0)
       eslint: 8.57.0
+      globals: 13.24.0
       natural-compare: 1.4.0
       nth-check: 2.1.1
       postcss-selector-parser: 6.0.16
