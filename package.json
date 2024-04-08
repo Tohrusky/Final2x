@@ -39,7 +39,7 @@
     "systeminformation": "^5.22.6",
     "vfonts": "^0.0.3",
     "vue": "^3.4.21",
-    "vue-i18n": "^9.10.2",
+    "vue-i18n": "^9.11.0",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
