@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@intlify/unplugin-vue-i18n':
     specifier: ^2.0.0
-    version: 2.0.0(vue-i18n@9.11.1)
+    version: 2.0.0(vue-i18n@9.12.1)
   '@vicons/antd':
     specifier: ^0.12.0
     version: 0.12.0
@@ -42,8 +42,8 @@ dependencies:
     specifier: ^3.4.21
     version: 3.4.21(typescript@5.4.5)
   vue-i18n:
-    specifier: ^9.11.1
-    version: 9.11.1(vue@3.4.21)
+    specifier: ^9.12.1
+    version: 9.12.1(vue@3.4.21)
   vue-router:
     specifier: ^4.3.0
     version: 4.3.0(vue@3.4.21)
@@ -965,7 +965,7 @@ packages:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     dev: true
 
-  /@intlify/bundle-utils@7.5.1(vue-i18n@9.11.1):
+  /@intlify/bundle-utils@7.5.1(vue-i18n@9.12.1):
     resolution: {integrity: sha512-UovJl10oBIlmYEcWw+VIHdKY5Uv5sdPG0b/b6bOYxGLln3UwB75+2dlc0F3Fsa0RhoznQ5Rp589/BZpABpE4Xw==}
     engines: {node: '>= 14.16'}
     peerDependencies:
@@ -986,16 +986,16 @@ packages:
       magic-string: 0.30.9
       mlly: 1.6.1
       source-map-js: 1.2.0
-      vue-i18n: 9.11.1(vue@3.4.21)
+      vue-i18n: 9.12.1(vue@3.4.21)
       yaml-eslint-parser: 1.2.2
     dev: false
 
-  /@intlify/core-base@9.11.1:
-    resolution: {integrity: sha512-qWXBBlEA+DC0CsHkfJiQK9ELm11c9I6lDpodY4FoOf99eMas1R6JR4woPhrfAcrtxFHp1UmXWdrQNKDegSW9IA==}
+  /@intlify/core-base@9.12.1:
+    resolution: {integrity: sha512-l7djJEmXLAR44PdtKDEBev/TN9tREQz967/+jvN3WtICqFoy2Cz8kPtjDfvZctqPNzOonp+ESsDCUm+rjHsmdA==}
     engines: {node: '>= 16'}
     dependencies:
-      '@intlify/message-compiler': 9.11.1
-      '@intlify/shared': 9.11.1
+      '@intlify/message-compiler': 9.12.1
+      '@intlify/shared': 9.12.1
     dev: false
 
   /@intlify/message-compiler@9.11.1:
@@ -1006,12 +1006,25 @@ packages:
       source-map-js: 1.2.0
     dev: false
 
+  /@intlify/message-compiler@9.12.1:
+    resolution: {integrity: sha512-6QrMGdqKUJSkctyg56nvE+h86tjQZTjYFEfx3ghQAXKPXUd1v5josZXrwnSbIEWWeAentlwtB5qW1FE5r2S8AQ==}
+    engines: {node: '>= 16'}
+    dependencies:
+      '@intlify/shared': 9.12.1
+      source-map-js: 1.2.0
+    dev: false
+
   /@intlify/shared@9.11.1:
     resolution: {integrity: sha512-yuDG82vjgId2oasNRgZ0PKJrF65zlL33MNyITP5itbLcP4AYOR/NcIuD+/DiI+GHXdxASMKJU0ZiITLc6RC+qw==}
     engines: {node: '>= 16'}
     dev: false
 
-  /@intlify/unplugin-vue-i18n@2.0.0(vue-i18n@9.11.1):
+  /@intlify/shared@9.12.1:
+    resolution: {integrity: sha512-xAAAxaMS7yUCkwXwqUVQmGCPbXSm6oHqMzcqr2IrxJQmC0DmuqoaW0yBeWyd/pG03PPXqGtWhJLnefsiVElzAQ==}
+    engines: {node: '>= 16'}
+    dev: false
+
+  /@intlify/unplugin-vue-i18n@2.0.0(vue-i18n@9.12.1):
     resolution: {integrity: sha512-1oKvm92L9l2od2H9wKx2ZvR4tzn7gUtd7bPLI7AWUmm7U9H1iEypndt5d985ypxGsEs0gToDaKTrytbBIJwwSg==}
     engines: {node: '>= 14.16'}
     peerDependencies:
@@ -1026,7 +1039,7 @@ packages:
       vue-i18n-bridge:
         optional: true
     dependencies:
-      '@intlify/bundle-utils': 7.5.1(vue-i18n@9.11.1)
+      '@intlify/bundle-utils': 7.5.1(vue-i18n@9.12.1)
       '@intlify/shared': 9.11.1
       '@rollup/pluginutils': 5.1.0
       '@vue/compiler-sfc': 3.4.21
@@ -1038,7 +1051,7 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.2.0
       unplugin: 1.10.1
-      vue-i18n: 9.11.1(vue@3.4.21)
+      vue-i18n: 9.12.1(vue@3.4.21)
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -5236,14 +5249,14 @@ packages:
       - supports-color
     dev: true
 
-  /vue-i18n@9.11.1(vue@3.4.21):
-    resolution: {integrity: sha512-S7Xi8DkLQG4xnnbxkxzipJK6CdfLdZkmApn95st89HFGp8LTmTH0Tv+Zw6puhOCZJCFrH73PHo3Ylwd2+Bmdxg==}
+  /vue-i18n@9.12.1(vue@3.4.21):
+    resolution: {integrity: sha512-cqkBt10YzxF3tNGA7/95VMfFdk8nEoguzB7K7R9rldiSnHyWeokq6GOWMThfK/siTr2lLfM9nqolD/er//t4Iw==}
     engines: {node: '>= 16'}
     peerDependencies:
       vue: ^3.0.0
     dependencies:
-      '@intlify/core-base': 9.11.1
-      '@intlify/shared': 9.11.1
+      '@intlify/core-base': 9.12.1
+      '@intlify/shared': 9.12.1
       '@vue/devtools-api': 6.6.1
       vue: 3.4.21(typescript@5.4.5)
     dev: false
