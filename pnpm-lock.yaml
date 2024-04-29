@@ -89,8 +89,8 @@ devDependencies:
     specifier: ^24.13.3
     version: 24.13.3(electron-builder-squirrel-windows@24.13.3)
   electron-vite:
-    specifier: ^2.1.0
-    version: 2.1.0(vite@5.2.8)
+    specifier: ^2.2.0
+    version: 2.2.0(vite@5.2.8)
   eslint:
     specifier: ^8.57.0
     version: 8.57.0
@@ -2691,8 +2691,8 @@ packages:
     resolution: {integrity: sha512-gUI9nhI2iBGF0OaYYLKOaOtliFMl+Bt1rY7VmEjwxOxqoYLub/D9xmduPEhbw2imE6gYkJKhIE5it+KE2ulVxQ==}
     dev: true
 
-  /electron-vite@2.1.0(vite@5.2.8):
-    resolution: {integrity: sha512-DjToUW6q3ILoW79b1yBywC6LubnOw5Axr2zo9cHMlYf00zAO8oVzrCcqinJQTTbJLvqCuVcBzuICMl5MYshUnQ==}
+  /electron-vite@2.2.0(vite@5.2.8):
+    resolution: {integrity: sha512-WvE8KlZTiay9uWqBRvnYuxg2JqIicaNqaz9qFvsZkIae2/FmqZC5jctziyduCuuwVxqJG0Sjh8RlTwSn8xcCoQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
