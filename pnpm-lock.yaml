@@ -59,8 +59,8 @@ devDependencies:
     specifier: ^3.0.0
     version: 3.0.0(electron@27.3.11)
   '@electron/notarize':
-    specifier: ^2.3.0
-    version: 2.3.0
+    specifier: ^2.3.2
+    version: 2.3.2
   '@rushstack/eslint-patch':
     specifier: ^1.10.2
     version: 1.10.2
@@ -444,8 +444,8 @@ packages:
       - supports-color
     dev: true
 
-  /@electron/notarize@2.3.0:
-    resolution: {integrity: sha512-EiTBU0BwE7HZZjAG1fFWQaiQpCuPrVGn7jPss1kUjD6eTTdXXd29RiZqEqkgN7xqt/Pgn4g3I7Saqovanrfj3w==}
+  /@electron/notarize@2.3.2:
+    resolution: {integrity: sha512-zfayxCe19euNwRycCty1C7lF7snk9YwfRpB5M8GLr1a4ICH63znxaPNAubrMvj0yDvVozqfgsdYpXVUnpWBDpg==}
     engines: {node: '>= 10.0.0'}
     dependencies:
       debug: 4.3.4
