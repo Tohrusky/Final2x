@@ -33,8 +33,8 @@ dependencies:
     specifier: ^1.77.2
     version: 1.77.2
   systeminformation:
-    specifier: ^5.22.9
-    version: 5.22.9
+    specifier: ^5.22.11
+    version: 5.22.11
   vfonts:
     specifier: ^0.0.3
     version: 0.0.3
@@ -4824,8 +4824,8 @@ packages:
       tslib: 2.6.2
     dev: true
 
-  /systeminformation@5.22.9:
-    resolution: {integrity: sha512-qUWJhQ9JSBhdjzNUQywpvc0icxUAjMY3sZqUoS0GOtaJV9Ijq8s9zEP8Gaqmymn1dOefcICyPXK1L3kgKxlUpg==}
+  /systeminformation@5.22.11:
+    resolution: {integrity: sha512-aLws5yi4KCHTb0BVvbodQY5bY8eW4asMRDTxTW46hqw9lGjACX6TlLdJrkdoHYRB0qs+MekqEq1zG7WDnWE8Ug==}
     engines: {node: '>=8.0.0'}
     os: [darwin, linux, win32, freebsd, openbsd, netbsd, sunos, android]
     hasBin: true
