@@ -63,7 +63,7 @@
     "jsdom": "^23.2.0",
     "node-fetch": "^3.3.2",
     "prettier": "^3.2.5",
-    "typescript": "^5.4.5",
+    "typescript": "^5.5.2",
     "vite": "^5.2.11",
     "vitest": "^1.6.0",
     "vue-tsc": "^1.8.27"
