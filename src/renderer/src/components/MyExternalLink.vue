@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { storeToRefs } from 'pinia'
 import { PaperPlaneSharp, BookOutline } from '@vicons/ionicons5'
-import { MoneyCollectOutlined } from '@vicons/antd'
 import { useGlobalSettingsStore } from '../store/globalSettingsStore'
 const { langsNum } = storeToRefs(useGlobalSettingsStore())
 
@@ -21,23 +20,12 @@ class openWebsite {
     const telegramLink = 'https://t.me/+hQMtDxG9bqNiNjRh'
     await window.open(telegramLink, '_blank')
   }
-
-  static async Afdian(): Promise<void> {
-    const afdianLink = 'https://afdian.net/a/tohrusky'
-    await window.open(afdianLink, '_blank')
-  }
 }
 </script>
 
 <template>
   <div class="MyExternalLink">
     <n-space>
-      <n-button style="font-size: 36px" text @click="openWebsite.Afdian">
-        <n-icon>
-          <money-collect-outlined />
-        </n-icon>
-      </n-button>
-
       <n-button style="font-size: 36px" text @click="openWebsite.TelegramGroup">
         <n-icon>
           <paper-plane-sharp />
