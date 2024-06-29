@@ -6,6 +6,7 @@ import { SelectOption } from 'naive-ui'
 export const modelOptions: SelectOption[] = [
   { label: 'RealCUGAN-se', value: 'RealCUGAN-se' },
   { label: 'RealCUGAN-pro', value: 'RealCUGAN-pro' },
+  { label: 'APISR-RRDB', value: 'APISR-RRDB' },
   { label: 'RealESRGAN-animevideov3', value: 'RealESRGAN-animevideov3' },
   { label: 'RealESRGAN', value: 'RealESRGAN' },
   { label: 'RealESRGAN-anime', value: 'RealESRGAN-anime' },
@@ -34,6 +35,7 @@ export const modelScaleOptions: ModelScaleOptionsType = {
     { label: '2', value: 2 },
     { label: '3', value: 3 }
   ],
+  'APISR-RRDB': [{ label: '4', value: 4 }],
   'RealESRGAN-animevideov3': [
     { label: '2', value: 2 },
     { label: '3', value: 3 },
@@ -80,6 +82,7 @@ export function GetModelNoiseOptionsByNameAndScale(Model: string, Scale: number)
       ]
     }
   } else if (
+    Model === 'APISR-RRDB' ||
     Model === 'RealESRGAN-animevideov3' ||
     Model === 'RealESRGAN' ||
     Model === 'RealESRGAN-anime'

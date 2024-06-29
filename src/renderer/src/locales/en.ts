@@ -40,6 +40,8 @@ export const en = {
     text14: 'TTA',
     text15: 'Custom Scale',
     text16: 'Default',
-    text17: 'Output Folder'
+    text17: 'Output Folder',
+    text18:
+      'APISR aims at restoring and enhancing low-quality low-resolution anime images and video sources with various degradations from real-world scenarios'
   }
 }
