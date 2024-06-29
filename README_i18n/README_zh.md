@@ -70,7 +70,7 @@ xattr -cr /Applications/Final2x.app
 
 ```bash
 pip install Final2x-core
-Final2x-core -o # 114514
+Final2x-core -c # cache models
 apt install -y libomp5 xdg-utils
 ```
 
