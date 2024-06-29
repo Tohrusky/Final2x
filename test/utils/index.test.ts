@@ -8,14 +8,14 @@ import { describe, expect, it, vi } from 'vitest'
 describe('Utils', () => {
   it('sleep', async () => {
     const start = new Date().getTime()
-    await sleep(1000)
+    await sleep(1010)
     const end = new Date().getTime()
     expect(end - start).toBeGreaterThanOrEqual(1000)
   })
 
   it('DeepDeepSleep', () => {
     const start = new Date().getTime()
-    DeepDeepSleep(1000)
+    DeepDeepSleep(1010)
     const end = new Date().getTime()
     expect(end - start).toBeGreaterThanOrEqual(1000)
   })

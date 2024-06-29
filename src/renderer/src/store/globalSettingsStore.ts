@@ -1,7 +1,7 @@
 import { ref, Ref } from 'vue'
 import { defineStore } from 'pinia'
 import { LogInst } from 'naive-ui'
-import type { NaiveDarkModeType } from 'naive-dark-mode'
+import type { NaiveDarkModeType } from '../components/NaiveDarkMode.vue'
 
 export const useGlobalSettingsStore = defineStore(
   'GlobalSettings',
