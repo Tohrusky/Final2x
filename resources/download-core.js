@@ -10,7 +10,7 @@ const coreDict = {
   'macos-arm64':
     'https://github.com/Final2x/Final2x-core/releases/download/2024-07-01/Final2x-core-macos-arm64.zip',
   'macos-x64':
-    'https://github.com/Final2x/Final2x-core/releases/download/2024-07-01/Final2x-core-macos-latest.zip',
+    'https://github.com/Final2x/Final2x-core/releases/download/2024-07-01/Final2x-core-macos-x64.zip',
   'linux-x64':
     'https://github.com/Final2x/Final2x-core/releases/download/2024-07-01/Final2x-core-ubuntu-20.04.zip',
   'windows-x64':
