@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { storeToRefs } from 'pinia'
-import { PaperPlaneSharp, BookOutline } from '@vicons/ionicons5'
+import { BookOutline } from '@vicons/ionicons5'
 import { useGlobalSettingsStore } from '../store/globalSettingsStore'
 const { langsNum } = storeToRefs(useGlobalSettingsStore())
 
@@ -10,15 +10,10 @@ class openWebsite {
     const docsLinkCN = 'https://final2x.tohru.top/zh'
 
     if (langsNum.value === 1) {
-      await window.open(docsLinkCN, '_blank')
+      window.open(docsLinkCN, '_blank')
     } else {
-      await window.open(docsLink, '_blank')
+      window.open(docsLink, '_blank')
     }
-  }
-
-  static async TelegramGroup(): Promise<void> {
-    const telegramLink = 'https://t.me/+hQMtDxG9bqNiNjRh'
-    await window.open(telegramLink, '_blank')
   }
 }
 </script>
@@ -26,12 +21,6 @@ class openWebsite {
 <template>
   <div class="MyExternalLink">
     <n-space>
-      <n-button style="font-size: 36px" text @click="openWebsite.TelegramGroup">
-        <n-icon>
-          <paper-plane-sharp />
-        </n-icon>
-      </n-button>
-
       <n-button style="font-size: 36px" text @click="openWebsite.Docs">
         <n-icon>
           <book-outline />
