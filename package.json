@@ -63,7 +63,7 @@
     "node-fetch": "^3.3.2",
     "prettier": "^3.3.3",
     "typescript": "^5.5.4",
-    "vite": "^5.3.5",
+    "vite": "^5.4.6",
     "vitest": "^1.6.0",
     "vue-tsc": "^2.0.29"
   }
