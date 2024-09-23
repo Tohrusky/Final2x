@@ -23,6 +23,8 @@ export const useGlobalSettingsStore = defineStore(
     const StartCommandLock = ref(false)
     const SrSuccess = ref(false)
 
+    const openOutputFolder = ref(true)
+
     return {
       darkMode,
       globalcolor,
@@ -35,13 +37,22 @@ export const useGlobalSettingsStore = defineStore(
       CommandLOG,
       StartCommandLock,
       SrSuccess,
-      logInstRef
+      logInstRef,
+      openOutputFolder
     }
   },
   {
     persist: {
       storage: localStorage,
-      paths: ['langsNum', 'SRgpuid', 'darkMode', 'naiveTheme', 'globalcolor', 'deviceList']
+      paths: [
+        'langsNum',
+        'SRgpuid',
+        'darkMode',
+        'naiveTheme',
+        'globalcolor',
+        'deviceList',
+        'openOutputFolder'
+      ]
     }
   }
 )

@@ -4,7 +4,11 @@ import { app } from 'electron'
 
 let child
 
-export async function RunCommand(event, config_json: string): Promise<void> {
+export async function RunCommand(
+  event,
+  config_json: string,
+  openOutputFolder: boolean
+): Promise<void> {
   let resourceUrl: string
 
   // ---- 还是直接传base64吧
@@ -22,7 +26,11 @@ export async function RunCommand(event, config_json: string): Promise<void> {
     resourceUrl = 'Final2x-core'
   }
 
-  const command = `"${resourceUrl}" -b ${config_json}`
+  let command = `"${resourceUrl}" -b ${config_json}`
+
+  if (!openOutputFolder) {
+    command += ' -n'
+  }
 
   console.log(command)
 
