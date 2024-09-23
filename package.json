@@ -33,7 +33,7 @@
     "core-js": "^3.38.1",
     "naive-ui": "^2.39.0",
     "pinia": "^2.2.2",
-    "pinia-plugin-persistedstate": "^3.2.3",
+    "pinia-plugin-persistedstate": "^4.0.2",
     "sass": "^1.79.3",
     "systeminformation": "^5.23.5",
     "vfonts": "^0.0.3",
