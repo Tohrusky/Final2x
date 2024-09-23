@@ -14,7 +14,7 @@ import { useIOPathStore } from '../store/ioPathStore'
 import { useGlobalSettingsStore } from '../store/globalSettingsStore'
 import { useSRSettingsStore } from '../store/SRSettingsStore'
 
-const { SRgpuid, deviceList } = storeToRefs(useGlobalSettingsStore())
+const { SRgpuid, deviceList, openOutputFolder } = storeToRefs(useGlobalSettingsStore())
 const { selectedModel, selectedScale, selectedNoise, useTTA, CustomScaleValue } =
   storeToRefs(useSRSettingsStore())
 const { outputpath } = storeToRefs(useIOPathStore())
@@ -270,7 +270,7 @@ class ClickButtomToConsoleLog {
           <span> {{ MyPopoverMessages.TTA() }} </span>
         </n-popover>
 
-        <n-switch v-model:value="useTTA" size="large" style="height: 35px"></n-switch>
+        <n-switch v-model:value="useTTA" size="large" style="height: 35px" />
 
         <n-popover trigger="hover" :width="200">
           <template #trigger>
@@ -299,14 +299,18 @@ class ClickButtomToConsoleLog {
       <n-space>
         <n-popover trigger="hover">
           <template #trigger>
-            <n-button round type="success" style="width: 171px" @click="getPath">
+            <n-button round type="success" style="height: 35px; width: 150px" @click="getPath">
               {{ t('Final2xSettings.text17') }}
             </n-button>
           </template>
           <span> {{ MyPopoverMessages.OutputFolder() }} </span>
         </n-popover>
 
-        <n-input v-model:value="outputpath" :placeholder="outputpath" round style="width: 374px" />
+        <n-switch v-model:value="openOutputFolder" size="large" style="height: 35px; width: 76px">
+          <template #checked> OPEN </template>
+        </n-switch>
+
+        <n-input v-model:value="outputpath" :placeholder="outputpath" round style="width: 308px" />
       </n-space>
     </n-space>
   </n-card>
