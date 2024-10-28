@@ -22,6 +22,8 @@
 
 Final2x 可以使用多个模型，将图像超分辨率到任意大小，以提高图像的分辨率和质量，如获得更清晰和丰富的纹理。目前，它支持以下几个模型：RealCUGAN、RealESRGAN 及 Waifu2x。
 
+- News🎉: 想超分辨率处理视频吗？试试 [FinalRip](https://github.com/TensoRaws/FinalRip)!
+
 ## [文档](https://final2x.tohru.top/zh)
 
 ## 图片对比
