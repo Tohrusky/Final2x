@@ -24,6 +24,8 @@
 
 This is a powerful tool that allows for image super-resolution to arbitrary sizes using multiple models, designed to enhance the resolution and quality of images, making them clearer and more detailed. Presently, it supports several models, such as RealCUGAN, RealESRGAN, and Waifu2x.
 
+- News🎉: Want to enhance your video? Try [FinalRip](https://github.com/TensoRaws/FinalRip)!
+
 ## [Documentation](https://final2x.tohru.top)
 
 ## Comparison

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { storeToRefs } from 'pinia'
-import { BookOutline } from '@vicons/ionicons5'
+import { BookOutline, FilmOutline } from '@vicons/ionicons5'
 import { useGlobalSettingsStore } from '../store/globalSettingsStore'
 const { langsNum } = storeToRefs(useGlobalSettingsStore())
 
@@ -15,6 +15,12 @@ class openWebsite {
       window.open(docsLink, '_blank')
     }
   }
+
+  static async FinalRip(): Promise<void> {
+    const Link = 'https://github.com/TensoRaws/FinalRip'
+
+    window.open(Link, '_blank')
+  }
 }
 </script>
 
@@ -24,6 +30,12 @@ class openWebsite {
       <n-button style="font-size: 36px" text @click="openWebsite.Docs">
         <n-icon>
           <book-outline />
+        </n-icon>
+      </n-button>
+
+      <n-button style="font-size: 36px" text @click="openWebsite.FinalRip">
+        <n-icon>
+          <film-outline />
         </n-icon>
       </n-button>
     </n-space>
