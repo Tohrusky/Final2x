@@ -5,20 +5,25 @@ import ioPath from '../utils/IOPath'
 import PathFormat from '../utils/pathFormat'
 
 /**
- * @description: 返回输出路径，如果输出路径不合法，则从第一个输入路径构造一个合法输出路径
+ * @description: Returns the output path. If the output path is invalid, it constructs a valid output path from the first input path
  */
 function getOutPutPATH(): string {
-  if (!PathFormat.checkPath(ioPath.getoutputpath())) {
-    const inputPATHList = ioPath.getList()
-    const pathFormat = new PathFormat()
-    pathFormat.setRootPath(inputPATHList[0])
-    ioPath.setoutputpath(pathFormat.getRootPath())
+  const currentOutputPath = ioPath.getoutputpath();
+  if (!PathFormat.checkPath(currentOutputPath)) {
+    const inputPATHList = ioPath.getList();
+    if (inputPATHList.length > 0) {
+      const pathFormat = new PathFormat();
+      pathFormat.setRootPath(inputPATHList[0]);
+      const newOutputPath = pathFormat.getRootPath();
+      ioPath.setoutputpath(newOutputPath);
+      return newOutputPath;
+    }
   }
-  return ioPath.getoutputpath()
+  return currentOutputPath;
 }
 
 /**
- * @description: 返回最终的json字符串配置文件
+ * @description: Returns the final JSON string configuration file
  */
 export const getFinal2xconfig = (): string => {
   const { selectedModel, selectedScale, selectedNoise, useTTA, CustomScaleValue } =
