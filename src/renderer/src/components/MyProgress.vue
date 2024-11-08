@@ -17,7 +17,6 @@ const {
   StartCommandLock,
   SrSuccess,
   ProgressPercentage,
-  deviceList,
   openOutputFolder
 } = storeToRefs(useGlobalSettingsStore())
 

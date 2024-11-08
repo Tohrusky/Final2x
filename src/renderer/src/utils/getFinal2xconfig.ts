@@ -21,8 +21,7 @@ function getOutPutPATH(): string {
  * @description: 返回最终的json字符串配置文件
  */
 export const getFinal2xconfig = (): string => {
-  const { selectedModel, ghProxy, targetScale } =
-    storeToRefs(useSRSettingsStore())
+  const { selectedModel, ghProxy, targetScale } = storeToRefs(useSRSettingsStore())
   const { SRdevice } = storeToRefs(useGlobalSettingsStore())
 
   const inputPATHList = ioPath.getList()

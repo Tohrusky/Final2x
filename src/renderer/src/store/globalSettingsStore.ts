@@ -19,7 +19,7 @@ export const useGlobalSettingsStore = defineStore(
       { value: 'auto', label: 'Auto' },
       { value: 'cuda', label: 'CUDA' },
       { value: 'mps', label: 'MPS' },
-      { value: 'cpu', label: 'CPU' },
+      { value: 'cpu', label: 'CPU' }
     ])
 
     const ProgressPercentage = ref(0)
@@ -49,14 +49,7 @@ export const useGlobalSettingsStore = defineStore(
   {
     persist: {
       storage: localStorage,
-      paths: [
-        'langsNum',
-        'SRdevice',
-        'darkMode',
-        'naiveTheme',
-        'globalcolor',
-        'openOutputFolder'
-      ]
+      paths: ['langsNum', 'SRdevice', 'darkMode', 'naiveTheme', 'globalcolor', 'openOutputFolder']
     }
   }
 )

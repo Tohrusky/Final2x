@@ -17,7 +17,7 @@ export const useSRSettingsStore = defineStore(
   {
     persist: {
       storage: localStorage,
-      paths: ['selectedModel',  'ghProxy', 'targetScale']
+      paths: ['selectedModel', 'ghProxy', 'targetScale']
     }
   }
 )
