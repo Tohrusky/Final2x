@@ -33,8 +33,8 @@ This is a powerful tool that allows for image super-resolution to arbitrary size
 ## Screenshots
 
 <div align=center>
-<a href="https://sm.ms/image/2QdtWyTe9DbOxJS" target="_blank"><img src="https://s2.loli.net/2023/09/19/2QdtWyTe9DbOxJS.png" width="40%"></a>
-<a href="https://sm.ms/image/BhQKM2751vAGNDP" target="_blank"><img src="https://s2.loli.net/2023/09/19/BhQKM2751vAGNDP.png" width="40%"></a>
+<a href="https://sm.ms/image/NjpeUqToEc5kW12" target="_blank"><img src="https://s2.loli.net/2024/11/08/NjpeUqToEc5kW12.png" width="40%"></a>
+<a href="https://sm.ms/image/IeHzQuKFJPLc6Vp" target="_blank"><img src="https://s2.loli.net/2024/11/08/IeHzQuKFJPLc6Vp.png" width="40%"></a>
 </div>
 
 ### Installation
