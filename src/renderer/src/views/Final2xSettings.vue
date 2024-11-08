@@ -8,7 +8,8 @@ import { useIOPathStore } from '../store/ioPathStore'
 import { useGlobalSettingsStore } from '../store/globalSettingsStore'
 import { useSRSettingsStore } from '../store/SRSettingsStore'
 
-const { SRdevice, deviceList, openOutputFolder } = storeToRefs(useGlobalSettingsStore())
+const { selectedTorchDevice, torchDeviceList, openOutputFolder } =
+  storeToRefs(useGlobalSettingsStore())
 const { selectedModel, ghProxy, targetScale } = storeToRefs(useSRSettingsStore())
 const { outputpath } = storeToRefs(useIOPathStore())
 const { t } = useI18n()
@@ -49,7 +50,11 @@ function getPath(): void {
           {{ t('Final2xSettings.text10') }}
         </n-button>
 
-        <n-select v-model:value="SRdevice" :options="deviceList" style="width: 150px" />
+        <n-select
+          v-model:value="selectedTorchDevice"
+          :options="torchDeviceList"
+          style="width: 150px"
+        />
 
         <n-button dashed type="success" style="width: 120px">
           {{ t('Final2xSettings.text15') }}

@@ -22,7 +22,7 @@ function getOutPutPATH(): string {
  */
 export const getFinal2xconfig = (): string => {
   const { selectedModel, ghProxy, targetScale } = storeToRefs(useSRSettingsStore())
-  const { SRdevice } = storeToRefs(useGlobalSettingsStore())
+  const { selectedTorchDevice } = storeToRefs(useGlobalSettingsStore())
 
   const inputPATHList = ioPath.getList()
   const outputPATH = getOutPutPATH()
@@ -36,7 +36,7 @@ export const getFinal2xconfig = (): string => {
 
   return JSON.stringify({
     pretrained_model_name: selectedModel.value,
-    device: SRdevice.value,
+    device: selectedTorchDevice.value,
     gh_proxy: _gh_proxy,
     target_scale: targetScale.value,
     output_path: outputPATH,
