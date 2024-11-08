@@ -26,10 +26,18 @@ export const getFinal2xconfig = (): string => {
 
   const inputPATHList = ioPath.getList()
   const outputPATH = getOutPutPATH()
+
+  let _gh_proxy: string | null
+  if (ghProxy.value === '') {
+    _gh_proxy = null
+  } else {
+    _gh_proxy = ghProxy.value
+  }
+
   return JSON.stringify({
     pretrained_model_name: selectedModel.value,
     device: SRdevice.value,
-    gh_proxy: ghProxy.value,
+    gh_proxy: _gh_proxy,
     target_scale: targetScale.value,
     output_path: outputPATH,
     input_path: inputPATHList
