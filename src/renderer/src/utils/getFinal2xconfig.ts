@@ -21,22 +21,18 @@ function getOutPutPATH(): string {
  * @description: 返回最终的json字符串配置文件
  */
 export const getFinal2xconfig = (): string => {
-  const { selectedModel, selectedScale, selectedNoise, useTTA, CustomScaleValue } =
+  const { selectedModel, ghProxy, targetScale } =
     storeToRefs(useSRSettingsStore())
-  const { SRgpuid } = storeToRefs(useGlobalSettingsStore())
+  const { SRdevice } = storeToRefs(useGlobalSettingsStore())
 
-  const gpuID = SRgpuid.value === 114514 ? 0 : SRgpuid.value
   const inputPATHList = ioPath.getList()
   const outputPATH = getOutPutPATH()
-  const targetScale = CustomScaleValue.value === null ? 0 : CustomScaleValue.value
   return JSON.stringify({
-    gpuid: gpuID,
-    inputpath: inputPATHList,
-    model: selectedModel.value,
-    modelscale: selectedScale.value,
-    modelnoise: selectedNoise.value,
-    outputpath: outputPATH,
-    targetscale: targetScale,
-    tta: useTTA.value
+    pretrained_model_name: selectedModel.value,
+    device: SRdevice.value,
+    gh_proxy: ghProxy.value,
+    target_scale: targetScale.value,
+    output_path: outputPATH,
+    input_path: inputPATHList
   })
 }
