@@ -6,29 +6,24 @@
   </picture>
 </a>
 
-<p align="center">English | <a href="README_i18n/README_zh.md">中文</a></p>
-
-<h3 align="center"> Enhance Your Images with Effortless Cross-Platform Super-Resolution at Any Scale </h3>
-
 ![MacOS x64](https://img.shields.io/badge/Support-MacOS%20x64-blue?logo=Apple&style=flat-square)
 ![MacOS arm64](https://img.shields.io/badge/Support-MacOS%20arm64-blue?logo=Apple&style=flat-square)
 ![Windows x64](https://img.shields.io/badge/Support-Windows%20x64-blue?logo=Windows&style=flat-square)
 ![Windows arm64](https://img.shields.io/badge/Support-Windows%20arm64-blue?logo=Windows&style=flat-square)
 ![Linux x64](https://img.shields.io/badge/Support-Linux%20x64-blue?logo=Linux&style=flat-square)
 [![codecov](https://codecov.io/gh/Tohrusky/Final2x/branch/main/graph/badge.svg?token=LL6K2P1RS8)](https://codecov.io/gh/Tohrusky/Final2x)
-[![CI-Test](https://github.com/Tohrusky/Final2x/actions/workflows/CI-Test.yml/badge.svg)](https://github.com/Tohrusky/Final2x/actions/workflows/CI-Test.yml)
-[![CI-Build](https://github.com/Tohrusky/Final2x/actions/workflows/CI-Build.yml/badge.svg)](https://github.com/Tohrusky/Final2x/actions/workflows/CI-Build.yml)
+[![CI-test](https://github.com/Tohrusky/Final2x/actions/workflows/CI-test.yml/badge.svg)](https://github.com/Tohrusky/Final2x/actions/workflows/CI-test.yml)
+[![CI-build](https://github.com/Tohrusky/Final2x/actions/workflows/CI-build.yml/badge.svg)](https://github.com/Tohrusky/Final2x/actions/workflows/CI-build.yml)
 [![Release](https://github.com/Tohrusky/Final2x/actions/workflows/Release.yml/badge.svg)](https://github.com/Tohrusky/Final2x/actions/workflows/Release.yml)
 ![Download](https://img.shields.io/github/downloads/Tohrusky/Final2x/total)
 ![GitHub](https://img.shields.io/github/license/Tohrusky/Final2x)
 
-This is a powerful tool that allows for image super-resolution to arbitrary sizes using multiple models, designed to enhance the resolution and quality of images, making them clearer and more detailed. Presently, it supports several models, such as RealCUGAN, RealESRGAN, and Waifu2x.
+This is a powerful tool that allows for image super-resolution to arbitrary sizes using multiple models, designed to enhance the resolution and quality of images, making them clearer and more detailed.
 
+- News🎉: We are thrilled to announce the release of Final2x v2.0.0, which marks a major milestone as we transition to utilizing [ccrestoration](https://github.com/TensoRaws/ccrestoration) (PyTorch) for our algorithm implementation.
 - News🎉: Want to enhance your video? Try [FinalRip](https://github.com/TensoRaws/FinalRip)!
 
-## [Documentation](https://final2x.tohru.top)
-
-## Comparison
+### Comparison
 
 <div align="center">
 <img src="https://s2.loli.net/2023/07/20/hWi4U6BNeqau3MF.png" />
@@ -38,25 +33,25 @@ This is a powerful tool that allows for image super-resolution to arbitrary size
 ## Screenshots
 
 <div align=center>
-<a href="https://sm.ms/image/2QdtWyTe9DbOxJS" target="_blank"><img src="https://s2.loli.net/2023/09/19/2QdtWyTe9DbOxJS.png" width="40%"></a>
-<a href="https://sm.ms/image/BhQKM2751vAGNDP" target="_blank"><img src="https://s2.loli.net/2023/09/19/BhQKM2751vAGNDP.png" width="40%"></a>
+<a href="https://sm.ms/image/NjpeUqToEc5kW12" target="_blank"><img src="https://s2.loli.net/2024/11/08/NjpeUqToEc5kW12.png" width="40%"></a>
+<a href="https://sm.ms/image/IeHzQuKFJPLc6Vp" target="_blank"><img src="https://s2.loli.net/2024/11/08/IeHzQuKFJPLc6Vp.png" width="40%"></a>
 </div>
 
-## Installation
+### Installation
 
-#### [Download the latest release from here.](https://github.com/Tohrusky/Final2x/releases)
+##### [Download the latest release from here.](https://github.com/Tohrusky/Final2x/releases)
 
-### Windows
+#### Windows
 
 Just Run! Furthermore, you can use package mananger to install and upgrade.
 
-#### winget
+##### winget
 
 ```bash
 winget install Final2x
 ```
 
-### MacOS
+#### MacOS
 
 ```bash
 sudo spctl --master-disable
@@ -64,53 +59,39 @@ sudo spctl --master-disable
 xattr -cr /Applications/Final2x.app
 ```
 
-In first time, you need to run the command above in terminal to allow the app to run, and first process may very slow because of Apple's Check.
+In first time, you need to run the command above in terminal to allow the app to run.
 
-### Linux
+#### Linux
 
-#### For General Linux (Suggested, download linux-pip)
+For Linux User, you need to install the dependencies first.
 
-Python >= 3.8, then check install in terminal.
+Make sure you have Python >= 3.9 and PyTorch >= 1.13 installed
 
 ```bash
 pip install Final2x-core
-Final2x-core -c # cache models
+Final2x-core -h # check if the installation is successful
 apt install -y libomp5 xdg-utils
 ```
 
-#### For Deb/Ubuntu
-
-Set 777 permission for the file and resources folder.
-
-## Features
-
-- Cross-platform: The tool is available for Windows x64/arm64, MacOS x64/arm64, and Linux x64, allowing users to enjoy the benefits of super-resolution regardless of their operating system.
-- Super-resolution: The tool employs advanced algorithms and models to upscale images, significantly increasing their resolution without sacrificing quality.
-- [Multiple models](https://github.com/Tohrusky/Final2x-core): It offers a wide range of models that can be used to achieve different levels of super-resolution, allowing users to choose the one that best suits their specific needs.
-- Customizable Scale: Users have the flexibility to specify the desired output size for their images, ranging from small enhancements to large-scale super-resolution.
-- i18n: The tool is available in ['English', 'Chinese', 'Japanese', 'French'] allowing users from different countries to enjoy the benefits of super-resolution.
-
-## Reference
+### Reference
 
 The following references were referenced in the development of this project:
 
-- [Final2x-core](https://github.com/Final2x/Final2x-core) - This project provided the core of the Final2x algorithm using the ncnn and Vulkan libraries.
-- [naive-ui](https://github.com/tusen-ai/naive-ui) - This project provided the UI framework for the Final2x.
-- [electron-vite](https://github.com/alex8088/electron-vite) - This project provided the build framework for the Final2x.
-- [ncnn](https://github.com/Tencent/ncnn) - ncnn is a high-performance neural network inference framework developed by Tencent AI Lab.
-- [nihui/realcugan-ncnn-vulkan](https://github.com/nihui/realcugan-ncnn-vulkan) - This project provided the core implementation of the Real-CUGAN algorithm using the ncnn and Vulkan libraries.
-- [xinntao/Real-ESRGAN-ncnn-vulkan](https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan) - This project provided the core implementation of the Real-ESRGAN algorithm using the ncnn and Vulkan.
-  libraries.
-- [nihui/waifu2x-ncnn-vulkan](https://github.com/nihui/waifu2x-ncnn-vulkan) - This project provided the core implementation of the Waifu2x algorithm using the ncnn and Vulkan libraries.
+- [Final2x-core](https://github.com/Final2x/Final2x-core)
+- [ccrestoration](https://github.com/TensoRaws/ccrestoration)
+- [PyTorch](https://github.com/pytorch/pytorch)
+- [ncnn](https://github.com/Tencent/ncnn)
+- [naive-ui](https://github.com/tusen-ai/naive-ui)
+- [electron-vite](https://github.com/alex8088/electron-vite)
 
-## License
+### License
 
 This project is licensed under the BSD 3-Clause - see
 the [LICENSE file](https://github.com/Tohrusky/Final2x/blob/main/LICENSE) for details.
 
-## Acknowledgements
+### Acknowledgements
 
-Feel free to reach out to the project maintainers with any questions or concerns. Happy image super-resolution!
+Feel free to reach out to the project maintainers with any questions or concerns~
 
 <a href="https://star-history.com/#Tohrusky/Final2x&Date">
   <picture>
