@@ -21,7 +21,7 @@ function getOutPutPATH(): string {
  * @description: 返回最终的json字符串配置文件
  */
 export const getFinal2xconfig = (): string => {
-  const { selectedModel, ghProxy, targetScale } = storeToRefs(useSRSettingsStore())
+  const { selectedSRModel, ghProxy, targetScale } = storeToRefs(useSRSettingsStore())
   const { selectedTorchDevice } = storeToRefs(useGlobalSettingsStore())
 
   const inputPATHList = ioPath.getList()
@@ -35,7 +35,7 @@ export const getFinal2xconfig = (): string => {
   }
 
   return JSON.stringify({
-    pretrained_model_name: selectedModel.value,
+    pretrained_model_name: selectedSRModel.value,
     device: selectedTorchDevice.value,
     gh_proxy: _gh_proxy,
     target_scale: targetScale.value,
