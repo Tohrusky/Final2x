@@ -44,13 +44,13 @@ jobs:
         if: matrix.os-version == 'x64'
         run: |
           cd .\dist\win-unpacked
-          7z a -r Final2x-windows-${{ matrix.os-version }}-unpacked.zip *
+          7z a -r Final2x-windows-${{ matrix.os-version }}-unpacked.7z *
 
       - name: zip-unpacked-arm64
         if: matrix.os-version == 'arm64'
         run: |
           cd .\dist\win-arm64-unpacked
-          7z a -r Final2x-windows-${{ matrix.os-version }}-unpacked.zip *
+          7z a -r Final2x-windows-${{ matrix.os-version }}-unpacked.7z *
 
       - name: upload-setup
         uses: actions/upload-artifact@v3
@@ -63,14 +63,14 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Final2x-windows-${{ matrix.os-version }}-unpacked
-          path: dist/win-unpacked/Final2x-windows-${{ matrix.os-version }}-unpacked.zip
+          path: dist/win-unpacked/*.7z
 
       - name: upload-unpacked-arm64
         if: matrix.os-version == 'arm64'
         uses: actions/upload-artifact@v3
         with:
           name: Final2x-windows-${{ matrix.os-version }}-unpacked
-          path: dist/win-arm64-unpacked/Final2x-windows-${{ matrix.os-version }}-unpacked.zip
+          path: dist/win-arm64-unpacked/*.7z
 
   macos:
     strategy:
