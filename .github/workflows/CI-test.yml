@@ -1,4 +1,4 @@
-name: CI-Test
+name: CI-test
 
 on:
   push:
@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  CI-Test:
+  test:
     strategy:
       matrix:
         os-version: ['macos-latest', 'windows-latest', 'ubuntu-20.04']

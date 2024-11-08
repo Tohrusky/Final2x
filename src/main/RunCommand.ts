@@ -56,13 +56,9 @@ export async function KillCommand(): Promise<void> {
 }
 
 function CheckPipPackage(): boolean {
-  const command = `Final2x-core -o`
+  const command = `Final2x-core -h`
 
   const result = spawnSync(command, { shell: true, encoding: 'utf-8' })
 
-  if (result.status === 0) {
-    return result.stdout.trim().toString() === '114514' // Magic Number String
-  } else {
-    return false
-  }
+  return result.status === 0
 }

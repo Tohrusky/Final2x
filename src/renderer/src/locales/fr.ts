@@ -1,9 +1,4 @@
 export const fr = {
-  MyExternalLink: {
-    text0: 'Numéro de groupe QQ :',
-    text1: 'Copié dans le presse-papiers',
-    text2: 'Échec de la copie du numéro de groupe QQ'
-  },
   MyProgress: {
     text0: 'Traitement commencé',
     text1: 'Traitement en cours',
@@ -22,27 +17,11 @@ export const fr = {
     text1: 'Cliquez ou faites glisser les images ou dossiers ici pour les téléverser'
   },
   Final2xSettings: {
-    text0:
-      "Lorsque l'ordre d'affichage GPU est incorrect pour le périphérique chargé, choisissez-en un autre",
-    text1:
-      "RealCUGAN est un modèle de super-résolution d'images anime entraîné sur des millions de données anime, prenant en charge une restauration conservatrice",
-    text2: "RealESRGAN est un modèle de super-résolution pour la restauration générale d'images",
-    text3:
-      "Waifu2x est un modèle de super-résolution d'images anime qui prend également en charge les photos",
-    text4: 'Super-Resolution Network for Multiple Degradations',
-    text5: "Facteur d'échelle du modèle",
-    text6: 'Puissance de débruitage du modèle, -1 pour une restauration conservatrice',
-    text7: "Cela augmentera le temps de traitement mais améliorera la qualité de l'image",
-    text8:
-      "Facteur d'échelle personnalisé, agrandissez plusieurs fois en utilisant le modèle sélectionné",
-    text9: 'Définir le chemin de sortie',
     text10: 'Périph.',
     text11: 'Modèle',
-    text12: 'Échelle',
-    text13: 'Débruit.',
-    text14: 'TTA',
     text15: 'Échelle (num.)',
     text16: 'Par déf.',
-    text17: 'Dossier de sortie'
+    text17: 'Dossier de sortie',
+    text18: 'Proxy'
   }
 }

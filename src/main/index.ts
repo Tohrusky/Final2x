@@ -1,7 +1,6 @@
 import { app, BrowserWindow, ipcMain, Menu, nativeImage, shell, Tray } from 'electron'
 import { join } from 'path'
 import { electronApp, is, optimizer } from '@electron-toolkit/utils'
-import { getSystemInfo } from './getSystemInfo'
 import { KillCommand, RunCommand } from './RunCommand'
 import { openDirectory } from './openDirectory'
 
@@ -30,8 +29,6 @@ function createWindow(): void {
   if (process.platform === 'darwin') {
     app.dock.setIcon(nativeImage.createFromPath(icon))
   }
-
-  ipcMain.handleOnce('getSystemInfo', getSystemInfo)
 
   ipcMain.on('execute-command', RunCommand)
 

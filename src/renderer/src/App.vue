@@ -5,7 +5,6 @@ import { onMounted, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
 import { getLanguage } from './utils'
-import { updateDeviceList } from './utils/updateDeviceList'
 import { useGlobalSettingsStore } from './store/globalSettingsStore'
 import TrafficLightsButtons from './components/TrafficLightsButtons.vue'
 import MyProgress from './components/MyProgress.vue'
@@ -26,17 +25,13 @@ onMounted(async () => {
     // 当语言不是跟随环境时，设置语言
     locale.value = getLanguage(langsNum.value).lang
   }
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  const res: Array<string> = await window.electron.ipcRenderer.invoke('getSystemInfo')
-  updateDeviceList(res)
 })
 
 const themeOverrides = {
   Select: {
     peers: {
       InternalSelectMenu: {
-        height: '130px'
+        height: '200px'
       }
     }
   }

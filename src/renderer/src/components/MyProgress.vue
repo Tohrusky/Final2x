@@ -17,7 +17,6 @@ const {
   StartCommandLock,
   SrSuccess,
   ProgressPercentage,
-  deviceList,
   openOutputFolder
 } = storeToRefs(useGlobalSettingsStore())
 
@@ -127,7 +126,7 @@ function StartSR(): void {
 
   const command = getFinal2xconfig()
 
-  CommandLOG.value += '\n' + JSON.stringify(deviceList.value) + '\n' + command + '\n'
+  CommandLOG.value += '\n' + command + '\n'
   CommandLOG.value += 'OPEN OUTPUT FOLDER: ' + openOutputFolder.value + '\n'
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment

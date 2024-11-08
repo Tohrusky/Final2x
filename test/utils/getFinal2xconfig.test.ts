@@ -16,19 +16,19 @@ describe('getFinal2xconfig', () => {
   it('test_getFinal2xconfig', () => {
     ioPath.add('114514', '/Users/Downloads/114514')
     expect(getFinal2xconfig()).toEqual(
-      '{"gpuid":0,"inputpath":["/Users/Downloads/114514"],"model":"RealESRGAN","modelscale":2,"modelnoise":-1,"outputpath":"/Users/Downloads","targetscale":0,"tta":false}'
+      '{"pretrained_model_name":"RealESRGAN_RealESRGAN_x2plus_2x.pth","device":"auto","gh_proxy":null,"target_scale":null,"output_path":"/Users/Downloads","input_path":["/Users/Downloads/114514"]}'
     )
     ioPath.setoutputpath('/test')
     expect(getFinal2xconfig()).toEqual(
-      '{"gpuid":0,"inputpath":["/Users/Downloads/114514"],"model":"RealESRGAN","modelscale":2,"modelnoise":-1,"outputpath":"/test","targetscale":0,"tta":false}'
+      '{"pretrained_model_name":"RealESRGAN_RealESRGAN_x2plus_2x.pth","device":"auto","gh_proxy":null,"target_scale":null,"output_path":"/test","input_path":["/Users/Downloads/114514"]}'
     )
     ioPath.add('114514', '/test1')
     expect(getFinal2xconfig()).toEqual(
-      '{"gpuid":0,"inputpath":["/test1"],"model":"RealESRGAN","modelscale":2,"modelnoise":-1,"outputpath":"/test","targetscale":0,"tta":false}'
+      '{"pretrained_model_name":"RealESRGAN_RealESRGAN_x2plus_2x.pth","device":"auto","gh_proxy":null,"target_scale":null,"output_path":"/test","input_path":["/test1"]}'
     )
     ioPath.add('1919810', '/test2')
     expect(getFinal2xconfig()).toEqual(
-      '{"gpuid":0,"inputpath":["/test1","/test2"],"model":"RealESRGAN","modelscale":2,"modelnoise":-1,"outputpath":"/test","targetscale":0,"tta":false}'
+      '{"pretrained_model_name":"RealESRGAN_RealESRGAN_x2plus_2x.pth","device":"auto","gh_proxy":null,"target_scale":null,"output_path":"/test","input_path":["/test1","/test2"]}'
     )
   })
 })

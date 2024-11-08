@@ -14,8 +14,13 @@ export const useGlobalSettingsStore = defineStore(
 
     const langsNum = ref(114514)
 
-    const SRgpuid = ref(114514)
-    const deviceList: Ref<any[]> = ref([])
+    const selectedTorchDevice = ref('auto')
+    const torchDeviceList: Ref<any[]> = ref([
+      { value: 'auto', label: 'Auto' },
+      { value: 'cuda', label: 'CUDA' },
+      { value: 'mps', label: 'MPS' },
+      { value: 'cpu', label: 'CPU' }
+    ])
 
     const ProgressPercentage = ref(0)
     const CommandLOG = ref('')
@@ -31,8 +36,8 @@ export const useGlobalSettingsStore = defineStore(
       naiveTheme,
       changeRoute,
       langsNum,
-      SRgpuid,
-      deviceList,
+      selectedTorchDevice,
+      torchDeviceList,
       ProgressPercentage,
       CommandLOG,
       StartCommandLock,
@@ -46,11 +51,10 @@ export const useGlobalSettingsStore = defineStore(
       storage: localStorage,
       paths: [
         'langsNum',
-        'SRgpuid',
+        'selectedTorchDevice',
         'darkMode',
         'naiveTheme',
         'globalcolor',
-        'deviceList',
         'openOutputFolder'
       ]
     }

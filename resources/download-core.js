@@ -2,19 +2,18 @@
 // and put it in resources folder
 
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args))
-const extract = require('extract-zip')
 const fs = require('fs')
 const path = require('path')
 
+const child_process = require('child_process')
+
 const coreDict = {
   'macos-arm64':
-    'https://github.com/Final2x/Final2x-core/releases/download/2024-09-23/Final2x-core-macos-arm64.zip',
+    'https://github.com/Tohrusky/Final2x-core/releases/download/2024-11-08/Final2x-core-macos-arm64.7z',
   'macos-x64':
-    'https://github.com/Final2x/Final2x-core/releases/download/2024-09-23/Final2x-core-macos-x64.zip',
-  'linux-x64':
-    'https://github.com/Final2x/Final2x-core/releases/download/2024-09-23/Final2x-core-ubuntu-20.04.zip',
+    'https://github.com/Tohrusky/Final2x-core/releases/download/2024-11-08/Final2x-core-macos-x64.7z',
   'windows-x64':
-    'https://github.com/Final2x/Final2x-core/releases/download/2024-09-23/Final2x-core-windows-latest.zip'
+    'https://github.com/Tohrusky/Final2x-core/releases/download/2024-11-08/Final2x-core-windows-latest.7z'
 }
 
 console.log('-'.repeat(50))
@@ -38,17 +37,21 @@ async function downloadAndUnzip(url, targetPath) {
 
   dest.on('finish', () => {
     console.log(`Download ${zipFileName} success!`)
-    // 解压缩文件
-    extract(zipFilePath, { dir: path.join(targetPath, 'Final2x-core') })
-      .then(() => {
-        console.log(`Unzip ${zipFileName} success!`)
-        // 删除压缩包
-        fs.unlinkSync(zipFilePath)
-        console.log(`Delete ${zipFileName} success!`)
-      })
-      .catch((err) => {
-        console.error(err)
-      })
+    // 解压缩文件, 命令行调用 7z
+    const Final2xCorePath = path.join(targetPath, 'Final2x-core')
+    const unzipCmd = `7z x ${zipFilePath} -o${Final2xCorePath}`
+    console.log(`Unzip command: ${unzipCmd}`)
+    // 使用异步方式执行解压命令
+    child_process.exec(unzipCmd, (error) => {
+      if (error) {
+        console.error(`Unzip error: ${error}`)
+        return
+      }
+      console.log(`Unzip ${zipFileName} success!`)
+      // 删除压缩文件
+      fs.unlinkSync(zipFilePath)
+      console.log(`Delete ${zipFileName} success!`)
+    })
   })
 
   res.body.pipe(dest)
@@ -81,7 +84,8 @@ let platformToDownload = ''
 if (PLATFORM === 'darwin') {
   platformToDownload = ARCH === 'arm64' ? 'macos-arm64' : 'macos-x64'
 } else if (PLATFORM === 'linux') {
-  platformToDownload = 'linux-x64'
+  console.error('Skip download Final2x-core for linux! Please use pip to install Final2x-core')
+  process.exit(0)
 } else if (PLATFORM === 'win32') {
   platformToDownload = 'windows-x64'
 } else {

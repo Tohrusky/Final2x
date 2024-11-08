@@ -4,24 +4,20 @@ import { defineStore } from 'pinia'
 export const useSRSettingsStore = defineStore(
   'SRSettings',
   () => {
-    const selectedModel = ref('RealESRGAN')
-    const selectedScale = ref(2)
-    const selectedNoise = ref(-1)
-    const useTTA = ref(false)
-    const CustomScaleValue: Ref<number | null> = ref(null)
+    const selectedSRModel = ref('RealESRGAN_RealESRGAN_x2plus_2x.pth')
+    const ghProxy: Ref<string | null> = ref(null)
+    const targetScale: Ref<number | null> = ref(null)
 
     return {
-      selectedModel,
-      selectedScale,
-      selectedNoise,
-      useTTA,
-      CustomScaleValue
+      selectedSRModel,
+      ghProxy,
+      targetScale
     }
   },
   {
     persist: {
       storage: localStorage,
-      paths: ['selectedModel', 'selectedScale', 'selectedNoise', 'useTTA', 'CustomScaleValue']
+      paths: ['selectedSRModel', 'ghProxy', 'targetScale']
     }
   }
 )
