@@ -31,7 +31,7 @@ const themeOverrides = {
   Select: {
     peers: {
       InternalSelectMenu: {
-        height: '130px'
+        height: '200px'
       }
     }
   }

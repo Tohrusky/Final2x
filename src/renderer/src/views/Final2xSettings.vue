@@ -66,7 +66,7 @@ function getPath(): void {
       </n-space>
 
       <n-space>
-        <n-button dashed type="success" style="width: 80px"> Proxy </n-button>
+        <n-button dashed type="success" style="width: 80px"> {{ t('Final2xSettings.text18') }} </n-button>
 
         <n-input
           v-model:value="ghProxy"
