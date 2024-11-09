@@ -77,7 +77,7 @@ apt install -y libomp5 xdg-utils
 
 The following references were referenced in the development of this project:
 
-- [Final2x-core](https://github.com/Final2x/Final2x-core)
+- [Final2x-core](https://github.com/Tohrusky/Final2x-core)
 - [ccrestoration](https://github.com/TensoRaws/ccrestoration)
 - [PyTorch](https://github.com/pytorch/pytorch)
 - [ncnn](https://github.com/Tencent/ncnn)
