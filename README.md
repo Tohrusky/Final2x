@@ -11,7 +11,6 @@
 ![Windows x64](https://img.shields.io/badge/Support-Windows%20x64-blue?logo=Windows&style=flat-square)
 ![Windows arm64](https://img.shields.io/badge/Support-Windows%20arm64-blue?logo=Windows&style=flat-square)
 ![Linux x64](https://img.shields.io/badge/Support-Linux%20x64-blue?logo=Linux&style=flat-square)
-[![codecov](https://codecov.io/gh/Tohrusky/Final2x/branch/main/graph/badge.svg?token=LL6K2P1RS8)](https://codecov.io/gh/Tohrusky/Final2x)
 [![CI-test](https://github.com/Tohrusky/Final2x/actions/workflows/CI-test.yml/badge.svg)](https://github.com/Tohrusky/Final2x/actions/workflows/CI-test.yml)
 [![CI-build](https://github.com/Tohrusky/Final2x/actions/workflows/CI-build.yml/badge.svg)](https://github.com/Tohrusky/Final2x/actions/workflows/CI-build.yml)
 [![Release](https://github.com/Tohrusky/Final2x/actions/workflows/Release.yml/badge.svg)](https://github.com/Tohrusky/Final2x/actions/workflows/Release.yml)
