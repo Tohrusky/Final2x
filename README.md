@@ -17,7 +17,7 @@
 ![Download](https://img.shields.io/github/downloads/Tohrusky/Final2x/total)
 ![GitHub](https://img.shields.io/github/license/Tohrusky/Final2x)
 
-This is a powerful tool that allows for image super-resolution to arbitrary sizes using multiple models, designed to enhance the resolution and quality of images, making them clearer and more detailed.
+This is a powerful tool that allows for image super-resolution to arbitrary sizes using [multiple models](./src/renderer/src/utils/ModelOptions.ts), designed to enhance the resolution and quality of images, making them clearer and more detailed.
 
 - News🎉: We are thrilled to announce the release of Final2x v2.0.0, which marks a major milestone as we transition to utilizing [ccrestoration](https://github.com/TensoRaws/ccrestoration) (PyTorch) for our algorithm implementation.
 - News🎉: Want to enhance your video? Try [FinalRip](https://github.com/TensoRaws/FinalRip)!
